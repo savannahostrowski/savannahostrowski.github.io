@@ -119,8 +119,7 @@ nav a:link, a:visited, a:active { /* makes all the links the same colour always 
 	background-repeat:no-repeat;
 	background-position: 10%;
 	float: left;
-	
-
+	}
 html {
     box-sizing: border-box;
 }
