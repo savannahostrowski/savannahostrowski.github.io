@@ -40,8 +40,8 @@ p {
 
 input {
 	font-family: 'Verdana', sans-serif;
-	float: right;
-}
+
+}	
 
 
 nav ul {
@@ -187,19 +187,16 @@ footer {
 	left:0;
 }
 
-html, body {
-    height: 100%;
-}
 .page-wrap {
     min-height: 100%;
-    margin-bottom: -35px; /* must be the same height as footer */
+    margin-bottom: -35px; 
 }
 .page-wrap:after {
     content: "";
     display: block;
 }
 footer, .page-wrap:after {
-    height: 35px; /* however tall you want the footer to be */
+    height: 35px; 
 }
 footer {
     color: white;
