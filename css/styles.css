@@ -58,7 +58,7 @@ nav ul li {
 	float:right;
 }	
 
-nav a:link, a:visited, a:active { /* makes all the links the same colour always */
+nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour always */
 	padding: 5px 15px;
 	text-decoration: none;
 	color: #000000;
@@ -119,10 +119,12 @@ nav a:link, a:visited, a:active { /* makes all the links the same colour always 
 	background-repeat:no-repeat;
 	background-position: 10%;
 	float: left;
-	}
+}
+
 html {
     box-sizing: border-box;
 }
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
