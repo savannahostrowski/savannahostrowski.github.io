@@ -20,7 +20,14 @@ function drawSmiley(centerX, centerY, radius) {
 	drawCircle(centerX, (centerY + (radius / 4)), radius / 2, 'black', 'black', Math.PI);
 }
 
-drawSmiley(100, 100, 120);
-drawSmiley(250, 250, 60);
-drawSmiley(50, 50, 30);
-drawSmiley(25, 25, 25);
+function randomize(min, max){
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+var radius = 20;
+
+drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
+drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
+drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
+drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
+drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
