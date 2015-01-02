@@ -202,6 +202,10 @@ footer {
     color: white;
 }
 
+footer p.black {
+	color: black;
+}
+
 footer {
     clear: both;
     padding: 5px; /* adds space inside the footer */
