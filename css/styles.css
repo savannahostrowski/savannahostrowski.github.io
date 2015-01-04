@@ -5,12 +5,13 @@
 	color: white;
 	font-size: 90px;
 	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+	font-weight:bold;
 }
 
 .homeheader2{
 	font-family: 'Verdana', sans-serif;
 	color: white;
-	font-size: 30px;
+	font-size: 25px;
 	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
@@ -19,8 +20,8 @@
     background: transparent;
     border-bottom: none;
     text-align: center;
-    padding-top: 250px;
-    padding-right: 5px;
+    padding-top: 265px;
+    padding-right: 10px;
 }
 
 .homebody {
@@ -66,7 +67,8 @@ nav ul li {
 nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour always */
 	padding: 5px 15px;
 	text-decoration: none;
-	color: #000000;
+	color: white;
+	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 
