@@ -55,6 +55,7 @@ nav ul {
 	margin: 0; /* removes default margin */
 	padding: 0; /* removes default padding */
 	float: right;
+	font-weight: bold;
 }
 
 nav ul li {
@@ -98,20 +99,18 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 
 .aboutbody {
 	font-family: 'Verdana', sans-serif;
-	
-	}
+}
 
 .aboutpara {
-	
 	margin: 15px 25px 0px 750px;
-	
 }
 
 .hiabout {
 	font-family: 'Verdana', sans-serif;
 	font-size: 20px;
 	color: #DE0056;
-	margin: 30px 25px 0px 800px;
+	margin: 185px 25px 0px 750px;
+	font-weight: bolder;
 }
 
 .aboutlinks{
@@ -123,6 +122,7 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 	background-repeat:no-repeat;
 	background-position: 10%;
 	float: left;
+	margin: 65px 0px 0px 30px;
 }
 
 html {
@@ -158,6 +158,7 @@ header, section{
 .aboutcontacthead{
 	border-bottom: 1px #DE0056 solid;
 	padding-bottom: 20px;
+	font-weight: bold;
 }
 
 .stretch {
@@ -208,6 +209,7 @@ footer {
 
 footer p.black {
 	color: black;
+	font-weight:bold;
 }
 
 footer {
