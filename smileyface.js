@@ -24,10 +24,7 @@ function randomize(min, max){
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-var radius = 20;
 
-drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
-drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
-drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
-drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
-drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), radius);
+for (var i= 0; i < 50; i++){
+	drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), 20);
+}
