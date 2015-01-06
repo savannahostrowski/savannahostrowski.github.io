@@ -1,47 +1,43 @@
-// to get reference to the canvas
-var ctx = $('#canvas')[0].getctx("2d");
+var canvas = document.getElementById('Canvas');
+var context = canvas.getContext('2d');
+//var centerX = canvas.width / 2;
+//var centerY = canvas.height / 2;
 
-// to create ball
-ctx.beginPath();
-ctx.arc(75, 75, 10, 10, Math.PI * 2, true);
-ctx.closePath();
-ctx.fill();
-
-// to make the rectangle half transparent
-ctx.fillStyle = 'green'
-ctx.beginPath();
-ctx.rect(15, 150, 120, 120);
-ctx.closePath();
-ctx.fill();
-
-//to create a moving ball
-var x = 150;
-var y = 150;
-var dx = 2;
-var dy = 4;
-var context;
-
-function init() {
-	ctx = $('#canvas')[0].getContext("2d");
-	return setInterval(draw, 10);
+function drawCircle(centerX, centerY, radius, fillColour, outlineColour, endAngle) {
+	context.beginPath();
+	context.arc(centerX, centerY, radius, 0, endAngle, false);
+	context.fillStyle = fillColour;
+	context.fill();
+	context.lineWidth = 2;
+	context.strokeStyle = outlineColour;
+	context.stroke();
 }
 
-function draw() {
-	ctx.clearRect(0, 0, 300, 300);
-	ctx.beginPath();
-	ctx.arc(x, y, 10, 0, Math.PI * 2, true);
-	ctx.closePath();
-	ctx.fill();
-	x += dx;
-	y += dy;
+/*function drawSmiley(centerX, centerY, radius) {	
+	drawCircle(centerX, centerY, radius, 'yellow', 'black', 2 * Math.PI);
+	drawCircle((centerX + (radius / 4)), (centerY - (radius / 4)), radius / 10, 'black', 'black', 2 * Math.PI);
+	drawCircle((centerX - (radius / 4)), (centerY - (radius / 4)), radius / 10, 'black', 'black', 2 * Math.PI);
+	drawCircle(centerX, (centerY + (radius / 4)), radius / 2, 'black', 'black', Math.PI);
 }
 
-init();
+function randomize(min, max){
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 
+for (var i= 0; i < 50; i++){
+	drawSmiley(randomize(0, canvas.width), randomize(0, canvas.height), 20);
+}
 
+*/
 
+function drawRect(){
+	context.fillStyle = 'rgba(255, 255, 0, 0.5)';
+	context.beginPath();
+	context.rect(15, 150, 120, 120);
+	context.closePath();
+	context.fill();
+}
 
-
-
-
+drawRect();
+}
