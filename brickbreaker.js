@@ -25,4 +25,3 @@ function drawRect(){
 }
 
 drawRect();
-drawCircle();
