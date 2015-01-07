@@ -20,6 +20,8 @@ function drawRect(){
 }
 
 drawCircle(25, 25, 10, 'green', 'black');
-drawCircle(canvas.width / 2, canvas.height / 2, 25, 'red', 'black');
+drawCircle(canvas.width / 2, canvas.height / 2, 30, 'red', 'black');
 drawRect();
+
+
 
