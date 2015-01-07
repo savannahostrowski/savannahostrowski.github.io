@@ -1,7 +1,5 @@
 var canvas = document.getElementById('Canvas');
 var context = canvas.getContext('2d');
-//var centerX = canvas.width / 2;
-//var centerY = canvas.height / 2;
 
 function drawCircle(centerX, centerY, radius, fillColour, outlineColour, endAngle) {
 	context.beginPath();
@@ -24,3 +22,4 @@ function drawRect(){
 drawCircle(25, 25, 10, 'green', 'black');
 drawCircle(canvas.width / 2, canvas.height / 2, 25, 'red', 'black');
 drawRect();
+
