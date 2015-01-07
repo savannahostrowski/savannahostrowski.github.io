@@ -13,9 +13,6 @@ function drawCircle(centerX, centerY, radius, fillColour, outlineColour, endAngl
 	context.stroke();
 }
 
-drawCircle(25, 25, 10, 'green', 'black');
-drawCircle(canvas.width / 2, canvas.height / 2, 25, 'red', 'black');
-
 function drawRect(){
 	context.fillStyle = 'rgba(255, 255, 0, 0.5)';
 	context.beginPath();
@@ -24,4 +21,6 @@ function drawRect(){
 	context.fill();
 }
 
+drawCircle(25, 25, 10, 'green', 'black');
+drawCircle(canvas.width / 2, canvas.height / 2, 25, 'red', 'black');
 drawRect();
