@@ -1,7 +1,7 @@
 var canvas = document.getElementById('Canvas');
 var context = canvas.getContext('2d');
 
-function drawCircle(centerX, centerY, radius, fillColour, outlineColour, endAngle) {
+/*function drawCircle(centerX, centerY, radius, fillColour, outlineColour, endAngle) {
 	context.beginPath();
 	context.arc(centerX, centerY, radius, 0, Math.PI * 2, false);
 	context.fillStyle = fillColour;
@@ -20,8 +20,28 @@ function drawRect(){
 }
 
 drawCircle(25, 25, 10, 'green', 'black');
-drawCircle(canvas.width / 2, canvas.height / 2, 30, 'red', 'black');
-drawRect();
+drawRect();*/
 
+var x = 150;
+var y = 150;
+var dx = 2;
+var dy = 4;
+var context;
 
+function draw(){
+  context.clearRect(0, 0, 300, 300);
+  context.beginPath();
+  context.arc(x, y, 10, 0, Math.PI*2, true); 
+  context.closePath();
+  context.fill();
+  x += dx;
+  y += dy;
+}
+
+function init(){
+	context = canvas.getContext('2d');
+	return setInterval(draw, 10);
+}
+
+init();
 
