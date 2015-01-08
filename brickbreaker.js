@@ -28,7 +28,7 @@ function drawRect(x, y, w, h){
 function clear(){
 	context.clearRect(0, 0, canvas.height, canvas.width);
 }
-drawCircle(25, 25, 10, 'green', 'black');
+drawCircle(25, 25, 5, 'green', 'black');
 drawRect();
 
 // End of Library Code
