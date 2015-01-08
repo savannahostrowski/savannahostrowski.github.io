@@ -8,6 +8,9 @@ var context;
 var WIDTH;
 var HEIGHT;
 var intervalId = 0;
+var paddlex; 
+var paddleh = 10;
+var paddlew = 75;
 
 function drawCircle(x, y, r){
 	context.beginPath();
@@ -30,26 +33,34 @@ function init(){
 	context = canvas.getContext('2d');
 	WIDTH = canvas.width;
 	HEIGHT = canvas.height;
+	paddlex = WIDTH / 2;
 	intervalId= setInterval(draw, 10);
 }
 
 // End of Library Code
-var paddlex; 
-var paddleh;
-var paddlew;
+rightDown = false;
+leftDown = false;
 
-function init_paddle(){
-	paddlex = WIDTH / 2
-	paddleh = 7;
-	paddlew = 60;
+function onKeyDown(evt){
+	if (evt.keyCode == 39) rightDown = true;
+	else if (evt.keyCode = 37) leftDown = true;
 }
+$(document).keydown(onKeyDown);
+$(document).keyup(onKeyUp);
 
+function onKeyUp(evt){
+	if (evt.keyCode == 39) rightDown = false;
+	else if (evt.keyCode == 37) leftDown = false;
+}
 
 function draw() {
   clear();
   drawCircle(x, y, 5);
+  
+  if (rightDown) paddlex += 5;
+  else if (leftDown) paddlex -= 5;
   drawRect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
- 
+  
   if (x + dx > WIDTH || x + dx < 0)
     dx = -dx;
 
