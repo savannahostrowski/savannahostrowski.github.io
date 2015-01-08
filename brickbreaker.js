@@ -1,47 +1,49 @@
-var canvas = document.getElementById('Canvas');
-var context = canvas.getContext('2d');
-
-/*function drawCircle(centerX, centerY, radius, fillColour, outlineColour, endAngle) {
-	context.beginPath();
-	context.arc(centerX, centerY, radius, 0, Math.PI * 2, false);
-	context.fillStyle = fillColour;
-	context.fill();
-	context.lineWidth = 2;
-	context.strokeStyle = outlineColour;
-	context.stroke();
-}
-
-function drawRect(){
-	context.fillStyle = 'rgba(255, 255, 0, 0.5)';
-	context.beginPath();
-	context.rect(15, 150, 120, 120);
-	context.closePath();
-	context.fill();
-}
-
-drawCircle(25, 25, 10, 'green', 'black');
-drawRect();*/
-
+//Beginning of Library Code
 var x = 150;
 var y = 150;
 var dx = 2;
 var dy = 4;
-var context;
-
-function draw(){
-  context.clearRect(0, 0, 300, 300);
-  context.beginPath();
-  context.arc(x, y, 10, 0, Math.PI*2, true); 
-  context.closePath();
-  context.fill();
-  x += dx;
-  y += dy;
-}
+var canvas = document.getElementById('Canvas');
+var context = canvas.getContext('2d');
 
 function init(){
 	context = canvas.getContext('2d');
 	return setInterval(draw, 10);
 }
 
-init();
+function drawCircle(x, y, r){
+	context.beginPath();
+	context.arc(x, y, r, 0, Math.PI * 2, true);
+	context.closePath();
+	context.fill();
+}
 
+function drawRect(x, y, w, h){
+	context.beginPath();
+	context.rect(x, y, w, h);
+	context.closePath();
+	context.fill();
+}
+
+function clear(){
+	context.clearRect(0, 0, canvas.height, canvas.width);
+}
+drawCircle(25, 25, 10, 'green', 'black');
+drawRect();
+
+// End of Library Code
+
+function draw(){
+	clear();
+	drawCircle(x, y, 10);
+
+	if (x + dx > canvas.width || x + dx < 0)
+		dx = -dx
+	if (y + dy > canvas.height || y + dy < 0)
+		dy = -dy
+
+x += dx;
+y += dy;
+}
+
+init();
