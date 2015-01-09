@@ -1,16 +1,16 @@
 //Beginning of Library Code
-var x = 130;
-var y = 150;
-var dx = 2;
-var dy = 2;
+var x = 25;
+var y = 250;
+var dx = 1.5;
+var dy = -4;
 var canvas = document.getElementById('Canvas');
 var context;
 var WIDTH;
 var HEIGHT;
 var intervalId = 0;
 var paddlex; 
-var paddleh = 10;
-var paddlew = 75;
+var paddleh = 7;
+var paddlew = 60;
 var rightDown = false;
 var leftDown = false;
 var canvasMinX = 0;
@@ -47,6 +47,13 @@ function onKeyUp(evt){
 $(document).keydown(onKeyDown);
 $(document).keyup(onKeyUp);
 
+function onMouseMove(evt) {
+	if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX){
+		paddlex = evt.pageX - canvasMinX;
+	}
+}
+
+$(document).mousemove(onMouseMove);
 
 function init(){
 	context = canvas.getContext('2d');
@@ -58,22 +65,35 @@ function init(){
 	intervalId = setInterval(draw, 10);
 }
 
-// End of Library Code
-var canvasMinX;
-var canvasMaxX;
-
 function init_mouse(){
 	canvasMinX = $(canvas).offset().left;
 	canvasMaxX = canvasMinX + WIDTH;
 }
 
-function onMouseMove(evt) {
-	if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX){
-		paddlex = evt.pageX - canvasMinX;
+// End of Library Code
+var bricks;
+var NROWS;
+var NCOLS;
+var BRICKWIDTH;
+var BRICKHEIGHT;
+var PADDING;
+
+function init_bricks(){
+	NROWS = 5;
+	NCOLS = 5;
+	BRICKWIDTH = (WIDTH/NCOLS) - 1;
+	BRICKHEIGHT = 15;
+	PADDING = 1;
+
+	bricks = new Array(NROWS);
+	for (i=0; i < NROWS; i++){
+		bricks[i] = new Array(NCOLS);
+		for (j=0; j < NCOLS; j++){
+			bricks[i][j] = 1;
+		}
 	}
 }
 
-$(document).mousemove(onMouseMove);
 
 function draw() {
   clear();
@@ -83,6 +103,29 @@ function draw() {
   else if (leftDown) paddlex -= 5;
   drawRect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
   
+
+  //rendering bricks
+  for (i=0; i < NROWS; i++){
+  	for (j=0; j < NCOLS; j++){
+  		if (bricks[i][j] == 1){
+  		drawRect ((j * (BRICKWIDTH + PADDING)) + PADDING,
+  			(i * (BRICKHEIGHT + PADDING)) + PADDING,
+  			BRICKWIDTH, BRICKHEIGHT);
+  		}
+  	}
+}
+
+//if brick is hit
+rowheight = BRICKHEIGHT + PADDING;
+colwidth = BRICKWIDTH + PADDING;
+row = Math.floor(y / rowheight);
+col = Math.floor(x / colwidth);
+
+//reverse the ball's direction and 'smash' the brick
+if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
+	dy = -dy
+	bricks[row][col] = 0;
+}
   if (x + dx > WIDTH || x + dx < 0)
     dx = -dx;
 
@@ -102,3 +145,4 @@ function draw() {
 
 init();
 init_mouse();
+init_bricks();
