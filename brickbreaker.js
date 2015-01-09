@@ -1,8 +1,8 @@
 //Beginning of Library Code
-var x = 150;
+var x = 130;
 var y = 150;
 var dx = 2;
-var dy = 4;
+var dy = 2;
 var canvas = document.getElementById('Canvas');
 var context;
 var WIDTH;
@@ -11,6 +11,10 @@ var intervalId = 0;
 var paddlex; 
 var paddleh = 10;
 var paddlew = 75;
+var rightDown = false;
+var leftDown = false;
+var canvasMinX = 0;
+var canvasMaxX = 0;
 
 function drawCircle(x, y, r){
 	context.beginPath();
@@ -29,29 +33,47 @@ function drawRect(x, y, w, h){
 function clear(){
 	context.clearRect(0, 0, canvas.height, canvas.width);
 }
-function init(){
-	context = canvas.getContext('2d');
-	WIDTH = canvas.width;
-	HEIGHT = canvas.height;
-	paddlex = WIDTH / 2;
-	intervalId= setInterval(draw, 10);
-}
-
-// End of Library Code
-rightDown = false;
-leftDown = false;
 
 function onKeyDown(evt){
 	if (evt.keyCode == 39) rightDown = true;
 	else if (evt.keyCode = 37) leftDown = true;
 }
-$(document).keydown(onKeyDown);
-$(document).keyup(onKeyUp);
 
 function onKeyUp(evt){
 	if (evt.keyCode == 39) rightDown = false;
 	else if (evt.keyCode == 37) leftDown = false;
 }
+
+$(document).keydown(onKeyDown);
+$(document).keyup(onKeyUp);
+
+
+function init(){
+	context = canvas.getContext('2d');
+	WIDTH = canvas.width;
+	HEIGHT = canvas.height;
+	paddlex = WIDTH / 2;
+	canvasMinX = $(canvas).offset();
+	canvasMaxX = canvasMinX + WIDTH;
+	intervalId = setInterval(draw, 10);
+}
+
+// End of Library Code
+var canvasMinX;
+var canvasMaxX;
+
+function init_mouse(){
+	canvasMinX = $(canvas).offset().left;
+	canvasMaxX = canvasMinX + WIDTH;
+}
+
+function onMouseMove(evt) {
+	if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX){
+		paddlex = evt.pageX - canvasMinX;
+	}
+}
+
+$(document).mousemove(onMouseMove);
 
 function draw() {
   clear();
@@ -79,4 +101,4 @@ function draw() {
 }
 
 init();
-init_paddle();
+init_mouse();
