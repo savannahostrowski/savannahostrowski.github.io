@@ -16,6 +16,7 @@ var leftDown = false;
 var canvasMinX = 0;
 var canvasMaxX = 0;
 
+// used to render the ball's shape
 function drawCircle(x, y, r){
 	context.beginPath();
 	context.arc(x, y, r, 0, Math.PI * 2, true);
@@ -23,6 +24,7 @@ function drawCircle(x, y, r){
 	context.fill();
 }
 
+// used to render the paddle's shape
 function drawRect(x, y, w, h){
 	context.beginPath();
 	context.rect(x, y, w, h);
@@ -30,10 +32,12 @@ function drawRect(x, y, w, h){
 	context.fill();
 }
 
+//used to ensure that the ball's path is erased as it moves
 function clear(){
 	context.clearRect(0, 0, canvas.height, canvas.width);
 }
 
+//key pad functionality to move paddle
 function onKeyDown(evt){
 	if (evt.keyCode == 39) rightDown = true;
 	else if (evt.keyCode = 37) leftDown = true;
@@ -47,6 +51,7 @@ function onKeyUp(evt){
 $(document).keydown(onKeyDown);
 $(document).keyup(onKeyUp);
 
+// mouse functionality to move paddle
 function onMouseMove(evt) {
 	if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX){
 		paddlex = evt.pageX - canvasMinX;
@@ -78,6 +83,7 @@ var BRICKWIDTH;
 var BRICKHEIGHT;
 var PADDING;
 
+//creates bricks
 function init_bricks(){
 	NROWS = 5;
 	NCOLS = 5;
