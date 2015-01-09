@@ -15,6 +15,23 @@ var rightDown = false;
 var leftDown = false;
 var canvasMinX = 0;
 var canvasMaxX = 0;
+var bricks;
+var NROWS = 5;
+var NCOLS = 5;
+var BRICKWIDTH;
+var BRICKHEIGHT = 15;
+var PADDING = 1;
+
+function init(){
+	context = canvas.getContext('2d');
+	WIDTH = canvas.width;
+	HEIGHT = canvas.height;
+	paddlex = WIDTH / 2;
+	BRICKWIDTH = (WIDTH / NCOLS) - 1;
+	canvasMinX = $(canvas).offset();
+	canvasMaxX = canvasMinX + WIDTH;
+	intervalId = setInterval(draw, 10);
+}
 
 // used to render the ball's shape
 function drawCircle(x, y, r){
@@ -35,6 +52,7 @@ function drawRect(x, y, w, h){
 //used to ensure that the ball's path is erased as it moves
 function clear(){
 	context.clearRect(0, 0, canvas.height, canvas.width);
+	drawRect(0, 0, WIDTH, HEIGHT);
 }
 
 //key pad functionality to move paddle
@@ -54,43 +72,20 @@ $(document).keyup(onKeyUp);
 // mouse functionality to move paddle
 function onMouseMove(evt) {
 	if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX){
-		paddlex = evt.pageX - canvasMinX;
+		paddlex = Math.max(evt.pageX - canvasMinX - (paddlew / 2), 0 );
+		paddlex = Math.min(WIDTH - paddlew, paddlex);
 	}
 }
 
 $(document).mousemove(onMouseMove);
-
-function init(){
-	context = canvas.getContext('2d');
-	WIDTH = canvas.width;
-	HEIGHT = canvas.height;
-	paddlex = WIDTH / 2;
-	canvasMinX = $(canvas).offset();
-	canvasMaxX = canvasMinX + WIDTH;
-	intervalId = setInterval(draw, 10);
-}
 
 function init_mouse(){
 	canvasMinX = $(canvas).offset().left;
 	canvasMaxX = canvasMinX + WIDTH;
 }
 
-// End of Library Code
-var bricks;
-var NROWS;
-var NCOLS;
-var BRICKWIDTH;
-var BRICKHEIGHT;
-var PADDING;
-
 //creates bricks
 function init_bricks(){
-	NROWS = 5;
-	NCOLS = 5;
-	BRICKWIDTH = (WIDTH/NCOLS) - 1;
-	BRICKHEIGHT = 15;
-	PADDING = 1;
-
 	bricks = new Array(NROWS);
 	for (i=0; i < NROWS; i++){
 		bricks[i] = new Array(NCOLS);
@@ -100,28 +95,40 @@ function init_bricks(){
 	}
 }
 
+function drawbricks() {
+  for (i=0; i < NROWS; i++) {
+    context.fillStyle = rowcolors[i];
+    for (j=0; j < NCOLS; j++) {
+      if (bricks[i][j] == 1) {
+        drawRect((j * (BRICKWIDTH + PADDING)) + PADDING, 
+             (i * (BRICKHEIGHT + PADDING)) + PADDING,
+             BRICKWIDTH, BRICKHEIGHT);
+      }
+    }
+  }
+}
+
+// End of Library Code
+var ballr = 10;
+var rowcolors = ['green', 'red', 'purple', 'yellow', 'orange'];
+var paddlecolor = 'black';
+var ballcolor = 'black';
+var backcolor = 'grey';
 
 function draw() {
-  clear();
-  drawCircle(x, y, 5);
+	context.fillStyle = backcolor;
+	clear();
+	context.fillStyle = ballcolor;
+	drawCircle(x, y, ballr);
   
   if (rightDown) paddlex += 5;
   else if (leftDown) paddlex -= 5;
+  context.fillStyle = paddlecolor;
   drawRect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
-  
 
-  //rendering bricks
-  for (i=0; i < NROWS; i++){
-  	for (j=0; j < NCOLS; j++){
-  		if (bricks[i][j] == 1){
-  		drawRect ((j * (BRICKWIDTH + PADDING)) + PADDING,
-  			(i * (BRICKHEIGHT + PADDING)) + PADDING,
-  			BRICKWIDTH, BRICKHEIGHT);
-  		}
-  	}
-}
+  drawbricks();
 
-//if brick is hit
+  //if brick is hit
 rowheight = BRICKHEIGHT + PADDING;
 colwidth = BRICKWIDTH + PADDING;
 row = Math.floor(y / rowheight);
@@ -137,10 +144,12 @@ if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
 
   if (y + dy < 0)
     dy = -dy;
-  else if (y + dy > HEIGHT) {
-    if (x > paddlex && x < paddlex + paddlew)
-      dy = -dy;
-    else
+  else if (y + dy > HEIGHT - paddleh) {
+    if (x > paddlex && x < paddlex + paddlew){
+    	dx = 8 * ((x-(paddlex + paddlew / 2)) / paddlew);
+        dy = -dy;
+    }
+    else if (y + dy + ballr > HEIGHT)
       //game over, so stop the animation (ball halts movement)
       clearInterval(intervalId);
   }
