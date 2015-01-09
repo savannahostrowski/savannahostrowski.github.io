@@ -141,7 +141,7 @@ if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
     if (x > paddlex && x < paddlex + paddlew)
       dy = -dy;
     else
-      //game over, so stop the animation
+      //game over, so stop the animation (ball halts movement)
       clearInterval(intervalId);
   }
  
