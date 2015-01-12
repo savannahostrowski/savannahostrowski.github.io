@@ -17,10 +17,15 @@ var canvasMinX = 0;
 var canvasMaxX = 0;
 var bricks;
 var NROWS = 5;
-var NCOLS = 5;
+var NCOLS = 7;
 var BRICKWIDTH;
 var BRICKHEIGHT = 15;
 var PADDING = 1;
+var ballr = 8;
+var rowcolors = ['green', 'red', 'purple', 'yellow', 'orange'];
+var paddlecolor = 'black';
+var ballcolor = 'black';
+var backcolor = 'grey';
 
 function init(){
 	context = canvas.getContext('2d');
@@ -28,7 +33,7 @@ function init(){
 	HEIGHT = canvas.height;
 	paddlex = WIDTH / 2;
 	BRICKWIDTH = (WIDTH / NCOLS) - 1;
-	canvasMinX = $(canvas).offset();
+	canvasMinX = $(canvas).offset().left;
 	canvasMaxX = canvasMinX + WIDTH;
 	intervalId = setInterval(draw, 10);
 }
@@ -57,13 +62,13 @@ function clear(){
 
 //key pad functionality to move paddle
 function onKeyDown(evt){
-	if (evt.keyCode == 39) rightDown = true;
-	else if (evt.keyCode = 37) leftDown = true;
+	if (evt.keyCode === 39) rightDown = true;
+	else if (evt.keyCode === 37) leftDown = true;
 }
 
 function onKeyUp(evt){
-	if (evt.keyCode == 39) rightDown = false;
-	else if (evt.keyCode == 37) leftDown = false;
+	if (evt.keyCode === 39) rightDown = false;
+	else if (evt.keyCode === 37) leftDown = false;
 }
 
 $(document).keydown(onKeyDown);
@@ -109,11 +114,6 @@ function drawbricks() {
 }
 
 // End of Library Code
-var ballr = 10;
-var rowcolors = ['green', 'red', 'purple', 'yellow', 'orange'];
-var paddlecolor = 'black';
-var ballcolor = 'black';
-var backcolor = 'grey';
 
 function draw() {
 	context.fillStyle = backcolor;
@@ -154,10 +154,25 @@ if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
       clearInterval(intervalId);
   }
  
-  x += dx;
+  x += dx; 
   y += dy;
 }
+
+// reset game using space bar once game has been lost
+function reset(evt){
+	if (evt.keyCode === 32){
+		init();
+		init_mouse();
+		init_bricks();
+
+
+	}
+}
+
+$(document).keyup(reset); 
 
 init();
 init_mouse();
 init_bricks();
+
+
