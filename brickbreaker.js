@@ -161,6 +161,7 @@ if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
 // reset game using space bar once game has been lost
 function reset(evt){
 	if (evt.keyCode === 32){
+		clearInterval(intervalId);
 		init();
 		init_mouse();
 		init_bricks();
