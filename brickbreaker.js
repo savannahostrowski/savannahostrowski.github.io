@@ -167,6 +167,8 @@ function reset(evt){
 		init_bricks();
 		dx = 1.5;
 		dy = -4;
+
+
 	}
 }
 
