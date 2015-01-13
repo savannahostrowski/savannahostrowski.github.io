@@ -136,7 +136,7 @@ col = Math.floor(x / colwidth);
 
 //reverse the ball's direction and 'smash' the brick
 if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
-	dy = -dy
+	dy = -dy;
 	bricks[row][col] = 0;
 }
   if (x + dx > WIDTH || x + dx < 0)
@@ -165,8 +165,8 @@ function reset(evt){
 		init();
 		init_mouse();
 		init_bricks();
-
-
+		dx = 1.5;
+		dy = -4;
 	}
 }
 
