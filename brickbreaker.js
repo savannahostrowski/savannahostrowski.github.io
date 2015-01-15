@@ -120,9 +120,10 @@ function draw() {
 	clear();
 	context.fillStyle = ballcolor;
 	drawCircle(x, y, ballr);
-  
-  if (rightDown) paddlex += 5;
-  else if (leftDown) paddlex -= 5;
+
+//move the paddle if left or right is currently pressed 
+  if (rightDown) paddlex += 4;
+  else if (leftDown) paddlex -= 4;
   context.fillStyle = paddlecolor;
   drawRect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
 
@@ -145,7 +146,7 @@ if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
   if (y + dy < 0)
     dy = -dy;
   else if (y + dy > HEIGHT - paddleh) {
-    if (x > paddlex && x < paddlex + paddlew){
+    if (!(x + ballr < paddlex || x - ballr > (paddlex + paddlew))) {
     	dx = 8 * ((x-(paddlex + paddlew / 2)) / paddlew);
         dy = -dy;
     }
