@@ -128,8 +128,13 @@ function draw() {
 	drawCircle(x, y, ballr);
 
 //move the paddle if left or right is currently pressed 
-  if (rightDown) paddlex += 4;
-  else if (leftDown) paddlex -= 4;
+  if (rightDown && paddlex + paddlew < 500){
+  	paddlex += 4;
+ };
+  if (leftDown && paddlex > 0){
+    paddlex -= 4;
+};
+
   context.fillStyle = paddlecolor;
   drawRect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
 
