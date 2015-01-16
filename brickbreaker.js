@@ -112,6 +112,12 @@ function drawbricks() {
     }
   }
 }
+// hide mouse when on canvas
+function hideMouse(){
+	document.getElementById('Canvas').style.cursor = "none";
+}
+
+hideMouse();
 
 // End of Library Code
 
