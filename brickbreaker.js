@@ -27,6 +27,7 @@ var paddlecolor = 'black';
 var ballcolor = 'black';
 var backcolor = 'grey';
 
+// initializes the functions to draw bricks and ball
 function init(){
 	context = canvas.getContext('2d');
 	WIDTH = canvas.width;
@@ -121,13 +122,15 @@ hideMouse();
 
 // End of Library Code
 
+// creates ball and bricks in canvas
 function draw() {
 	context.fillStyle = backcolor;
 	clear();
 	context.fillStyle = ballcolor;
 	drawCircle(x, y, ballr);
 
-//move the paddle if left or right is currently pressed 
+//move the paddle if left or right is
+// currently pressed and stop when paddle reaches edge of canvas
   if (rightDown && paddlex + paddlew < 500){
   	paddlex += 4;
  };
