@@ -1,65 +1,67 @@
 /* home page */
 
 .homeheader {
-	font-family: 'Verdana', sans-serif;
-	color: white;
+	font-family: 'Lobster', cursive;
+	color: #C1B0A0;
 	font-size: 90px;
-	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 	font-weight:bold;
-}
-
-.homeheader2{
-	font-family: 'Verdana', sans-serif;
-	color: white;
-	font-size: 25px;
-	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+	text-align:center;
+	text-shadow: 2px 2px #B35301;
 }
 
 .home {
 	position: static;
     background: transparent;
     border-bottom: none;
-    text-align: center;
-    padding-top: 265px;
+    padding-top: 280px;
     padding-right: 10px;
 }
 
 .homebody {
-	font-family: 'Verdana', sans-serif;
-	background-image: url('../images/sav-background.jpg');
-	background-repeat:no-repeat;
-	background-position: 100%;
+	background-color:#265B6A;
 	background-size: cover;
 }
+nav ul{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	list-style-type: none; /* removes bullets */
+	text-align:center;
+	font-weight: bold;
 
 
+}
+
+nav ul li {
+	display: inline-block; /* gets the list items to line up side by side*/
+}	
 /* general css */
 
 p a:hover{
 	color: grey;
+	text-align: center;
 }
 
 p {
-	font-family: 'Verdana', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 input {
-	font-family: 'Verdana', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 
 }	
 
 
-nav ul {
-	font-family: 'Verdana', sans-serif;
-	font-size: 18px;
-	list-style-type: none; /* removes bullets */
+.othernavlist {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	list-style-type: none; /* removes bullets 
 	margin: 0; /* removes default margin */
 	padding: 0; /* removes default padding */
 	float: right;
-	font-weight: bold;
+
 }
 
-nav ul li {
+.othernavelem {
 	display: inline-block; /* gets the list items to line up side by side*/
 	float:right;
 }	
@@ -67,21 +69,15 @@ nav ul li {
 nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour always */
 	padding: 5px 15px;
 	text-decoration: none;
-	color: white;
-	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+	color: #1F160D;
 }
-
-
-.highlight {
-	color: #DE0056;
-}
-
+*/
 /* contact page */
 
 
 
 .contactbody {
-	font-family: 'Verdana', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	background-repeat:no-repeat;
 	background-position: 50%;
@@ -100,7 +96,8 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 /* about page */
 
 .aboutbody {
-	font-family: 'Verdana', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	background-color:#265B6A;
 }
 
 .aboutpara {
@@ -108,7 +105,7 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 }
 
 .hiabout {
-	font-family: 'Verdana', sans-serif;
+	font-family: 'Open Sans', sans-serif;;
 	font-size: 20px;
 	color: #DE0056;
 	margin: 185px 25px 0px 750px;
@@ -123,7 +120,7 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 .aboutpic{
 	background-repeat:no-repeat;
 	background-position: 10%;
-	float: left;
+	float: left;	
 	margin: 65px 0px 0px 30px;
 }
 
@@ -144,13 +141,13 @@ h1, h2 {
 h1 {
 	font-size: 35px;
 	font-color: black;
-	font-family: 'Verdana', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 h2 {
 	font-size: 20px;
 	color: #DE0056;
-	font-family: 'Verdana', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 header, section{
@@ -158,20 +155,18 @@ header, section{
 }
 
 .aboutcontacthead{
-	border-bottom: 1px #DE0056 solid;
-	padding-bottom: 20px;
-	font-weight: bold;
+	font-family: 'Lobster', cursive;
+	color: #C1B0A0;
+	font-size: 40px;
+	font-weight:bold;
+	text-align:center;
+	text-shadow: 2px 2px #B35301;
 }
 
 .stretch {
     width:100%;
     height:100%;
 }
-      background-color: white;
-      background: url('../images/sav-background.jpg');
-      background-size: contain;
-      background-size: 1700px 700px;
-      background-repeat: no-repeat;
 
 #header {
 	width: 800px;
@@ -191,7 +186,7 @@ html {
 footer {
 	position: fixed;
 	bottom:0;
-	left:0;
+	left: 0;
 }
 
 .page-wrap {
@@ -205,8 +200,12 @@ footer {
 footer, .page-wrap:after {
     height: 35px; 
 }
+
 footer {
-    color: white;
+    font-color:#120D0A;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+
 }
 
 footer p.black {
