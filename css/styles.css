@@ -214,27 +214,6 @@ footer {
 footer p {
     margin: 0; /* removes default margin from paragraph */
 }
-
-<<<<<<< HEAD
-/* Projects Page*/
-
-p.projecttitle{
-	font-family: 'Verdana', sans-serif;
-	font-size: 20px;
-	color: #DE0056;
-	font-weight: bolder;
-	text-align:center;
-}
-
-p.projectabout{
-	text-align:center;
-}
-
-.canvasstyle {
-	display: block;
-	margin: 0 auto;
-}
-
 canvas {
     padding-left: 0;
     padding-right: 0;
@@ -261,4 +240,4 @@ canvas {
 	text-align:center;
 
 }
->>>>>>> work
+
