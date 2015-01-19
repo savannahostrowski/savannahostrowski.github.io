@@ -57,13 +57,13 @@ input {
 	list-style-type: none; /* removes bullets 
 	margin: 0; /* removes default margin */
 	padding: 0; /* removes default padding */
-	float: right;
+	text-align:center;
 
 }
 
 .othernavelem {
 	display: inline-block; /* gets the list items to line up side by side*/
-	float:right;
+	text-align:center;
 }	
 
 nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour always */
@@ -107,8 +107,8 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 .hiabout {
 	font-family: 'Open Sans', sans-serif;;
 	font-size: 20px;
-	color: #DE0056;
-	margin: 185px 25px 0px 750px;
+	color: #1F160D;
+	margin:170px 25px 0px 750px;
 	font-weight: bolder;
 }
 
@@ -119,9 +119,9 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 
 .aboutpic{
 	background-repeat:no-repeat;
-	background-position: 10%;
+	background-position: 20%;
 	float: left;	
-	margin: 65px 0px 0px 30px;
+	margin: 0px 0px 0px 30px;
 }
 
 html {
@@ -184,9 +184,10 @@ html {
 
 
 footer {
-	position: fixed;
-	bottom:0;
-	left: 0;
+	bottom:-10;
+	font-color:#120D0A;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
 }
 
 .page-wrap {
@@ -199,13 +200,6 @@ footer {
 }
 footer, .page-wrap:after {
     height: 35px; 
-}
-
-footer {
-    font-color:#120D0A;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-
 }
 
 footer p.black {
