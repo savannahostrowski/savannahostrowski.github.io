@@ -78,20 +78,10 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 
 .contactbody {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-	background-repeat:no-repeat;
-	background-position: 50%;
+	background-color:#265B6A;
 	background-size: cover;
-	background-image: url('../images/contact.jpg');
-}
-
-.boxed {
- 	border: none;
-	background-color:rgba(255,255,255,.6);
-	display: table;
-	padding: 4px;
-	margin: 87px 300px 110px 480px;
-}
+	text-align:center;
+};
 
 /* about page */
 
