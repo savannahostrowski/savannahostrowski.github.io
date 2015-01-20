@@ -18,8 +18,10 @@
 }
 
 .homebody {
-	background-color:#265B6A;
-	background-size: cover;
+	background-image:
+	radial-gradient(
+		#6C949F,
+		#022A35);
 }
 nav ul{
 	font-family: 'Open Sans', sans-serif;
@@ -101,7 +103,7 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 	background-repeat:no-repeat;
 	background-position: 20%;
 	float: left;	
-	margin: 0px 0px 0px 30px;
+	margin: 40px 0px 0px 90px;
 }
 
 html {
