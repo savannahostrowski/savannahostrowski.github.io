@@ -71,17 +71,6 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 	text-decoration: none;
 	color: #1F160D;
 }
-*/
-/* contact page */
-
-
-
-.contactbody {
-	font-family: 'Open Sans', sans-serif;
-	background-color:#265B6A;
-	background-size: cover;
-	text-align:center;
-};
 
 /* about page */
 
