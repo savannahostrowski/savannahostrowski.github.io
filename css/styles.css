@@ -22,6 +22,10 @@
 	radial-gradient(
 		#6C949F,
 		#022A35);
+	height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 nav ul{
 	font-family: 'Open Sans', sans-serif;
@@ -108,6 +112,7 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 
 html {
     box-sizing: border-box;
+    height: 100%;
 }
 
 *, *:before, *:after {
