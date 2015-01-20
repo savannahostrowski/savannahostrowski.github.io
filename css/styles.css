@@ -83,6 +83,13 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 .aboutbody {
 	font-family: 'Open Sans', sans-serif;
 	background-color:#265B6A;
+	background-image:
+	radial-gradient(
+		#6C949F,
+		#022A35);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .aboutpara {
@@ -211,7 +218,14 @@ canvas {
 }
 
 .projectsbackground{
-	background-color:#265B6A;
+	background-image:
+	radial-gradient(
+		#6C949F,
+		#022A35);
+	height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .projecttitle{
