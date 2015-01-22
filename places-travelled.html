@@ -15,11 +15,33 @@
 				function initialize() {
 					var mapOptions = { 
 						center: new google.maps.LatLng(62.186014,-93.779297),
-						 zoom: 3 
-						};
+						 zoom: 3,
+						 disableDefaultUI: true,
+						 zoomControl: true,
+						 zoomControlOptions:{
+							 style: google.maps.ZoomControlStyle.SMALL,
+							 position: google.maps.ControlPosition.BOTTOM_LEFT
+							},
+
+						 panControl: true,
+						 scaleControl: true,
+						 mapTypeControl: true,
+						 mapTypeControlOptions:{
+						 	mapTypeIds:[google.maps.MapTypeId.ROADMAP,
+						 		google.maps.MapTypeId.HYBRID],
+						 	style:google.maps.MapTypeControlStyle.DROPDOWN_MENU
+						 },
+						 streetviewControl:true,
+						 rotateControl:true,
+						 overviewMapControl:true,
+						 overviewMapContolOptions:{
+						 	opened:true
+						 }
+					}
 					var map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
 					addButtons(map);
-				}
+					drawMarkers(map);
+				};
 				function addButtons(map) {
 					document.getElementById('btnTerrain').addEventListener('click',function(){
 						map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
@@ -34,8 +56,34 @@
 						map.setMapTypeId(google.maps.MapTypeId.HYBRID);
 					});
 				}; 
+				function drawMarkers(map){
+					var centerMarker = new google.maps.Marker({
+						position: new google.maps.LatLng(41.8919300,12.5113300),
+						map: map,
+						title: "Rome - Summer 2014"
+					});
+					var centerMarker = new google.maps.Marker({
+						position: new google.maps.LatLng(40.8563100,14.2464100),
+						map: map,
+						title: "Naples - Summer 2014"
+					});
+					var centerMarker = new google.maps.Marker({
+						position: new google.maps.LatLng(43.7792500,11.2462600),
+						map: map,
+						title: "Florence - Summer 2014"
+					});
+					var centerMarker = new google.maps.Marker({
+						position: new google.maps.LatLng(44.4938100,11.3387500),
+						map: map,
+						title: "Bologna - Summer 2014"
+					});
+					var centerMarker = new google.maps.Marker({
+						position: new google.maps.LatLng(45.4642700,9.1895100),
+						map: map,
+						title: "Milan - Summer 2014"
+					});
+				};
 				google.maps.event.addDomListener(window, "load", initialize);
-
 
 			</script>
 			</head>
