@@ -120,10 +120,6 @@ nav a:link, nav a:visited, nav a:active { /* makes all the links the same colour
 
 }
 
-html {
-    box-sizing: border-box;
-}
-
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -218,10 +214,7 @@ canvas {
     display: block;
     width: 500px;
     padding:1px;
-   	border:1px solid #B35301;
-
-
-}
+   }
 
 .projectsbackground{
 	background-image:
@@ -229,9 +222,9 @@ canvas {
 		#6C949F,
 		#022A35);
 	height: 100%;
-    margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
 }
 
 .projecttitle{
