@@ -120,6 +120,19 @@ function hideMouse(){
 
 hideMouse();
 
+
+// smashes brick and updates score
+function score(){
+	bricks[row][col] = 0;
+	plus10();
+}
+//add 10 points per bricksmash
+function plus10(){
+	for (i = 0; i < 10 * 35; i+=10){
+		console.log(i);
+	}
+};
+
 // End of Library Code
 
 // creates ball and bricks in canvas
@@ -152,13 +165,16 @@ col = Math.floor(x / colwidth);
 //reverse the ball's direction and 'smash' the brick
 if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
 	dy = -dy;
-	bricks[row][col] = 0;
+	score();
+
 }
   if (x + dx > WIDTH || x + dx < 0)
     dx = -dx;
 
+
   if (y + dy < 0)
     dy = -dy;
+
   else if (y + dy > HEIGHT - paddleh) {
     if (!(x + ballr < paddlex || x - ballr > (paddlex + paddlew))) {
     	dx = 8 * ((x-(paddlex + paddlew / 2)) / paddlew);
@@ -167,11 +183,12 @@ if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
     else if (y + dy + ballr > HEIGHT)
       //game over, so stop the animation (ball halts movement)
       clearInterval(intervalId);
+      return "Game Over!"
   }
  
   x += dx; 
   y += dy;
-}
+};
 
 // reset game using space bar once game has been lost
 function reset(evt){
