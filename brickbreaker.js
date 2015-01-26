@@ -26,6 +26,7 @@ var rowcolors = ['#843800', '#3AE4A00', '#D65B00', '#FC7C1D', '#FF9A50'];
 var paddlecolor = '#1F160D';
 var ballcolor = '#1F160D';
 var backcolor = '#C1B0A0';
+var score = 0;
 
 // initializes the functions to draw bricks and ball
 function init(){
@@ -128,14 +129,6 @@ function hideMouse(){
 //function call for hidding mouse
 hideMouse();
 
-
-//add 10 points per bricksmash
-function plus10(){
-	for (i = 0; i < 10 * 35; i+=10){
-		console.log(i);
-	}
-};
-
 //move the paddle if left or right is currently pressed and stop when paddle reaches edge of canvas
 function paddlemovement(){
   if (rightDown && paddlex + paddlew < 500){
@@ -163,38 +156,38 @@ function objFill(){
     drawRect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
 
 }
+//adds to the score
+function addScore(){
+	console.log(score += 10);
+}
 // End of Library Code
 
 // creates ball and bricks in canvas
 function draw() {
-	objFill();
-
-	paddlemovement();
-	
-
-
-  	drawbricks();
-  	brickDimensions();
-
-
+	objFill(); // draws ball, and paddle and gives colour to ball, bricks, paddle and background of canvas
+	paddlemovement(); //dictates the paddle's movement speed and parameters
+  	drawbricks(); // draws the bricks using arrays for the rows and columns
+  	brickDimensions(); //gives brick dimensions
 
 //reverse the ball's direction and 'smash' the brick
 if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
-	dy = -dy;
+	dy = -dy; // ball change directions in y
 	bricks[row][col] = 0;
+	addScore();
+
 
 }
-  if (x + dx > WIDTH || x + dx < 0)
-    dx = -dx;
+  if (x + dx > WIDTH || x + dx < 0) // if ball hits a wall on the canvas
+    dx = -dx; //ball change direction in x
 
 
-  if (y + dy < 0)
-    dy = -dy;
+  if (y + dy < 0) // if ball hits the paddle
+    dy = -dy; //ball change direction in y
 
   else if (y + dy > HEIGHT - paddleh) {
-    if (!(x + ballr < paddlex || x - ballr > (paddlex + paddlew))) {
+    if (!(x + ballr < paddlex || x - ballr > (paddlex + paddlew))) { // stops paddle at the edges of the canvas
     	dx = 8 * ((x-(paddlex + paddlew / 2)) / paddlew);
-        dy = -dy;
+        dy = -dy; //ball change direction in y
     }
     else if (y + dy + ballr > HEIGHT)
       //game over, so stop the animation (ball halts movement)
