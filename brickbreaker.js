@@ -160,6 +160,7 @@ function objFill(){
 function addScore(){
 	console.log(score += 10);
 }
+
 // End of Library Code
 
 // creates ball and bricks in canvas
@@ -208,6 +209,7 @@ function reset(evt){
 		init_bricks();
 		dx = 1.5;
 		dy = -4;
+		score = 0;
 
 
 	}
