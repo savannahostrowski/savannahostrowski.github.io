@@ -136,34 +136,47 @@ function plus10(){
 	}
 };
 
-// End of Library Code
-
-// creates ball and bricks in canvas
-function draw() {
-	context.fillStyle = backcolor;
-	clear();
-	context.fillStyle = ballcolor;
-	drawCircle(x, y, ballr);
-
-//move the paddle if left or right is
-// currently pressed and stop when paddle reaches edge of canvas
+//move the paddle if left or right is currently pressed and stop when paddle reaches edge of canvas
+function paddlemovement(){
   if (rightDown && paddlex + paddlew < 500){
   	paddlex += 4;
  };
   if (leftDown && paddlex > 0){
     paddlex -= 4;
 };
+}
 
-  context.fillStyle = paddlecolor;
-  drawRect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
+// defines brick dimensions
+function brickDimensions(){
+	rowheight = BRICKHEIGHT + PADDING; //the height of a row is 15 plus the padding of 1 per brick
+	colwidth = BRICKWIDTH + PADDING; // the width / number of columns in the canvas - 1 plus the padding
+	row = Math.floor(y / rowheight); 
+	col = Math.floor(x / colwidth);
+}
 
-  drawbricks();
+function objFill(){
+	context.fillStyle = backcolor;
+	clear();
+	context.fillStyle = ballcolor;
+	drawCircle(x, y, ballr);
+	context.fillStyle = paddlecolor;//fills in the paddle
+    drawRect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
 
-  //if brick is hit
-rowheight = BRICKHEIGHT + PADDING;
-colwidth = BRICKWIDTH + PADDING;
-row = Math.floor(y / rowheight);
-col = Math.floor(x / colwidth);
+}
+// End of Library Code
+
+// creates ball and bricks in canvas
+function draw() {
+	objFill();
+
+	paddlemovement();
+	
+
+
+  	drawbricks();
+  	brickDimensions();
+
+
 
 //reverse the ball's direction and 'smash' the brick
 if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
