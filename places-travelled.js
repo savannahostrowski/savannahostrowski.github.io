@@ -1,5 +1,5 @@
 function initialize() {
-					var mapOptions = { 
+	var mapOptions = { 
 						center: new google.maps.LatLng(62.186014,-93.779297),
 						 zoom: 3,
 						 disableDefaultUI: true,
