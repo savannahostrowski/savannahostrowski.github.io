@@ -1,0 +1,212 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+	color: #444444;
+	font-family: Helvetica, Arial, sans-serif;
+}
+h1 {
+	font-size: 48px;
+
+}
+h2 {
+	font-size: 32px;
+}
+h1, h2, h3 {
+	font-family: 'Oswald', sans-serif;
+}
+p {
+	line-height: 1.4;
+	font-size: 20px;
+	text-align:center;
+}
+.container {
+	padding: 50px 100px;
+}
+.container h2, 
+.container h3 {
+	color: #444444;
+}
+
+h4 {
+	display: inline-block;
+	position:relative;
+}
+
+div{
+	display:block;
+}
+
+ul li{
+	display:block;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end:0px;
+}
+ .nav {
+ 	width: 100%;
+ 	margin: 0;
+ 	position: fixed;
+ 	top:0px;
+ 	height: 65px;
+ 	z-index:999;
+ 	display:block;
+ 	background-color: white;
+ }
+/* PAGE MENU
+-----------------------------------------*/
+.stickyname{
+	padding-left:  40px;
+	padding-top: 0px;
+	font-size: 20px;
+}
+.menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	border-bottom: 1px solid #434A5C;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 5;
+}
+.menu li {
+	display: inline-block;
+	padding: 20px 35px;
+}
+.menu a {
+	text-decoration: none;
+	color: #333333;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+}
+
+.menu a.active {
+	color: #6494BF;
+}
+
+/* BANNER 
+-----------------------------------------*/
+img.profile {
+	border: 1px solid grey;
+	width: 250px;
+	height: 250px;
+	padding: 5px;
+}
+.banner {
+	padding-top: 250px;
+	padding-bottom: 250px;
+	max-width: 100%;
+	max-height: 100%;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/banner.jpg');
+	background-attachment: fixed;
+	color: #ffffff;
+	text-align: center;
+	height: 100%;
+    position:relative;
+    background-size: cover;
+    background-position: center;
+    z-index:-200;
+}
+.banner h1 {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+.banner p {
+	font-size: 22px;
+}
+
+
+/* ABOUT
+-----------------------------------------*/
+.about {
+	background: url('../images/tile1.png');
+	overflow: hidden;
+	text-align:center;
+}
+.about h2 {
+	text-align: center;
+}
+.favourites {
+	text-align: center;
+}
+
+
+/* SKILLS
+-----------------------------------------*/
+.skills{
+	width: 100%;
+	padding-top: 70px;
+	padding-bottom: 80px;
+	margin-bottom: 0px;
+	padding-left: 15%;
+	padding-right: 15%;
+	overflow:hidden;
+	text-align: center;
+	z-index:1;
+	display:inline-block;
+}
+.skillone{
+	width: 32.5%;
+	margin-right: 0.5%;
+	text-align: center;
+	margin-bottom: 50px;
+	transition: all 0.5s;
+}
+
+.skilltwo{
+	width: 32.5%;
+	margin-right: 0.5%;
+	text-align: center;
+	margin-bottom: 50px;
+	transition: all 0.5s;
+}
+.skillthree{
+	width: 32.5%;
+	margin-right: 0.5%;
+	text-align: center;
+	margin-bottom: 50px;
+	transition: all 0.5s;
+}
+.skillone ul li{
+	margin:0;
+	padding-bottom: 7px;
+	list-style-type:none;
+}
+.skilltwo ul li{
+	margin:0;
+	padding-bottom: 7px;
+	list-style-type:none;
+}
+.skillthree ul li{
+	margin:0;
+	padding-bottom: 7px;
+	list-style-type:none;
+}
+/* FAVOURITES 
+-----------------------------------------*/
+.fav-img {
+	border: 1px solid #A8258D;
+	border-radius: 50%;
+	width: 200px;
+	padding: 5px;
+	margin: 10px;
+	vertical-align: middle;
+}
+
+/* CONTACT 
+-----------------------------------------*/
+.contact {
+	text-align: center;
+	background: url('../images/tile2.png');
+}
+.contact img {
+	margin: 0px;
+	width:15%;
+}

@@ -1,30 +1,120 @@
-<!DOCTYPE html>
-	<head>
-		<meta charset="utf-8">
-    	<meta name ="author" content = "Savannah Ostrowski"</>
-   	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<html lang="en">
-		<title>Savannah Ostrowski | Home</title>
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-		<link rel="shortcut icon" href="images/favicon.ico" type="images/x-icon">
-		<link rel="icon" href="images/favicon.ico" type="images/x-icon">
-		<!-- Google Fonts -->
- 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-		 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" media="all" rel="stylesheet">
-	</head>
-<body class= "homebody">
-	<div class = "page-wrap" id="background">
-		<header class = "home">
-			<h1 class = "homeheader"> Savannah Ostrowski</h1>
-			<nav>
-				<ul>
-					<li> <a href = "index.html">Home</span></a> </li>
-					<li> <a href = "about.html"> About </a> </li>	
-					<li> <a href = "projects.html"> Projects </a></li>	
-				</ul>
-			</nav>
-		</header>
+<!doctype html>
+<html>
+<head>
+	<title>Savannah Ostrowski</title>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!--jQuery -->
+	<script src="js/jquery-2.1.3.min.js"></script>
+
+	<!--jQuery UI -->
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+
+
+	<script text = "text/javascript">
+	$(document).ready(function(){
+	 	$('a[href*=#]:not([href=#])').click(function() {
+	 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	 		    var target = $(this.hash);
+	 		    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+	 		    if (target.length) {
+	 		        $('html,body').animate({
+	 		      	  scrollTop: target.offset().top
+	 		         }, 1000);
+	 		         return false;
+	 		        }
+	 		    }
+	 		});
+	 		//sets initial project icon size
+			$('.fav-img').width(150).height(150);
+			//on hover, icon for project grows
+			$('.fav-img').hover(function(){
+				$(this).animate({width: 175, height: 175}, 500);
+			},
+			function(){
+				$(this).animate({width: 150, height: 150}, 500);
+			});
+			//to highlight the menu links once they are clicked
+			$('.menu a').click(function(){
+				//this is what happens when a menu button is clicked
+				$('.active').removeClass('active');
+				$(this).addClass('active');
+			});
+		});
+	</script>
+			
+</head>
+<body>
+	<div class = "nav">
+		<h3 class = "stickyname">SAVANNAH OSTROWSKI</h3>
+		<ul class="menu">
+			<li><a href="#about">About</a></li>
+			<li><a href="#favourites">Projects</a></li>
+			<li><a href="#contact">Connect</a></li>
+		</ul>
 	</div>
+
+	<section class="banner">
+		<h1>Savannah Ostrowski</h1>
+		<h2 id = "bannerheader"> Front-End Web Developer </h2>
+	</section>
+
+	<section id="about" class="about container">
+		<h2>HEY THERE!</h2>
+		<img class="profile" src="images/sav-naples.jpg">
+		<p>  I am a Canadian front-end web developer who is passionate about data visualization and mobile app development. I'm interested in building applications that present data in impactful and memorable ways to users.</section>
+
+<!-- Skills Section -->
+<section class = "skills container">
+<!-- First skill -->
+	<div class = "skillone">
+		<img class="skill" src="images/code.png">
+		<h3> I write code in:</h3>
+			<ul>
+				<li>Javascript/jQuery</li>
+				<li>HTML/CSS </li>
+				<li>Python</li>
+				<li>Scheme</li>
+			</ul>
+	</div>
+<!-- Second skill -->
+	<div class = "skilltwo">
+		<img class="skill" src="images/puzzle.png">
+		<h3> I have formal training from:</h3>
+			<ul>
+				<li>University of Waterloo</li>
+				<li>Ladies Learning Code</li>
+			</ul>
+	</div>
+<!-- Third Skill -->
+	<div class = "skillthree">
+		<img class="skill" src="images/locate.png">
+		<h3> I solve spatial problems with:</h3>
+			<ul>
+				<li>ArcGIS/QGIS</li>
+				<li>ENVI/Geomatica</li>
+				<li>Google Earth</li>
+			<ul>
+	</div>
+</section>
+<section id="favourites" class="favourites container">
+    <h2>PROJECTS</h2>
+    <h4> BRICKSMASHER</h4>
+    <a href ="brickbreaker.html"><img class="fav-img" src="images/brickbreaker.png" alt="BrickSmasher"></a>
+    <h4> PLACES </h4>
+    <a href ="places-travelled.html"> <img class="fav-img" src="images/maps.png" alt = "Places I've been" ></a>
+</section>
+	<section id="contact" class="contact container">
+		<h2>CONNECT</h2>
+		<a href="https://ca.linkedin.com/in/savannahmostrowski"><img src="images/linkedin-black.png"></a>
+		<a href="http://www.github.com/savannahostrowski"><img src="images/github.png"></a>
+		<a href="mailto:savannahostrowski@gmail.com"><img src="images/email.png"></a>
+		<a href="http://www.savannahlearnstocode.wordpress.com"><img src="images/wordpress.png"></a>
+	</section>
 </body>
 </html>
