@@ -161,6 +161,14 @@ function addScore(){
 	console.log(score += 10);
 }
 
+function scoreBoard(){
+	context.beginPath();
+	context.rect(300, 200, 50, 25);
+	context.closePath();
+	context.fill();
+	addScore();
+}
+
 // End of Library Code
 
 // creates ball and bricks in canvas
@@ -210,8 +218,6 @@ function reset(evt){
 		dx = 1.5;
 		dy = -4;
 		score = 0;
-
-
 	}
 }
 
