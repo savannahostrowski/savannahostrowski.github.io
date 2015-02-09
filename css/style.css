@@ -161,17 +161,21 @@ img.profile {
 	z-index:0;
 	background-color:#170F34;
 	text-align:center;
-	display:inline-block;
 }
 .skillgen{
 	text-align:center;
-	display:inline-block;
 	list-style-type:none;
 }
 
 .skillheader{
 	color:whitesmoke;
 	font-family: 'Lato', sans-serif;
+}
+
+.skillalign{
+	width: 300px;
+	float:left;
+	padding: 10px;
 }
 
 /* FAVOURITES 
