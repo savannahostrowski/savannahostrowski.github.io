@@ -43,7 +43,7 @@ div{
 
 ul{
 	list-style-type:none;
-	display:inline;
+	display:inline-block;
 	font-family: 'Lato', sans-serif;
 	color:whitesmoke;
 	padding: 0;
@@ -165,7 +165,7 @@ img.profile {
 }
 .skillgen{
 	text-align:center;
-	display:inline;
+	display:inline-block;
 	list-style-type:none;
 }
 
