@@ -66,8 +66,16 @@ ul{
 	padding-left:  40px;
 	padding-top: 0px;
 	font-size: 20px;
+}
+
+.stickyname a{
 	text-decoration: none;
-	outline:none;
+	color:#333333;
+}
+
+.stickyname a:hover{
+	color: whitesmoke;
+	background-color:darkslateblue;
 }
 .menu {
 	list-style: none;
