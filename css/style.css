@@ -148,14 +148,23 @@ img.profile {
 .about h2 {
 	text-align: center;
 }
-.favourites {
-	text-align: center;
-}
 
 .aboutbox{
 	width: 650px;
 	margin: 0 auto;
 }
+
+.about p a{
+	text-decoration: none;
+	color:#333333;
+	font-size:20px;
+}
+
+.about p a:hover{
+	color:darkslateblue;
+	text-decoration: underline;
+}
+
 
 /* SKILLS
 -----------------------------------------*/
@@ -200,19 +209,47 @@ li a:hover{
 /* FAVOURITES 
 -----------------------------------------*/
 .fav-img {
-	border: 1px solid #A8258D;
+	border: 1px solid darkslateblue;
 	border-radius: 50%;
 	width: 200px;
 	padding: 5px;
 	margin: 10px;
-	vertical-align: middle;
+	float:left;
+}
+.favourites {
+	text-align: center;
+	background: url('../images/tile2.png');
+	height: 700px;
+
 }
 
+.favourites ul{
+	float:left;
+}
+
+.projectdesc{
+	color: #170F34;
+	padding-top: 70px;
+	padding-left:70px;
+	float:right;
+}
+
+.projectheader{
+	color:darkslateblue;
+	
+}
+
+.aboutproject{
+	padding-top: 1.5em;
+	padding: 0.5em 0 0 3.2em;
+	overflow: hidden;
+}
 /* CONTACT 
 -----------------------------------------*/
 .contact {
 	text-align: center;
-	background: url('../images/tile2.png');
+	background-color:whitesmoke;
+	
 }
 .contact img {
 	margin: 0px;

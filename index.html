@@ -34,20 +34,9 @@
 	 		    }
 	 		});
 	 		//sets initial project icon size
-			$('.fav-img').width(150).height(150);
-			//on hover, icon for project grows
-			$('.fav-img').hover(function(){
-				$(this).animate({width: 175, height: 175}, 500);
-			},
-			function(){
-				$(this).animate({width: 150, height: 150}, 500);
-			});
-			//to highlight the menu links once they are clicked
-			$('.menu a').click(function(){
-				//this is what happens when a menu button is clicked
-				$('.active').removeClass('active');
-				$(this).addClass('active');
-			});
+			$('.fav-img').width(250).height(250);
+			
+		
 		});
 	</script>
 			
@@ -72,7 +61,8 @@
 		<div class = "aboutbox">
 			<h2>NICE TO MEET YOU</h2>
 			<img class="profile" src="images/sav-naples.jpg">
-			<p>  I am a Canadian front-end web developer who is passionate about data visualization and mobile app development. I'm interested in building applications that present data in impactful and memorable ways to users.
+			<p>  I am a Canadian front-end web developer who is passionate about data visualization and mobile app development. I'm interested in building applications that present data in impactful and memorable ways to users.</p>
+			<p> Take a look at what <a href="#favourites">projects</a> I have been working on!</p>
 		</div>
 	</section>
 
@@ -95,7 +85,7 @@
 		<li class="skillalign"><img class="skillimage" src="images/puzzle.png">
 			<p class="skillheader"> I have formal training from:</p>
 				<ul>
-					<li>University of Waterloo</li>
+					<li><a href ="http://uwaterloo.ca">University of Waterloo - Geomatics/Computer Science</li>
 					<li><a href="http://ladieslearningcode.com">Ladies Learning Code</a></li>
 				</ul>
 		</li>
@@ -112,13 +102,21 @@
 </section>
 <section id="favourites" class="favourites container">
     <h2>PROJECTS</h2>
-    <h4> BRICKSMASHER</h4>
-    <a href ="brickbreaker.html"><img class="fav-img" src="images/brickbreaker.png" alt="BrickSmasher"></a>
-    <h4> PLACES </h4>
-    <a href ="places-travelled.html"> <img class="fav-img" src="images/maps.png" alt = "Places I've been" ></a>
-    <h4> TO DO APP </h4>
-    <h5> Coming soon!</h5>
-</section>
+    <ul>
+    	<li>
+       		<div class="aboutproject">
+       		<h5 class="projectheader"> BrickSmasher </h5>
+    		<!-- <h3 class = "projectdesc">This is a clone of the popular game Brickbreaker that I created using Javascript, jQuery, HTML and CSS. </h3> -->
+  	    	</div>
+  	    	<a href ="brickbreaker.html"><img class="fav-img" src="images/brickbreaker.png" alt="BrickSmasher"></a>
+    	</li>
+   		<!-- <li>
+   			 <a href ="places-travelled.html"> <img class="fav-img" src="images/maps.png" alt = "Places I've been" ></a>
+   		</li>
+   		<li>
+   		    <a href ="to-do-app.html"> <img class="fav-img" src="images/to-do.jpg" alt = "Coming soon!" ></a>
+   		</li> -->
+   	</section>
 	<section id="contact" class="contact container">
 		<h2>CONNECT</h2>
 		<a href="https://ca.linkedin.com/in/savannahmostrowski"><img src="images/linkedin-black.png"></a>
