@@ -34,7 +34,7 @@
 	 		    }
 	 		});
 	 		//sets initial project icon size
-			$('.fav-img').width(250).height(250);
+			$('.proj-img').width(165).height(165);
 			
 		
 		});
@@ -47,7 +47,7 @@
 		<ul class="menu">
 			<li><a href="#about">About</a></li>
 			<li><a href="#skills">Skills</a></li>
-			<li><a href="#favourites">Projects</a></li>
+			<li><a href="#projects">Projects</a></li>
 			<li><a href="#contact">Connect</a></li>
 		</ul>
 	</div>
@@ -100,22 +100,30 @@
 				<ul>
 		</li>
 </section>
-<section id="favourites" class="favourites container">
+<section id="projects" class="projects container">
     <h2>PROJECTS</h2>
     <ul>
     	<li>
        		<div class="aboutproject">
-       		<h5 class="projectheader"> BrickSmasher </h5>
-    		<!-- <h3 class = "projectdesc">This is a clone of the popular game Brickbreaker that I created using Javascript, jQuery, HTML and CSS. </h3> -->
+       		<h5 class="projectheader"> BrickSmasher | <a class="view" href = "brickbreaker.html"><img src = "images/view.png">View</h5></a>
+    		<h3 class = "projectdesc">This is a clone of the popular game Brickbreaker that I created using Javascript, jQuery, HTML canvas and CSS. </h3>
   	    	</div>
-  	    	<a href ="brickbreaker.html"><img class="fav-img" src="images/brickbreaker.png" alt="BrickSmasher"></a>
+  	    	<img class="proj-img" src="images/brickbreaker.png" alt="BrickSmasher">
     	</li>
-   		<!-- <li>
-   			 <a href ="places-travelled.html"> <img class="fav-img" src="images/maps.png" alt = "Places I've been" ></a>
+   		<li>
+   			<div class ="aboutproject">
+   				<h5 class="projectheader">Places Travelled | <a class="view" href = "places-travelled.html"><img src = "images/view.png">View</h5></a>
+   				<h3 class = "projectdesc">This is a map I created of all the places I have travelled in the world using the Google Maps API and Javascript. </h3>
+   			</div>
+   			 <img class="proj-img" src="images/maps.png" alt = "Places I've been" >
    		</li>
    		<li>
-   		    <a href ="to-do-app.html"> <img class="fav-img" src="images/to-do.jpg" alt = "Coming soon!" ></a>
-   		</li> -->
+   			<div class ="aboutproject">
+   				<h5 class="projectheader">To Do List | <a class="view" href = "to-do-app.html"><img src = "images/view.png">View</h5></a>
+   				<h3 class = "projectdesc">This is a web app which is a sortable and memory-enabled to-do list that I created using Angular.js and <a href = "http://yeoman.io/">Yeoman</a>. </h3>
+   			</div>
+   			 <img class="proj-img" src="images/to-do.png" alt = "Coming soon!" >
+   		</li>
    	</section>
 	<section id="contact" class="contact container">
 		<h2>CONNECT</h2>

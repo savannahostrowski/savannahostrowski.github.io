@@ -206,43 +206,61 @@ li a:hover{
 	color:darkslateblue;
 }
 
-/* FAVOURITES 
+/* PROJECTS
 -----------------------------------------*/
-.fav-img {
+.proj-img {
 	border: 1px solid darkslateblue;
-	border-radius: 50%;
 	width: 200px;
 	padding: 5px;
 	margin: 10px;
 	float:left;
 }
-.favourites {
+.projects {
 	text-align: center;
 	background: url('../images/tile2.png');
-	height: 700px;
+	height: 900px;
 
 }
 
-.favourites ul{
-	float:left;
-}
 
 .projectdesc{
 	color: #170F34;
-	padding-top: 70px;
 	padding-left:70px;
 	float:right;
 }
 
 .projectheader{
+	padding-top: 15px;
 	color:darkslateblue;
 	
 }
 
 .aboutproject{
-	padding-top: 1.5em;
-	padding: 0.5em 0 0 3.2em;
-	overflow: hidden;
+	float:right;
+	text-align:center;
+}
+
+h5 {
+	font-size: 25px;
+}
+
+.view {
+	color: darkslateblue;
+}
+
+h5 a:hover{
+	color: #170F34;
+}
+
+.projects li {
+	padding-bottom: 5px;
+}
+
+h3 a{
+	color: #170F34;
+}
+.projdesc a:hover:{
+	color: darkslateblue;
 }
 /* CONTACT 
 -----------------------------------------*/
