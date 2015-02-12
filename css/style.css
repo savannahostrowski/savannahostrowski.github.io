@@ -262,6 +262,10 @@ h3 a{
 .projdesc a:hover:{
 	color: darkslateblue;
 }
+
+.projectspages{
+	background:url('../images/tile2.png');
+}
 /* CONTACT 
 -----------------------------------------*/
 .contact {
