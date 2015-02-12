@@ -268,13 +268,13 @@ h3 a{
 }
 
 canvas {
-	padding-top: 100px;
 	padding-left: 0;
     padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     display: block;
     width: 500px;
+    outline-style: solid;
+    vertical-align:middle;
 }
 /* CONTACT 
 -----------------------------------------*/

@@ -22,10 +22,10 @@ var BRICKWIDTH;
 var BRICKHEIGHT = 15;
 var PADDING = 1;
 var ballRadius = 8;
-var rowcolors = ['#843800', '#3AE4A00', '#D65B00', '#FC7C1D', '#FF9A50'];
-var paddlecolor = '#1F160D';
-var ballcolor = '#1F160D';
-var backcolor = '#C1B0A0';
+var rowcolors = ['#1C125A', '#322775', '#483D8B', '#675DA5', '#938CC5'];
+var paddlecolor = 'black';
+var ballcolor = 'black';
+var backcolor = 'whitesmoke';
 var initialScore = 0;
 
 // initializes the functions to draw bricks and ball
