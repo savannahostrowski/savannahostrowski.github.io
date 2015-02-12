@@ -208,33 +208,24 @@ if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
 };
 
 
-function keycode (evt){
-	switch (evt.keyCode){
-		//reset game using space bar once game has been lost by ball missing paddle
-		case 32 && (y + yDirection + ballRadius > HEIGHT):
-			clearInterval(intervalDraw);
-			init();
-			init_mouse();
-			init_bricks();
-			xDirection = 1.5;
-			yDirection = -4;
-			initialScore = 0; 
-	}
-};
-$(document).keyup(reset);
-// // reset game using space bar once game has been lost
-// function reset(evt){
-// 	if ( (y + yDirection + ballRadius > HEIGHT) && evt.keyCode === 32){
-// 		clearInterval(intervalDraw);
-// 		init();
-// 		init_mouse();
-// 		init_bricks();
-// 		xDirection = 1.5;
-// 		yDirection = -4;
-// 		initialScore = 0;
-// 	}
-// }
+// add event listeners for the game
+window. addEventListener('keydown', onKeyPress, false);
 
+function onKeyPress (event){
+	switch (true){
+	case (event.keyCode === 32 && (y + yDirection + ballRadius > HEIGHT)):
+	//reset game using space bar once game has been lost by ball missing paddle
+		clearInterval(intervalDraw);
+		init();
+		init_mouse();
+		init_bricks();
+		xDirection = 1.5;
+		yDirection = -4;
+		initialScore = 0; 
+	case (event.keyCode === 13 && score === 0):
+		init();
+}
+}
 
 
 init();
