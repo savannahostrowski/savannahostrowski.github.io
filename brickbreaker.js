@@ -1,16 +1,16 @@
 //Beginning of Library Code
 var x = 25;
 var y = 250;
-var dx = 1.5;
-var dy = -4;
+var xDirection = 1.5;
+var yDirection = -4;
 var canvas = document.getElementById('Canvas');
 var context;
 var WIDTH;
 var HEIGHT;
-var intervalId = 0;
+var intervalDraw = 0;
 var paddlex; 
-var paddleh = 7;
-var paddlew = 60;
+var paddleHeight = 7;
+var paddleLength = 60;
 var rightDown = false;
 var leftDown = false;
 var canvasMinX = 0;
@@ -21,12 +21,12 @@ var NCOLS = 7;
 var BRICKWIDTH;
 var BRICKHEIGHT = 15;
 var PADDING = 1;
-var ballr = 8;
+var ballRadius = 8;
 var rowcolors = ['#843800', '#3AE4A00', '#D65B00', '#FC7C1D', '#FF9A50'];
 var paddlecolor = '#1F160D';
 var ballcolor = '#1F160D';
 var backcolor = '#C1B0A0';
-var score = 0;
+var initialScore = 0;
 
 // initializes the functions to draw bricks and ball
 function init(){
@@ -37,7 +37,7 @@ function init(){
 	BRICKWIDTH = (WIDTH / NCOLS) - 1;
 	canvasMinX = $(canvas).offset().left;
 	canvasMaxX = canvasMinX + WIDTH;
-	intervalId = setInterval(draw, 10);
+	intervalDraw = setInterval(draw, 10);
 }
 
 // used to render the ball's shape
@@ -84,8 +84,8 @@ $(document).keyup(onKeyUp);
 // mouse functionality to move paddle
 function onMouseMove(evt) {
 	if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX){
-		paddlex = Math.max(evt.pageX - canvasMinX - (paddlew / 2), 0 ); 
-		paddlex = Math.min(WIDTH - paddlew, paddlex);
+		paddlex = Math.max(evt.pageX - canvasMinX - (paddleLength / 2), 0 ); 
+		paddlex = Math.min(WIDTH - paddleLength, paddlex);
 	}
 }
 
@@ -131,7 +131,7 @@ hideMouse();
 
 //move the paddle if left or right is currently pressed and stop when paddle reaches edge of canvas
 function paddlemovement(){
-  if (rightDown && paddlex + paddlew < 500){
+  if (rightDown && paddlex + paddleLength < 500){
   	paddlex += 4;
  };
   if (leftDown && paddlex > 0){
@@ -151,14 +151,14 @@ function objFill(){
 	context.fillStyle = backcolor;
 	clear();
 	context.fillStyle = ballcolor;
-	drawCircle(x, y, ballr);
+	drawCircle(x, y, ballRadius);
 	context.fillStyle = paddlecolor;//fills in the paddle
-    drawRect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
+    drawRect(paddlex, HEIGHT-paddleHeight, paddleLength, paddleHeight);
 
 }
 //adds to the score
 function addScore(){
-	console.log(score += 10);
+	console.log(initialScore += 10);
 }
 
 function scoreBoard(){
@@ -180,48 +180,62 @@ function draw() {
 
 //reverse the ball's direction and 'smash' the brick
 if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
-	dy = -dy; // ball change directions in y
+	yDirection = -yDirection; // ball change directions in y
 	bricks[row][col] = 0;
 	addScore();
 
-
 }
-  if (x + dx > WIDTH || x + dx < 0) // if ball hits a wall on the canvas
-    dx = -dx; //ball change direction in x
+  if (x + xDirection > WIDTH || x + xDirection < 0) // if ball hits a wall on the canvas
+    xDirection = -xDirection; //ball change direction in x
 
 
-  if (y + dy < 0) // if ball hits the paddle
-    dy = -dy; //ball change direction in y
+  if (y + yDirection < 0) // if ball hits the paddle
+    yDirection = -yDirection; //ball change direction in y
 
-  else if (y + dy > HEIGHT - paddleh) {
-    if (!(x + ballr < paddlex || x - ballr > (paddlex + paddlew))) { // stops paddle at the edges of the canvas
-    	dx = 8 * ((x-(paddlex + paddlew / 2)) / paddlew);
-        dy = -dy; //ball change direction in y
+  else if (y + yDirection > HEIGHT - paddleHeight) {
+    if (!(x + ballRadius < paddlex || x - ballRadius > (paddlex + paddleLength))) { // stops paddle at the edges of the canvas
+    	xDirection = 8 * ((x-(paddlex + paddleLength / 2)) / paddleLength);
+        yDirection = -yDirection; //ball change direction in y
     }
-    else if (y + dy + ballr > HEIGHT)
+    else if (y + yDirection + ballRadius > HEIGHT)
       //game over, so stop the animation (ball halts movement)
-      clearInterval(intervalId);
+      clearInterval(intervalDraw);
       return "Game Over!"
   }
  
-  x += dx; 
-  y += dy;
+  x += xDirection; 
+  y += yDirection;
 };
 
-// reset game using space bar once game has been lost
-function reset(evt){
-	if ( y + dy + ballr > HEIGHT && evt.keyCode === 32){
-		clearInterval(intervalId);
-		init();
-		init_mouse();
-		init_bricks();
-		dx = 1.5;
-		dy = -4;
-		score = 0;
-	}
-}
 
-$(document).keyup(reset); 
+function keycode (evt){
+	switch (evt.keyCode){
+		//reset game using space bar once game has been lost by ball missing paddle
+		case 32 && (y + yDirection + ballRadius > HEIGHT):
+			clearInterval(intervalDraw);
+			init();
+			init_mouse();
+			init_bricks();
+			xDirection = 1.5;
+			yDirection = -4;
+			initialScore = 0; 
+	}
+};
+$(document).keyup(reset);
+// // reset game using space bar once game has been lost
+// function reset(evt){
+// 	if ( (y + yDirection + ballRadius > HEIGHT) && evt.keyCode === 32){
+// 		clearInterval(intervalDraw);
+// 		init();
+// 		init_mouse();
+// 		init_bricks();
+// 		xDirection = 1.5;
+// 		yDirection = -4;
+// 		initialScore = 0;
+// 	}
+// }
+
+
 
 init();
 init_mouse();
