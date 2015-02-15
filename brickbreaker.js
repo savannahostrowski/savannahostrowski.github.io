@@ -147,14 +147,17 @@ function brickDimensions(){
 	col = Math.floor(x / colwidth);
 }
 
-function objFill(){
+//gets the background colour, 
+function drawBricksPaddle(){
 	context.fillStyle = backcolor;
 	clear();
-	context.fillStyle = ballcolor;
-	drawCircle(x, y, ballRadius);
 	context.fillStyle = paddlecolor;//fills in the paddle
     drawRect(paddlex, HEIGHT-paddleHeight, paddleLength, paddleHeight);
+}
 
+function drawBall(){
+	context.fillStyle = ballcolor;
+	drawCircle(x, y, ballRadius);
 }
 //adds to the score
 function addScore(){
@@ -170,37 +173,59 @@ function scoreBoard(){
 }
 
 // End of Library Code
+function hitBrick(){
+	return y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1;
+}
 
+function hitWall(){
+	return x + xDirection > WIDTH || x + xDirection < 0;
+}
+
+function hitTop(){
+	return y + yDirection < 0;
+}
+
+function atPaddleHeight(){
+	return y + yDirection > HEIGHT - paddleHeight;
+}
+
+function hitPaddle(){
+	return !(x + ballRadius < paddlex || x - ballRadius > (paddlex + paddleLength));
+}
+
+function hitBottom(){
+	return y + yDirection + ballRadius > HEIGHT;
+}
 // creates ball and bricks in canvas
 function draw() {
-	objFill(); // draws ball, and paddle and gives colour to ball, bricks, paddle and background of canvas
+	drawBricksPaddle(); // draws  paddle and gives colour to  bricks, paddle and background of canvas
 	paddlemovement(); //dictates the paddle's movement speed and parameters
   	drawbricks(); // draws the bricks using arrays for the rows and columns
   	brickDimensions(); //gives brick dimensions
+  	drawBall();
 
 //reverse the ball's direction and 'smash' the brick
-if  (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1){
+if  (hitBrick()){
 	yDirection = -yDirection; // ball change directions in y
 	bricks[row][col] = 0;
 	addScore();
 
 }
-  if (x + xDirection > WIDTH || x + xDirection < 0) // if ball hits a wall on the canvas
+  if (hitWall()) // if ball hits a wall on the canvas
     xDirection = -xDirection; //ball change direction in x
 
-
-  if (y + yDirection < 0) // if ball hits the paddle
+  if (hitTop()) // if ball hits top
     yDirection = -yDirection; //ball change direction in y
 
-  else if (y + yDirection > HEIGHT - paddleHeight) {
-    if (!(x + ballRadius < paddlex || x - ballRadius > (paddlex + paddleLength))) { // stops paddle at the edges of the canvas
+  else if (atPaddleHeight()) {
+    if (hitPaddle()) { 
     	xDirection = 8 * ((x-(paddlex + paddleLength / 2)) / paddleLength);
         yDirection = -yDirection; //ball change direction in y
     }
-    else if (y + yDirection + ballRadius > HEIGHT)
+    else if (hitBottom())
       //game over, so stop the animation (ball halts movement)
       clearInterval(intervalDraw);
-      return "Game Over!"
+      alert("Game Over!");
   }
  
   x += xDirection; 
@@ -223,16 +248,15 @@ function onKeyPress (event){
 		yDirection = -4;
 		initialScore = 0; 
 	case (event.keyCode === 13 && score === 0):
-		init();
-}
-}
+	//start game if the page is new and the enter key is pressed
+		initialScore = 0;
+		drawBall();
 
+}
+}
 
 init();
 init_mouse();
 init_bricks();
-
-
-
 
 
