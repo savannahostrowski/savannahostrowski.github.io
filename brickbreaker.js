@@ -211,26 +211,30 @@ if  (hitBrick()){
 	addScore();
 
 }
-  if (hitWall()) // if ball hits a wall on the canvas
+  if (hitWall()) { // if ball hits a wall on the canvas
     xDirection = -xDirection; //ball change direction in x
+}
 
-  if (hitTop()) // if ball hits top
+  if (hitTop()){ // if ball hits top
     yDirection = -yDirection; //ball change direction in y
+}
+
 
   else if (atPaddleHeight()) {
     if (hitPaddle()) { 
     	xDirection = 8 * ((x-(paddlex + paddleLength / 2)) / paddleLength);
         yDirection = -yDirection; //ball change direction in y
     }
-    else if (hitBottom())
+    else if (hitBottom()){
       //game over, so stop the animation (ball halts movement)
       clearInterval(intervalDraw);
-      alert("Game Over!");
-  }
+      console.log("Game Over!");
+	}
+}
  
   x += xDirection; 
   y += yDirection;
-};
+}
 
 
 // add event listeners for the game
