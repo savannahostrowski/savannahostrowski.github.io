@@ -5,8 +5,8 @@ var xDirection = 1.5;
 var yDirection = -4;
 var canvas = document.getElementById('Canvas');
 var context;
-var WIDTH;
-var HEIGHT;
+var width;
+var height;
 var intervalDraw = 0;
 var paddlex;
 var paddleHeight = 7;
@@ -31,13 +31,13 @@ var initialScore = 0;
 // initializes the functions to draw bricks and ball
 function init() {
   context = canvas.getContext('2d');
-  WIDTH = canvas.width;
-  HEIGHT = canvas.height;
-  paddlex = WIDTH / 2;
-  BRICKWIDTH = (WIDTH / NCOLS) - 1;
+  width = canvas.width;
+  height = canvas.height;
+  paddlex = width / 2;
+  BRICKWIDTH = (width / NCOLS) - 1;
   canvasMinX = $(canvas).offset().left;
-  canvasMaxX = canvasMinX + WIDTH;
-  intervalDraw = setInterval(draw, 10);
+  canvasMaxX = canvasMinX + width;
+  intervalDraw = setInterval(gameTick, 10);
 }
 
 // used to render the ball's shape
@@ -59,7 +59,7 @@ function drawRect(x, y, w, h) {
 //used to ensure that the ball's path is erased as it moves
 function clear() {
   context.clearRect(0, 0, canvas.height, canvas.width);
-  drawRect(0, 0, WIDTH, HEIGHT);
+  drawRect(0, 0, width, height);
 }
 
 //key pad functionality to move paddle
@@ -83,10 +83,11 @@ $(document).keyup(onKeyUp);
 
 // mouse functionality to move paddle
 function onMouseMove(evt) {
-  if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX) {
-    paddlex = Math.max(evt.pageX - canvasMinX - (paddleLength / 2), 0);
-    paddlex = Math.min(WIDTH - paddleLength, paddlex);
-  }
+  if (!(evt.pageX > canvasMinX && evt.pageX < canvasMaxX))
+    return;
+
+  paddlex = Math.max(evt.pageX - canvasMinX - (paddleLength / 2), 0);
+  paddlex = Math.min(width - paddleLength, paddlex);
 }
 
 //function call to use mouse for paddle navigation
@@ -94,7 +95,7 @@ $(document).mousemove(onMouseMove);
 
 function init_mouse() {
   canvasMinX = $(canvas).offset().left;
-  canvasMaxX = canvasMinX + WIDTH; // the max is canvas min plus its width
+  canvasMaxX = canvasMinX + width; // the max is canvas min plus its width
 }
 
 //initializes bricks
@@ -151,13 +152,14 @@ function drawBricksPaddle() {
   context.fillStyle = backcolor;
   clear();
   context.fillStyle = paddlecolor; //fills in the paddle
-  drawRect(paddlex, HEIGHT - paddleHeight, paddleLength, paddleHeight);
+  drawRect(paddlex, height - paddleHeight, paddleLength, paddleHeight);
 }
 
 function drawBall() {
     context.fillStyle = ballcolor;
     drawCircle(x, y, ballRadius);
-  }
+}
+
   //adds to the score
 function addScore() {
   console.log(initialScore += 10);
@@ -177,7 +179,7 @@ function hitBrick() {
 }
 
 function hitWall() {
-  return x + xDirection > WIDTH || x + xDirection < 0;
+  return x + xDirection > width || x + xDirection < 0;
 }
 
 function hitTop() {
@@ -185,7 +187,8 @@ function hitTop() {
 }
 
 function atPaddleHeight() {
-  return y + yDirection > HEIGHT - paddleHeight;
+  return y + yDirection > height - paddleHeight;
+
 }
 
 function hitPaddle() {
@@ -193,7 +196,7 @@ function hitPaddle() {
 }
 
 function hitBottom() {
-  return y + yDirection + ballRadius > HEIGHT;
+  return y + yDirection + ballRadius > height;
 }
 
 function draw() {
@@ -202,57 +205,62 @@ function draw() {
   drawbricks(); // draws the bricks using arrays for the rows and columns
   brickDimensions(); //gives brick dimensions
   drawBall();
-
-	//reverse the ball's direction and 'smash' the brick
-	if (hitBrick()) {
-	  yDirection = -yDirection; // ball change directions in y
-	  bricks[row][col] = 0;
-	  addScore();
-
-	}
-	if (hitWall()) { // if ball hits a wall on the canvas
-	  xDirection = -xDirection; //ball change direction in x
-
-
-	  if (hitTop()) { // if ball hits top
-	    yDirection = -yDirection; //ball change direction in y
-	  } else if (atPaddleHeight()) {
-	    if (hitPaddle()) {
-	      xDirection = 8 * ((x - (paddlex + paddleLength / 2)) / paddleLength);
-	      yDirection = -yDirection; //ball change direction in y
-	    } else if (hitBottom()) {
-	      //game over, so stop the animation (ball halts movement)
-	      clearInterval(intervalDraw);
-	      console.log("Game Over!");
-	    }
-	  }
-
-	  x += xDirection;
-	  y += yDirection;
-	}
 }
 
+function gameTick() {
+  draw();
+
+  //reverse the ball's direction and 'smash' the brick
+  if (hitBrick()) {
+    yDirection = -yDirection; // ball change directions in y
+    bricks[row][col] = 0;
+    addScore();
+  }
+
+  if (hitWall()) { // if ball hits a wall on the canvas
+    xDirection = -xDirection; //ball change direction in x
+  }
+
+    if (hitTop()) { // if ball hits top
+      yDirection = -yDirection; //ball change direction in y
+    }
+    else if (atPaddleHeight()) {
+      if (hitPaddle()) {
+        xDirection = 8 * ((x - (paddlex + paddleLength / 2)) / paddleLength);
+        yDirection = -yDirection; //ball change direction in y
+      } else if (hitBottom()) {
+        //game over, so stop the animation (ball halts movement)
+        clearInterval(intervalDraw);
+        console.log("Game Over!");
+      }
+     }
+
+    x += xDirection;
+    y += yDirection;
+  }
 
 // add event listeners for the game
 window.addEventListener('keydown', onKeyPress, false);
 
 function onKeyPress(event) {
-switch (true) {
-  case (event.keyCode === 32 && (y + yDirection + ballRadius > HEIGHT)):
-    //reset game using space bar once game has been lost by ball missing paddle
-    clearInterval(intervalDraw);
-    init();
-    init_mouse();
-    init_bricks();
-    xDirection = 1.5;
-    yDirection = -4;
-    initialScore = 0;
-  case (event.keyCode === 13 && score === 0):
-    //start game if the page is new and the enter key is pressed
-    initialScore = 0;
-    drawBall();
+  switch (true) {
+    case (event.keyCode === 32 && (y + yDirection + ballRadius > height)):
+      //reset game using space bar once game has been lost by ball missing paddle
+      clearInterval(intervalDraw);
+      init();
+      init_mouse();
+      init_bricks();
+      xDirection = 1.5;
+      yDirection = -4;
+      initialScore = 0;
+      break;
+    case (event.keyCode === 13 && score === 0):
+      //start game if the page is new and the enter key is pressed
+      initialScore = 0;
+      drawBall();
+      break;
 
-}
+  }
 }
 
 init();
