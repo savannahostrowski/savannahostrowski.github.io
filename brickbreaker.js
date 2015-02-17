@@ -17,7 +17,7 @@ var canvasMaxX = canvasMinX + width;
 var bricks;
 var NROWS = 5;
 var NCOLS = 7;
-var BRICKWIDTH = (width /NCOLS) - 1;
+var BRICKWIDTH = (width / NCOLS) - 1;
 var BRICKHEIGHT = 15;
 var PADDING = 1;
 var ballRadius = 8;
@@ -38,8 +38,9 @@ function resetGameState() {
 }
 
 function startGame() {
-   intervalDraw = setInterval(gameTick, 10);
+  intervalDraw = setInterval(gameTick, 10);
 }
+
 // used to render the ball's shape
 function drawCircle(x, y, r) {
   context.beginPath();
@@ -54,12 +55,6 @@ function drawRect(x, y, w, h) {
   context.rect(x, y, w, h);
   context.closePath();
   context.fill();
-}
-
-// used to ensure that the ball's path is erased as it moves
-function clear() {
-  context.clearRect(0, 0, canvas.height, canvas.width);
-  drawRect(0, 0, width, height);
 }
 
 //key pad functionality to move paddle
@@ -98,17 +93,18 @@ function generateBricks() {
 
 //draws and colours bricks
 function drawbricks() {
-    for (i = 0; i < NROWS; i++) {
-      context.fillStyle = rowcolors[i];
-      for (j = 0; j < NCOLS; j++) {
-        if (bricks[i][j] == 1) {
-          drawRect((j * (BRICKWIDTH + PADDING)) + PADDING, (i * (BRICKHEIGHT + PADDING)) + PADDING,
-            BRICKWIDTH, BRICKHEIGHT); // giving dimensions to bricks
-        }
+  for (i = 0; i < NROWS; i++) {
+    context.fillStyle = rowcolors[i];
+    for (j = 0; j < NCOLS; j++) {
+      if (bricks[i][j] == 1) {
+        drawRect((j * (BRICKWIDTH + PADDING)) + PADDING, (i * (BRICKHEIGHT + PADDING)) + PADDING,
+          BRICKWIDTH, BRICKHEIGHT); // giving dimensions to bricks
       }
     }
   }
-  // hide mouse when on canvas
+}
+
+// hide mouse when on canvas
 function hideMouse() {
   $('#Canvas').css("cursor", "none");
 }
@@ -131,20 +127,24 @@ function brickDimensions() {
   col = Math.floor(ballX / colwidth);
 }
 
-//gets the background colour, 
-function drawBricksPaddle() {
+// used to ensure that the ball's path is erased as it moves
+function clearCanvas() {
   context.fillStyle = backcolor;
-  clear();
+  drawRect(0, 0, width, height);
+}
+
+//gets the background colour, 
+function drawPaddle() {
   context.fillStyle = paddlecolor; //fills in the paddle
   drawRect(paddleLeft, height - paddleHeight, paddleLength, paddleHeight);
 }
 
 function drawBall() {
-    context.fillStyle = ballcolor;
-    drawCircle(ballX, ballY, ballRadius);
+  context.fillStyle = ballcolor;
+  drawCircle(ballX, ballY, ballRadius);
 }
 
-  //adds to the score
+//adds to the score
 function addScore() {
   console.log(score += 10);
 }
@@ -183,7 +183,8 @@ function hitBottom() {
 }
 
 function draw() {
-  drawBricksPaddle(); // draws  paddle and gives colour to  bricks, paddle and background of canvas
+  clearCanvas();
+  drawPaddle(); // draws  paddle and gives colour to  bricks, paddle and background of canvas
   paddlemovement(); //dictates the paddle's movement speed and parameters
   drawbricks(); // draws the bricks using arrays for the rows and columns
   brickDimensions(); //gives brick dimensions
@@ -204,30 +205,23 @@ function gameTick() {
     xDirection = -xDirection; //ball change direction in ballX
   }
 
-    if (hitTop()) { // if ball hits top
+  if (hitTop()) { // if ball hits top
+    yDirection = -yDirection; //ball change direction in ballY
+  } else if (atPaddleHeight()) {
+    if (hitPaddle()) {
+      xDirection = 8 * ((ballX - (paddleLeft + paddleLength / 2)) / paddleLength);
       yDirection = -yDirection; //ball change direction in ballY
+    } else if (hitBottom()) {
+      //game over, so stop the animation (ball halts movement)
+      clearInterval(intervalDraw);
+      console.log("Game Over!");
     }
-    else if (atPaddleHeight()) {
-      if (hitPaddle()) {
-        xDirection = 8 * ((ballX - (paddleLeft + paddleLength / 2)) / paddleLength);
-        yDirection = -yDirection; //ball change direction in ballY
-      } else if (hitBottom()) {
-        //game over, so stop the animation (ball halts movement)
-        clearInterval(intervalDraw);
-        console.log("Game Over!");
-      }
-     }
-
-    ballX += xDirection;
-    ballY += yDirection;
   }
 
-function resetGame() {
-  xDirection = 1.5;
-  yDirection = -4;
-  score = 0;
-
+  ballX += xDirection;
+  ballY += yDirection;
 }
+
 function onKeyPress(event) {
   switch (true) {
     case (event.keyCode === 32 && (ballY + yDirection + ballRadius > height)):
@@ -235,27 +229,27 @@ function onKeyPress(event) {
       clearInterval(intervalDraw);
       intervalDraw = null;
       startGame();
-      generateBricks();
+      resetGameState();
       break;
     case (event.keyCode === 13 && !intervalDraw):
       //start game if the page is new and the enter key is pressed
-      score = 0;
+      resetGameState();
       drawBall();
       startGame();
-      xDirection = 1.5;
-      yDirection = -4;
       break;
-
   }
 }
-generateBricks();
-// add event listeners for the game
-window.addEventListener('keydown', onKeyPress, false);
-//function call for hidding mouse
-hideMouse();
-//function call to use mouse for paddle navigation
-$(document).mousemove(onMouseMove);
-//function calls for the onKeyDown and onKeyUp events
-$(document).keydown(onKeyDown);
-$(document).keyup(onKeyUp);
 
+function init() {
+  // add event listeners for the game
+  window.addEventListener('keydown', onKeyPress, false);
+  //function call for hidding mouse
+  hideMouse();
+  //function call to use mouse for paddle navigation
+  $(document).mousemove(onMouseMove);
+  //function calls for the onKeyDown and onKeyUp events
+  $(document).keydown(onKeyDown);
+  $(document).keyup(onKeyUp);
+}
+
+init();
