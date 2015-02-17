@@ -63,9 +63,8 @@ ul{
 /* PAGE MENU
 -----------------------------------------*/
 .stickyname{
-	padding-left:  40px;
+	padding-left:  0px;
 	padding-top: 0px;
-	font-size: 20px;
 }
 
 .stickyname a{
