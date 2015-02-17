@@ -92,7 +92,7 @@ function generateBricks() {
 }
 
 //draws and colours bricks
-function drawbricks() {
+function drawBricks() {
   for (i = 0; i < NROWS; i++) {
     context.fillStyle = rowcolors[i];
     for (j = 0; j < NCOLS; j++) {
@@ -186,7 +186,7 @@ function draw() {
   clearCanvas();
   drawPaddle(); // draws  paddle and gives colour to  bricks, paddle and background of canvas
   paddlemovement(); //dictates the paddle's movement speed and parameters
-  drawbricks(); // draws the bricks using arrays for the rows and columns
+  drawBricks(); // draws the bricks using arrays for the rows and columns
   brickDimensions(); //gives brick dimensions
   drawBall();
 }
@@ -250,6 +250,11 @@ function init() {
   //function calls for the onKeyDown and onKeyUp events
   $(document).keydown(onKeyDown);
   $(document).keyup(onKeyUp);
+  clearCanvas();
+  generateBricks();
+  drawBricks();
+  drawPaddle();
+
 }
 
 init();
