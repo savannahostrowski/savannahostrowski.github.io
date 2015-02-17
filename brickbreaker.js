@@ -37,9 +37,11 @@ function init() {
   BRICKWIDTH = (width / NCOLS) - 1;
   canvasMinX = $(canvas).offset().left;
   canvasMaxX = canvasMinX + width;
-  intervalDraw = setInterval(gameTick, 10);
 }
 
+function startGame() {
+   intervalDraw = setInterval(gameTick, 10);
+}
 // used to render the ball's shape
 function drawCircle(x, y, r) {
   context.beginPath();
@@ -56,7 +58,7 @@ function drawRect(x, y, w, h) {
   context.fill();
 }
 
-//used to ensure that the ball's path is erased as it moves
+// used to ensure that the ball's path is erased as it moves
 function clear() {
   context.clearRect(0, 0, canvas.height, canvas.width);
   drawRect(0, 0, width, height);
@@ -76,11 +78,6 @@ function onKeyUp(evt) {
   else if (evt.keyCode === 37) leftDown = false;
 }
 
-//function calls for the onKeyDown and onKeyUp events
-$(document).keydown(onKeyDown);
-$(document).keyup(onKeyUp);
-
-
 // mouse functionality to move paddle
 function onMouseMove(evt) {
   if (!(evt.pageX > canvasMinX && evt.pageX < canvasMaxX))
@@ -90,15 +87,7 @@ function onMouseMove(evt) {
   paddlex = Math.min(width - paddleLength, paddlex);
 }
 
-//function call to use mouse for paddle navigation
-$(document).mousemove(onMouseMove);
-
-function init_mouse() {
-  canvasMinX = $(canvas).offset().left;
-  canvasMaxX = canvasMinX + width; // the max is canvas min plus its width
-}
-
-//initializes bricks
+// initializes bricks
 function init_bricks() {
   bricks = new Array(NROWS); // creates a new array for the rows
   for (i = 0; i < NROWS; i++) {
@@ -123,11 +112,8 @@ function drawbricks() {
   }
   // hide mouse when on canvas
 function hideMouse() {
-  document.getElementById('Canvas').style.cursor = "none";
+  $('#Canvas').css("cursor", "none");
 }
-
-//function call for hidding mouse
-hideMouse();
 
 //move the paddle if left or right is currently pressed and stop when paddle reaches edge of canvas
 function paddlemovement() {
@@ -188,7 +174,6 @@ function hitTop() {
 
 function atPaddleHeight() {
   return y + yDirection > height - paddleHeight;
-
 }
 
 function hitPaddle() {
@@ -239,30 +224,43 @@ function gameTick() {
     y += yDirection;
   }
 
-// add event listeners for the game
-window.addEventListener('keydown', onKeyPress, false);
+function resetGame() {
+  xDirection = 1.5;
+  yDirection = -4;
+  initialScore = 0;
 
+}
 function onKeyPress(event) {
   switch (true) {
     case (event.keyCode === 32 && (y + yDirection + ballRadius > height)):
       //reset game using space bar once game has been lost by ball missing paddle
       clearInterval(intervalDraw);
+      intervalDraw = null;
       init();
-      init_mouse();
+      startGame();
       init_bricks();
-      xDirection = 1.5;
-      yDirection = -4;
-      initialScore = 0;
       break;
-    case (event.keyCode === 13 && score === 0):
+    case (event.keyCode === 13 && !intervalDraw):
       //start game if the page is new and the enter key is pressed
       initialScore = 0;
       drawBall();
+      startGame();
+      xDirection = 1.5;
+      yDirection = -4;
       break;
 
   }
 }
 
 init();
-init_mouse();
 init_bricks();
+// add event listeners for the game
+window.addEventListener('keydown', onKeyPress, false);
+//function call for hidding mouse
+hideMouse();
+//function call to use mouse for paddle navigation
+$(document).mousemove(onMouseMove);
+//function calls for the onKeyDown and onKeyUp events
+$(document).keydown(onKeyDown);
+$(document).keyup(onKeyUp);
+
