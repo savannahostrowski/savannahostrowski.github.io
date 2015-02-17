@@ -1,24 +1,23 @@
-//Beginning of Library Code
-var x = 25;
-var y = 250;
+var ballX = 25;
+var ballY = 250;
 var xDirection = 1.5;
 var yDirection = -4;
 var canvas = document.getElementById('Canvas');
-var context;
-var width;
-var height;
+var context = canvas.getContext('2d');
+var width = canvas.width;
+var height = canvas.height;
 var intervalDraw = 0;
-var paddlex;
+var paddleLeft = width / 2;
 var paddleHeight = 7;
 var paddleLength = 60;
 var rightDown = false;
 var leftDown = false;
-var canvasMinX = 0;
-var canvasMaxX = 0;
+var canvasMinX = $(canvas).offset().left;
+var canvasMaxX = canvasMinX + width;
 var bricks;
 var NROWS = 5;
 var NCOLS = 7;
-var BRICKWIDTH;
+var BRICKWIDTH = (width /NCOLS) - 1;
 var BRICKHEIGHT = 15;
 var PADDING = 1;
 var ballRadius = 8;
@@ -26,17 +25,16 @@ var rowcolors = ['#1C125A', '#322775', '#483D8B', '#675DA5', '#938CC5'];
 var paddlecolor = 'black';
 var ballcolor = 'black';
 var backcolor = 'whitesmoke';
-var initialScore = 0;
+var score = 0;
 
-// initializes the functions to draw bricks and ball
-function init() {
-  context = canvas.getContext('2d');
-  width = canvas.width;
-  height = canvas.height;
-  paddlex = width / 2;
-  BRICKWIDTH = (width / NCOLS) - 1;
-  canvasMinX = $(canvas).offset().left;
-  canvasMaxX = canvasMinX + width;
+function resetGameState() {
+  ballX = 25;
+  ballY = 250;
+  xDirection = 1.5;
+  yDirection = -4;
+  paddleLeft = width / 2;
+  generateBricks();
+  score = 0;
 }
 
 function startGame() {
@@ -83,12 +81,12 @@ function onMouseMove(evt) {
   if (!(evt.pageX > canvasMinX && evt.pageX < canvasMaxX))
     return;
 
-  paddlex = Math.max(evt.pageX - canvasMinX - (paddleLength / 2), 0);
-  paddlex = Math.min(width - paddleLength, paddlex);
+  paddleLeft = Math.max(evt.pageX - canvasMinX - (paddleLength / 2), 0);
+  paddleLeft = Math.min(width - paddleLength, paddleLeft);
 }
 
 // initializes bricks
-function init_bricks() {
+function generateBricks() {
   bricks = new Array(NROWS); // creates a new array for the rows
   for (i = 0; i < NROWS; i++) {
     bricks[i] = new Array(NCOLS); // creates a new array with rows for col
@@ -117,11 +115,11 @@ function hideMouse() {
 
 //move the paddle if left or right is currently pressed and stop when paddle reaches edge of canvas
 function paddlemovement() {
-  if (rightDown && paddlex + paddleLength < 500) {
-    paddlex += 4;
+  if (rightDown && paddleLeft + paddleLength < 500) {
+    paddleLeft += 4;
   };
-  if (leftDown && paddlex > 0) {
-    paddlex -= 4;
+  if (leftDown && paddleLeft > 0) {
+    paddleLeft -= 4;
   };
 }
 
@@ -129,8 +127,8 @@ function paddlemovement() {
 function brickDimensions() {
   rowheight = BRICKHEIGHT + PADDING; //the height of a row is 15 plus the padding of 1 per brick
   colwidth = BRICKWIDTH + PADDING; // the width / number of columns in the canvas - 1 plus the padding
-  row = Math.floor(y / rowheight);
-  col = Math.floor(x / colwidth);
+  row = Math.floor(ballY / rowheight);
+  col = Math.floor(ballX / colwidth);
 }
 
 //gets the background colour, 
@@ -138,17 +136,17 @@ function drawBricksPaddle() {
   context.fillStyle = backcolor;
   clear();
   context.fillStyle = paddlecolor; //fills in the paddle
-  drawRect(paddlex, height - paddleHeight, paddleLength, paddleHeight);
+  drawRect(paddleLeft, height - paddleHeight, paddleLength, paddleHeight);
 }
 
 function drawBall() {
     context.fillStyle = ballcolor;
-    drawCircle(x, y, ballRadius);
+    drawCircle(ballX, ballY, ballRadius);
 }
 
   //adds to the score
 function addScore() {
-  console.log(initialScore += 10);
+  console.log(score += 10);
 }
 
 function scoreBoard() {
@@ -161,27 +159,27 @@ function scoreBoard() {
 
 // End of Library Code
 function hitBrick() {
-  return y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1;
+  return ballY < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1;
 }
 
 function hitWall() {
-  return x + xDirection > width || x + xDirection < 0;
+  return ballX + xDirection > width || ballX + xDirection < 0;
 }
 
 function hitTop() {
-  return y + yDirection < 0;
+  return ballY + yDirection < 0;
 }
 
 function atPaddleHeight() {
-  return y + yDirection > height - paddleHeight;
+  return ballY + yDirection > height - paddleHeight;
 }
 
 function hitPaddle() {
-  return !(x + ballRadius < paddlex || x - ballRadius > (paddlex + paddleLength));
+  return !(ballX + ballRadius < paddleLeft || ballX - ballRadius > (paddleLeft + paddleLength));
 }
 
 function hitBottom() {
-  return y + yDirection + ballRadius > height;
+  return ballY + yDirection + ballRadius > height;
 }
 
 function draw() {
@@ -197,22 +195,22 @@ function gameTick() {
 
   //reverse the ball's direction and 'smash' the brick
   if (hitBrick()) {
-    yDirection = -yDirection; // ball change directions in y
+    yDirection = -yDirection; // ball change directions in ballY
     bricks[row][col] = 0;
     addScore();
   }
 
   if (hitWall()) { // if ball hits a wall on the canvas
-    xDirection = -xDirection; //ball change direction in x
+    xDirection = -xDirection; //ball change direction in ballX
   }
 
     if (hitTop()) { // if ball hits top
-      yDirection = -yDirection; //ball change direction in y
+      yDirection = -yDirection; //ball change direction in ballY
     }
     else if (atPaddleHeight()) {
       if (hitPaddle()) {
-        xDirection = 8 * ((x - (paddlex + paddleLength / 2)) / paddleLength);
-        yDirection = -yDirection; //ball change direction in y
+        xDirection = 8 * ((ballX - (paddleLeft + paddleLength / 2)) / paddleLength);
+        yDirection = -yDirection; //ball change direction in ballY
       } else if (hitBottom()) {
         //game over, so stop the animation (ball halts movement)
         clearInterval(intervalDraw);
@@ -220,29 +218,28 @@ function gameTick() {
       }
      }
 
-    x += xDirection;
-    y += yDirection;
+    ballX += xDirection;
+    ballY += yDirection;
   }
 
 function resetGame() {
   xDirection = 1.5;
   yDirection = -4;
-  initialScore = 0;
+  score = 0;
 
 }
 function onKeyPress(event) {
   switch (true) {
-    case (event.keyCode === 32 && (y + yDirection + ballRadius > height)):
+    case (event.keyCode === 32 && (ballY + yDirection + ballRadius > height)):
       //reset game using space bar once game has been lost by ball missing paddle
       clearInterval(intervalDraw);
       intervalDraw = null;
-      init();
       startGame();
-      init_bricks();
+      generateBricks();
       break;
     case (event.keyCode === 13 && !intervalDraw):
       //start game if the page is new and the enter key is pressed
-      initialScore = 0;
+      score = 0;
       drawBall();
       startGame();
       xDirection = 1.5;
@@ -251,9 +248,7 @@ function onKeyPress(event) {
 
   }
 }
-
-init();
-init_bricks();
+generateBricks();
 // add event listeners for the game
 window.addEventListener('keydown', onKeyPress, false);
 //function call for hidding mouse
