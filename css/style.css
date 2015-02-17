@@ -219,9 +219,7 @@ li a:hover{
 	text-align: center;
 	background: url('../images/tile2.png');
 	height: 900px;
-
 }
-
 
 .projectdesc{
 	color: #170F34;
@@ -232,7 +230,6 @@ li a:hover{
 .projectheader{
 	padding-top: 15px;
 	color:darkslateblue;
-	
 }
 
 .aboutproject{
@@ -268,13 +265,12 @@ h3 a{
 }
 
 canvas {
-	padding-top: 100px;
-	padding-left: 0;
+		padding-top: 75px;
+		padding-left: 0;
     padding-right: 0;
     margin: 0 auto;
     display: block;
     width: 500px;
-    outline-style: solid;
     vertical-align:middle;
 }
 /* CONTACT 

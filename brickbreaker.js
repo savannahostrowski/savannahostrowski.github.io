@@ -24,7 +24,7 @@ var ballRadius = 8;
 var rowcolors = ['#1C125A', '#322775', '#483D8B', '#675DA5', '#938CC5'];
 var paddlecolor = 'black';
 var ballcolor = 'black';
-var backcolor = 'whitesmoke';
+var backcolor = 'lightgrey';
 var score = 0;
 
 function resetGameState() {
@@ -254,7 +254,6 @@ function init() {
   generateBricks();
   drawBricks();
   drawPaddle();
-
 }
 
 init();
