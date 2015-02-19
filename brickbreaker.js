@@ -41,10 +41,10 @@ function resetGameState() {
     score = 0;
 }
 
-function levelUp(){
-  ballDirection.x += 0.5;
-  ballDirection.y += 0.5;
-  generateBricks();
+function levelUp() {
+    ballDirection.x += 0.5;
+    ballDirection.y += 0.5;
+    generateBricks();
 }
 
 function startGame() {
@@ -250,11 +250,11 @@ function onKeyPress(event) {
 }
 
 function levels() {
-  switch() {
-    case ((score % 350) === 0 && !hitBottom):
-      levelUp();
-      break;
-  }
+    switch (true) {
+        case ((score % 350) === 0 && !hitBottom):
+            levelUp();
+            break;
+    }
 }
 
 function init() {
