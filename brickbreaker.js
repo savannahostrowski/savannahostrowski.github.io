@@ -41,6 +41,12 @@ function resetGameState() {
     score = 0;
 }
 
+function levelUp(){
+  ballDirection.x += 0.5;
+  ballDirection.y += 0.5;
+  generateBricks();
+}
+
 function startGame() {
     intervalDraw = setInterval(gameTick, 10);
 }
@@ -241,6 +247,14 @@ function onKeyPress(event) {
             startGame();
             break;
     }
+}
+
+function levels() {
+  switch() {
+    case ((score % 350) === 0 && !hitBottom):
+      levelUp();
+      break;
+  }
 }
 
 function init() {
