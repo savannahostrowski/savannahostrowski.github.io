@@ -19,6 +19,7 @@ var leftDown = false;
 var canvasMinX = $(canvas).offset().left;
 var canvasMaxX = canvasMinX + width;
 var bricks;
+var xSpeed = 8;
 var NROWS = 5;
 var NCOLS = 7;
 var BRICKWIDTH = (width / NCOLS) - 1;
@@ -39,12 +40,6 @@ function resetGameState() {
     paddleLeft = width / 2;
     generateBricks();
     score = 0;
-}
-
-function levelUp() {
-    ballDirection.x += 0.5;
-    ballDirection.y += 0.5;
-    generateBricks();
 }
 
 function startGame() {
@@ -157,6 +152,7 @@ function drawBall() {
 //adds to the score
 function addScore() {
     console.log(score += 10);
+    levelUp();
 }
 
 function scoreBoard() {
@@ -218,7 +214,7 @@ function gameTick() {
         ballDirection.y = -ballDirection.y; //ball change direction in ballCoords.y
     } else if (atPaddleHeight()) {
         if (hitPaddle()) {
-            ballDirection.x = 8 * ((ballCoords.x - (paddleLeft + paddleLength / 2)) / paddleLength);
+            ballDirection.x = xSpeed * ((ballCoords.x - (paddleLeft + paddleLength / 2)) / paddleLength);
             ballDirection.y = -ballDirection.y; //ball change direction in ballCoords.y
         } else if (hitBottom()) {
             //game over, so stop the animation (ball halts movement)
@@ -249,11 +245,14 @@ function onKeyPress(event) {
     }
 }
 
-function levels() {
-    switch (true) {
-        case ((score % 350) === 0 && !hitBottom):
-            levelUp();
-            break;
+function levelUp() {
+    if ((score % 350) === 0) {
+        xSpeed += 1;
+        ballDirection.y = ballDirection.y * 1.1;
+        generateBricks();
+        ballCoords.x;
+        ballCoords.y;
+        console.log("Level Up!");
     }
 }
 
