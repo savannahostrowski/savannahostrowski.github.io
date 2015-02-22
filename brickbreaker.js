@@ -152,7 +152,7 @@ function drawBall() {
 //adds to the score
 function addScore() {
     console.log(score += 10);
-    $('#score').text(score); 
+    $('#score').text("Your score is " + score +"!"); 
     levelUp();
 }
 
@@ -212,7 +212,7 @@ function gameTick() {
         } else if (hitBottom()) {
             //game over, so stop the animation (ball halts movement)
             clearInterval(intervalDraw);
-            console.log("Game Over!");
+            $('#score').text("Game Over!  Play again!");
         }
     }
 
