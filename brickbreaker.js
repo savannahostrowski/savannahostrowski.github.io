@@ -152,6 +152,7 @@ function drawBall() {
 //adds to the score
 function addScore() {
     console.log(score += 10);
+    $('#score').text(score); 
     levelUp();
 }
 
