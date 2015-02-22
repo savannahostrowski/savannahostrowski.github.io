@@ -59,6 +59,7 @@ ul{
  	z-index:999;
  	display:block;
  	background-color: white;
+ 	border-bottom: 1px solid #434A5C;
  }
 
  .nav h3{
@@ -87,7 +88,6 @@ ul{
 	padding: 0;
 	margin: 0;
 	text-align: center;
-	border-bottom: 1px solid #434A5C;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -284,4 +284,9 @@ canvas {
 .contact img {
 	margin: 0px;
 	width:15%;
+}
+
+p span {
+	color:darkslateblue;
+	font-weight:bolder;
 }

@@ -155,14 +155,6 @@ function addScore() {
     levelUp();
 }
 
-function scoreBoard() {
-    context.beginPath();
-    context.rect(300, 200, 50, 25);
-    context.closePath();
-    context.fill();
-    addScore();
-}
-
 function hitBrick() {
     return ballCoords.y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1;
 }
