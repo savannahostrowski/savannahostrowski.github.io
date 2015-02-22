@@ -245,7 +245,7 @@ function levelUp() {
         generateBricks();
         ballCoords.x;
         ballCoords.y;
-        console.log("Level Up!");
+        $('#score').text("Your score is " + score + "! Level Up!"); 
     }
 }
 
