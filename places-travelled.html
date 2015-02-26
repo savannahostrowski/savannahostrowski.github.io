@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<title>Savannah Ostrowski | Projects</title>
-	<!-- Google fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-	<!-- CSS -->
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
-	
-	<!--jQuery -->
-	<script src="js/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src = "https://maps.googleapis.com/maps/api/js?v=&key=AIzaSyBIP2Od7j8NywDHcRwxRGVw4GsKclCVL_c&sensor=false"></script>
-	<script src="places-travelled.js"></script>
 
-			<style type="text/css" href = "css/styles.css">
-				html {height: 100%}
-				body {height: 100%; margin:0; padding-top:30px;}
-				#mapDiv {height:100%}
-			</style>
-	</head>
-	<body class = "projectspages">
-	<div class = "nav">
-		<h3  class = "stickyname"><a href="#banner">SAVANNAH OSTROWSKI</a></h3>
-		<ul class="menu">
-			<li><a href="index.html">Back to home</a></li>
-		</ul>
-	</div>
-			<body class = "projectsbackground">
-				<button id="btnTerrain">Terrain</button>
-				<button id="btnRoadmap">Road Map</button>
-				<button id="btnSatellite">Satellite</button>
-				<button id="btnHybrid"> Hybrid</button>
-				<div id="mapDiv"></div>
-			</body>
+<head>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Savannah Ostrowski | Projects</title>
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--jQuery -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.14&key=AIzaSyBIP2Od7j8NywDHcRwxRGVw4GsKclCVL_c&sensor=false"></script>
+    <script src="places-travelled.js"></script>
+
+    <style type="text/css" href="css/style.css">
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #mapDiv {
+        height: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <h3 class="stickyname"><a href="#banner">SAVANNAH OSTROWSKI</a></h3>
+        <ul class="menu">
+            <li><a href="index.html">Back to home</a>
+            </li>
+        </ul>
+    </div>
+    <button id="btnTerrain">Terrain</button>
+    <button id="btnRoadmap">Road Map</button>
+    <button id="btnSatellite">Satellite</button>
+    <button id="btnHybrid"> Hybrid</button>
+    <div id="mapDiv"></div>
+</body>
+
 </html>
