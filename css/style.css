@@ -1,6 +1,7 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
+  font-size: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -10,18 +11,18 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 h1 {
-	font-size: 48px;
+	font-size: 3rem;
 
 }
 h2 {
-	font-size: 32px;
+	font-size: 2rem;
 }
 h1, h2, h3 {
 	font-family: 'Oswald', sans-serif;
 }
 p {
 	line-height: 1.4;
-	font-size: 20px;
+	font-size: 1rem;
 	text-align:center;
 }
 .container {
@@ -62,10 +63,6 @@ ul{
  	border-bottom: 1px solid #434A5C;
  }
 
- .nav h3{
- 	font-size: 20px;
- 	padding-left: 5px;
- }
 /* PAGE MENU
 -----------------------------------------*/
 .stickyname{
@@ -162,7 +159,7 @@ img.profile {
 .about p a{
 	text-decoration: none;
 	color:#333333;
-	font-size:20px;
+	font-size: 1rem;
 }
 
 .about p a:hover{
@@ -243,7 +240,7 @@ li a:hover{
 }
 
 h5 {
-	font-size: 25px;
+	font-size: 1.5rem;
 }
 
 .view {
