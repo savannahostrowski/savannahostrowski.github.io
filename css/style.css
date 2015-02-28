@@ -423,39 +423,22 @@ img.hamburger {
     }
 }
 @media (max-width: 685px) {
-    body {
-        padding-top: 0px;
-        background-image: url("images/desk2.png");
-    }
-    .first {
-        width: 80%;
-    }
-    h1 {
+    
+        h1 {
         padding-left: 40px;
         line-height: 2.6rem;
     }
-    .first img {
-        margin-left: 35%;
-    }
-    img.logo {
-        margin-left: 39%;
+    .skillalign{
+      width:210px;
     }
     p {
-        font-size: 0.8rem;
+        font-size: 1rem;
         padding-top: 0px;
         padding-right: 0;
         padding-left: 2%;
         margin-top: 20px;
     }
-    .about h5 {
-        font-size: 0.8rem;
-    }
-    .about h5 {
-        margin-top: 20px;
-    }
-    .aboutproject {
-        height: 275px;
-    }
+  
     .projects h2 {
         padding-top: 10px;
     }
@@ -465,6 +448,8 @@ img.hamburger {
         padding-left: 0px;
     }
 }
+
+
 @media (max-width: 580px) {
     .first img {
         margin-left: 35%;
