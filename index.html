@@ -138,6 +138,15 @@
 		  $(".mobile-nav a").click(function(){
 		  	$(".mobile-nav ul").slideUp();
 		  });
+		  $(window).resize(function(){
+   			var width = $(window).width();
+   			if(width < 365){
+       		$('.skillgen li').removeClass('skillalign');
+       		$('.skillgen li').addClass('skillalign-mob');
+   }
+  
+})
+.resize();
 
    });
 	</script>
