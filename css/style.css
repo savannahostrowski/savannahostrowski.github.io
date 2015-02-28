@@ -682,7 +682,6 @@ h2.contactemail {
 
  @media (max-width:565px) {
   html{
-    box-sizing: initial;
     overflow-x:hidden;
   }
 
@@ -791,6 +790,7 @@ h2.contactemail {
 .projects{
   max-width:100%;
   height:175px;
+  overflow: hidden;
 }
 
 .projectheader {
@@ -869,6 +869,7 @@ h3 a{
 .contact img{
   width:20%;
   height:20%;
+}
 }
 /* @media (max-width:550px) {
 
