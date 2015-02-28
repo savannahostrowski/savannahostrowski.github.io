@@ -622,12 +622,26 @@ img.hamburger {
         width: 20%;
         height: 20%;
     }
+     #skill1 {
+  padding-top:5px;
+ }
+
+ #list1{
+  padding-top:16px;
+ }
 }
 
 @media (max-width:550px) {
   .skillalign{
     width:170px;
   }
+   #skill1 {
+  padding-top:5px;
+ }
+
+ #list1{
+  padding-top:16px;
+ }
 
 }
 
@@ -639,6 +653,13 @@ img.hamburger {
   .skillalign{
     width:150px;
   }
+   #skill1 {
+  padding-top:5px;
+ }
+
+ #list1{
+  padding-top:16px;
+ }
  
 }
 
@@ -656,7 +677,7 @@ img.hamburger {
  }
 
  #list1{
-  padding-top:16px;
+  padding-top:1px;
  }
 
 }
