@@ -41,7 +41,7 @@
 			</ul>
 	</div>
 
-	<section  id= "banner" class="banner">
+	<section  id= "banner" class="banner container">
 		<h1>Savannah Ostrowski</h1>
 		<h2 id = "bannerheader"> Front-End Web Developer </h2>
 	</section>
@@ -91,6 +91,9 @@
 </section>
 <section id="projects" class="projects container">
     <h2>PROJECTS</h2>
+    <div class="mobile-projects">
+   		To view these projects, please visit my <a class="github-mobile"href = "https://github.com/savannahostrowski/">Github</a> or view this website on desktop!
+   	</div>
     <ul>
     	<li>
        		<div class="aboutproject">
@@ -104,7 +107,7 @@
    				<h5 class="projectheader">Places Travelled | <a class="view" href = "places-travelled.html"><img src = "images/view.png">View</h5></a>
    				<h3 class = "projectdesc">This is a map I created of all the places I have travelled in the world using the Google Maps API and Javascript. </h3>
    			</div>
-   			 <img class="proj-img" src="images/maps.PNG" alt = "Places I've been" >
+   			 <img class="proj-img" src="images/maps.PNG" alt = "Places I've been">
    		</li>
    		<li>
    			<div class ="aboutproject">
@@ -113,7 +116,8 @@
    			</div>
    			 <img class="proj-img" src="images/to-do.PNG" alt = "To-Do App!" >
    		</li>
-   	</section>
+   	</ul>
+ </section>
 
 	<section id="contact" class="contact container">
 		<h2>CONNECT</h2>
@@ -144,6 +148,9 @@
 		  $("img.hamburger").click(function(){
 		     $(".mobile-nav ul").slideToggle();
 		   });
+		  $(".mobile-nav a").click(function(){
+		  	$(".mobile-nav ul").slideUp();
+		  });
 
    });
 	</script>
