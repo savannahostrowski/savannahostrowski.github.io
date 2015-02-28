@@ -301,8 +301,8 @@ img.hamburger {
         padding-left: 0;
         padding-right: 0;
     }
-    .projects{
-      text-align:center;
+    .projects {
+        text-align: center;
     }
     .contact img {
         width: 23%;
@@ -365,8 +365,8 @@ img.hamburger {
         padding-top: 50px;
         padding-bottom: 50px;
         background-attachment: local;
-    }   
-  .skillalign {
+    }
+    .skillalign {
         width: 240px;
         padding-left: 0;
         padding-right: 0;
@@ -375,7 +375,6 @@ img.hamburger {
         max-width: 100%;
         height: 175px;
     }
-    
     .mobile-projects {
         visibility: visible;
     }
@@ -385,7 +384,7 @@ img.hamburger {
     a {
         font-size: 1rem;
     }
-        .banner {
+    .banner {
         width: 100%;
         height: 450px;
     }
@@ -396,7 +395,6 @@ img.hamburger {
         width: 200px;
         height: 200px;
     }
-    
     .container {
         padding: 10px 10px;
     }
@@ -410,10 +408,9 @@ img.hamburger {
         color: #333333;
         font-size: 1rem;
     }
-
-    .mobile-projects a:hover{
-      color:darkcyan;
-   }
+    .mobile-projects a:hover {
+        color: darkcyan;
+    }
     h3 a {
         font-size: 0.85rem;
     }
@@ -423,13 +420,12 @@ img.hamburger {
     }
 }
 @media (max-width: 685px) {
-    
-        h1 {
+    h1 {
         padding-left: 40px;
         line-height: 2.6rem;
     }
-    .skillalign{
-      width:210px;
+    .skillalign {
+        width: 210px;
     }
     p {
         font-size: 1rem;
@@ -438,7 +434,6 @@ img.hamburger {
         padding-left: 2%;
         margin-top: 20px;
     }
-  
     .projects h2 {
         padding-top: 10px;
     }
@@ -448,8 +443,6 @@ img.hamburger {
         padding-left: 0px;
     }
 }
-
-
 @media (max-width: 580px) {
     html {
         overflow-x: hidden;
@@ -571,16 +564,13 @@ img.hamburger {
         height: 40px;
         padding: 0;
     }
-
-    .skillalign{
-      width:180px;
-      font-size:0.85rem;
+    .skillalign {
+        width: 180px;
+        font-size: 0.85rem;
     }
-
-    .skillalign a{
-      font-size:0.85rem;
+    .skillalign a {
+        font-size: 0.85rem;
     }
-
     a {
         font-size: 1rem;
     }
@@ -622,62 +612,51 @@ img.hamburger {
         width: 20%;
         height: 20%;
     }
-     #skill1 {
-  padding-top:5px;
- }
-
- #list1{
-  padding-top:16px;
- }
+    #skill1 {
+        padding-top: 5px;
+    }
+    #list1 {
+        padding-top: 16px;
+    }
 }
-
-@media (max-width:550px) {
-  .skillalign{
-    width:170px;
-  }
-   #skill1 {
-  padding-top:5px;
- }
-
- #list1{
-  padding-top:16px;
- }
-
+@media (max-width: 550px) {
+    .skillalign {
+        width: 170px;
+    }
+    #skill1 {
+        padding-top: 5px;
+    }
+    #list1 {
+        padding-top: 16px;
+    }
 }
-
- @media (max-width:480px) {
-  .skills img{
-    width:50px;
-    height:50px;
-  }
-  .skillalign{
-    width:150px;
-  }
-   #skill1 {
-  padding-top:5px;
- }
-
- #list1{
-  padding-top:16px;
- }
- 
+@media (max-width: 480px) {
+    .skills img {
+        width: 50px;
+        height: 50px;
+    }
+    .skillalign {
+        width: 150px;
+    }
+    #skill1 {
+        padding-top: 5px;
+    }
+    #list1 {
+        padding-top: 16px;
+    }
 }
-
- @media (max-width:450px) {
-
-  .skills img{
-    width:50px;
-    height:50px;
-  }
-  .skillalign{
-    width:140px;
-  }
- #skill1 {
-  padding-top:5px;
- }
-
- #list1{
-  padding-top:1px;
- }
-
+@media (max-width: 450px) {
+    .skills img {
+        width: 50px;
+        height: 50px;
+    }
+    .skillalign {
+        width: 140px;
+    }
+    #skill1 {
+        padding-top: 5px;
+    }
+    #list1 {
+        padding-top: 1px;
+    }
 }
