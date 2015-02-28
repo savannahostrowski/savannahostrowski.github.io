@@ -166,7 +166,7 @@ img.profile {
     padding-right: 15%;
     overflow: hidden;
     z-index: 0;
-    background-color: #0D0B0B;
+    background-color: #363635;
     text-align: center;
 }
 .skillgen {
@@ -174,7 +174,7 @@ img.profile {
     list-style-type: none;
 }
 .skillheader {
-    color: #003E3E;
+    color: #009999;
     font-family: 'Lato', sans-serif;
     font-weight: bold;
 }
