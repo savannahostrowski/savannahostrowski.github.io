@@ -18,7 +18,7 @@ h2 {
 	font-size: 2rem;
 }
 h1, h2, h3 {
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 p {
 	line-height: 1.4;
@@ -28,9 +28,8 @@ p {
 .container {
 	padding: 50px 100px;
 }
-.container h2, 
-.container h3 {
-	color: #170F34;
+.container h2 {
+	color: #003E3E;
 }
 
 h4 {
@@ -60,7 +59,7 @@ ul{
  	z-index:999;
  	display:block;
  	background-color: white;
- 	border-bottom: 1px solid #434A5C;
+ 	border-bottom: 1px solid black;
  }
 
 /* PAGE MENU
@@ -78,7 +77,7 @@ ul{
 
 .stickyname a:hover{
 	color: whitesmoke;
-	background-color:darkslateblue;
+	background-color:#003E3E;
 }
 .menu {
 	list-style: none;
@@ -99,13 +98,12 @@ ul{
 	text-decoration: none;
 	color: #333333;
 	font-weight: bold;
-	text-transform: uppercase;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 .menu a:hover {
-	background-color:darkslateblue;
-    color:white;
+	background-color:#003E3E;
+  color:white;
 }
 
 /* BANNER 
@@ -121,7 +119,7 @@ img.profile {
 	padding-bottom: 350px;
 	max-width: 100%;
 	max-height: 100%;
-	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/banner.jpg');
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/sanfran.jpg');
 	background-attachment: fixed;
 	color: #ffffff;
 	text-align: center;
@@ -146,12 +144,9 @@ img.profile {
 /* ABOUT
 -----------------------------------------*/
 .about {
-	background: whitesmoke;
+	background: white;
 	overflow: hidden;
 	text-align:center;
-}
-.about h2 {
-	text-align: center;
 }
 
 .aboutbox{
@@ -161,12 +156,13 @@ img.profile {
 
 .about p a{
 	text-decoration: underline;
-	color:#333333;
+	color:#003E3E;
+  font-weight: bold;
 	font-size: 1rem;
 }
 
 .about p a:hover{
-	color:darkslateblue;
+	color:dark;
 	text-decoration: underline;
 }
 
@@ -183,7 +179,7 @@ img.profile {
 	padding-right: 15%;
 	overflow:hidden;
 	z-index:0;
-	background-color:#170F34;
+	background-color:#0D0B0B;
 	text-align:center;
 }
 .skillgen{
@@ -192,7 +188,7 @@ img.profile {
 }
 
 .skillheader{
-	color:darkslateblue;
+	color:#003E3E;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -208,7 +204,7 @@ li a{
 }
 
 li a:hover{
-	color:darkslateblue;
+	color:#003E3E;
 }
 
 /* PROJECTS
@@ -216,31 +212,22 @@ li a:hover{
 .mobile-projects{
   visibility:hidden;
 }
-.proj-img {
-  border: 1px solid darkslateblue;
-  width: 200px;
-  padding: 5px;
-  margin: 10px;
-  float:left;
-}
+
 .projects {
   text-align: center;
   background: url('../images/tile2.png');
 }
-
-.projectdesc{
-  color: #170F34;
-  padding-left:70px;
-  float:right;
-}
-
 .projectheader{
-  padding-top: 0;
-  color:darkslateblue;
+  padding:0;
+  color:black;
+  text-decoration: underline
+}
+.view{
+  color:black;
 }
 
 .aboutproject{
-  float:right;
+  color:black;
   text-align:center;
 }
 
@@ -248,25 +235,21 @@ h5 {
   font-size: 1.5rem;
 }
 
-.view {
-  color: darkslateblue;
-}
-
 h5 a:hover{
-  color: #170F34;
+  color: #003E3E;
 }
 
 .projects li {
-  padding-bottom: 5px;
+  padding:0;
+}
+
+.projects li ul {
+  padding:0;
 }
 
 h3 a{
-  color: #170F34;
+  color: black;
 }
-.projdesc a:hover:{
-  color: darkslateblue;
-}
-
 canvas {
     padding-top: 75px;
     padding-left: 0;
@@ -293,7 +276,7 @@ canvas {
 }
 
 p span {
-	color:darkslateblue;
+	color:#003E3E;
 	font-weight:bolder;
 }
 
@@ -700,7 +683,7 @@ h2.contactemail {
 
   .mobile-nav {
  	  visibility: visible;
-    background-color:darkslateblue;
+    background-color:#003E3E;
  	}
 
  	.mobile-nav img {
@@ -722,7 +705,7 @@ h2.contactemail {
  	  width:100%;
  	  padding-top:30px;
  	  padding-bottom:10px;
- 	  background-color:darkslateblue;
+ 	  background-color:#003E3E;
  	  margin-top:0;
  	  margin-right:0;
  	  list-style-type: none;
@@ -746,7 +729,7 @@ h2.contactemail {
  	}
 
  	.mobile-nav a:hover {
- 	  color:darkslateblue;
+ 	  color:#003E3E;
  	}
   .banner {
     max-height: 100%;
