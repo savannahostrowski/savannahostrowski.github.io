@@ -140,10 +140,15 @@
 		  });
 		  $(window).resize(function(){
    			var width = $(window).width();
-   			if(width < 425){
+   			if(width <= 425){
        		$('.skillgen li').removeClass('skillalign');
        		$('.skillgen li').addClass('skillalign-mob');
-   }
+  			 }
+  			 if(width > 425){
+  			 	$('.skillgen li').removeClass('skillalign-mob');
+       		$('.skillgen li').addClass('skillalign');
+  			 }
+
   
 })
 .resize();
