@@ -83,6 +83,33 @@ ul {
     width: 100%;
     z-index: 5;
 }
+.menu-proj {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    font-size:1rem;
+}
+.menu-proj li {
+    display: inline-block;
+}
+.menu-proj a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+
+}
+.menu-proj a:hover {
+    background-color: #009999;
+    color: white;
+}
+
 .menu li {
     display: inline-block;
     padding: 20px 35px;
