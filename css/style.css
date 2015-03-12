@@ -30,6 +30,9 @@ p {
     font-size: 1rem;
     text-align: center;
 }
+svg{
+    margin-top: 85px;
+}
 .container {
     padding: 50px 100px;
 }

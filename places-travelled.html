@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="description" content="Drawing Shapes with d3.js"/>
-    <meta charset = "utf-8">
-    <title> Drawing SVG shapes with d3.js</title>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Savannah Ostrowski | Projects</title>
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
     <!--D3.js-->
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <!--jQuery-->
     <script src="js/jquery.js"></script>
 </head>
-<body>
+
+<body class="projects">
+    <div class="nav">
+        <h3 class="stickyname">SAVANNAH OSTROWSKI</h3>
+        <ul class="menu-proj">
+            <li><a href="index.html">Back to home</a>
+            </li>
+        </ul>
+    </div>
 <svg version="1.2" baseProfile="tiny" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="950px" height="620px"
  viewBox="0 0 950 620" xml:space="preserve">
@@ -356,6 +371,13 @@
 <script>
     $(document).ready(function(){
         $('#canada, #usa, #cuba, #dominicanrepublic, #italy, #newfoundland, #victoria, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').css('fill', 'darkcyan');
+        $('#canada, #usa, #cuba, #dominicanrepublic, #italy, #newfoundland, #victoria, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').hover(function(){
+            var id = 
+            $(this).fadeTo("slow", 0.5);
+            $(this).find("#id").show();
+        }, function(){
+            $(this).fadeTo("slow", 1);
+        });
 
     });
 
