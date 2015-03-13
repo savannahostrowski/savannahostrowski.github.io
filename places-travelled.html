@@ -373,7 +373,7 @@
         $('#canada, #usa, #cuba, #dominicanrepublic, #italy, #newfoundland, #victoria, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').css('fill', 'darkcyan');
         $('#usa, #cuba, #dominicanrepublic, #italy').hover(function(){
             $(this).fadeTo("slow", 0.5);
-            $(this).fadeTo("slow", 1);
+            $(this).stop().fadeTo("slow", 0.5);
         });
         $('#canada').hover(function(){
             $(this).fadeTo("slow",0.5);
