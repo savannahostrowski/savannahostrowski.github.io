@@ -15,17 +15,28 @@ $(document).ready(function() {
     }
 
     function fadeOnHover() {
-        $.each(places, function(idx, place) {
+        $.each(places, function (idx, place) {
             $(place).hover(function() {
                     $(place).stop().animate({
                         'opacity': 0.5
                     }, 'slow');
+                    console.log(place);
                 },
+
                 function() {
                     $(place).stop().animate({
                         'opacity': 1
                     }, 'slow');
                 });
+        });
+    }
+
+    function textOnHover(){
+        $.each(places, function(idx, place){
+            $(place).hover(function(){
+                $(place).text(function(){
+                    css('color', 'black');
+            });
         });
     }
 
