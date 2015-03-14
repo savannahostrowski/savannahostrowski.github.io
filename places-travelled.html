@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.js"></script>
-    <!--D3.js-->
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <!--jQuery-->
     <script src="js/jquery.js"></script>
 </head>
@@ -368,136 +366,7 @@
 <path id="thrace" d="M523.02,209.7l-0.16,3.55l3.1-0.95l1.42-0.95l-0.42-1.54l-1.47-1.17L523.02,209.7L523.02,209.7z"/>
 <path id="crete" d="M516.76,230.59l1.63,0.05l0.68,1.01h2.37l1.58-0.58l0.53,0.64l-1.05,1.38l-4.63,0.16l-0.84-1.11l-0.89-0.53L516.76,230.59L516.76,230.59z"/>
 </svg>
-<script>
-    $(document).ready(function(){
-        $('#canada, #usa, #cuba, #dominicanrepublic, #italy, #newfoundland, #victoria, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').css('fill', 'darkcyan');
-        $('#usa, #cuba, #dominicanrepublic, #italy').hover(function(){
-            $(this).fadeTo("slow", 0.5);
-            $(this).stop().fadeTo("slow", 0.5);
-        });
-        $('#canada').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#newfoundland, #victoria, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#newfoundland, #victoria, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#newfoundland').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#victoria').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #newfoundland, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #newfoundland, #devon, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#devon').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#southhampton').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #devon, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #devon, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#ellesmere').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #devon, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #devon, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#bylot').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #devon, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #devon, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#baffin').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #devon, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #devon, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#bathurst').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #devon, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #devon, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#cornwallis').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #devon, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #devon, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#prescott').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #devon, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #devon, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#princeofwales').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #devon, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #devon, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#banks').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #devon, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #devon, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#princepatrick').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #devon, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #devon, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#eglinton').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #devon, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #devon, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#mackenzieking').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #devon, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #devon, #ellefringnes, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#ellefringnes').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #devon, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #devon, #amundringnes, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#amundringnes').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #devon, #axelheiberg, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #devon, #axelheiberg, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#axelheiberg').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #devon, #kingchristian').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #devon, #kingchristian').fadeTo("slow", 1);
-        });
-         $('#kingchristian').hover(function(){
-            $(this).fadeTo("slow",0.5);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #devon').fadeTo("slow", 0.5);
-            $(this).fadeTo("slow",1);
-            $('#canada, #victoria, #newfoundland, #southhampton, #ellesmere, #bylot, #baffin, #bathurst, #cornwallis, #prescott, #princeofwales, #banks, #princepatrick, #eglinton, #mackenzieking, #ellefringnes, #amundringnes, #axelheiberg, #devon').fadeTo("slow", 1);
-        });
-
-    });
-
+<script src="places-travelled.js">
 </script>
 </body>
 </html>
