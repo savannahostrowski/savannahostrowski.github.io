@@ -20,7 +20,6 @@ $(document).ready(function() {
                     $(place).stop().animate({
                         'opacity': 0.5
                     }, 'slow');
-                    console.log(place);
                 },
 
                 function() {
@@ -34,10 +33,9 @@ $(document).ready(function() {
     function textOnHover(){
         $.each(places, function(idx, place){
             $(place).hover(function(){
-                $(place).text(function(){
-                    css('color', 'black');
-            });
-        });
+                console.log(place);
+    });
+    });
     }
 
     function execute() {
