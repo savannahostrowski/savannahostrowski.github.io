@@ -14,7 +14,7 @@ $(document).ready(function() {
         }
     }
 
-    function fadeOnHover() {
+    function OnHover() {
         $.each(places, function (idx, place) {
             $(place).hover(function() {
                     $(place).stop().animate({
@@ -30,16 +30,9 @@ $(document).ready(function() {
         });
     }
 
-    function textOnHover(){
-        $.each(places, function(idx, place){
-            $(place).hover(function(){
-                console.log(place);
-    });
-    });
-    }
 
     function execute() {
-        fadeOnHover();
+        OnHover();
         colourTravelled();
     }
 
