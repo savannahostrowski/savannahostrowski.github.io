@@ -93,7 +93,7 @@ ul {
     font-family: 'Lato', sans-serif;
 }
 
-.menu a:hover{
+li:hover a{
     color:white;
 }
 .nav-elem:hover{
