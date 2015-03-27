@@ -259,14 +259,14 @@ p span {
 
 .mobile-nav {
     visibility: hidden;
+    padding-top:65px;
     width: 100%;
     margin: 0;
     position: fixed;
     top: 0px;
     height: 65px;
     z-index: 999;
-    background-color: white;
-    border-bottom: 1px solid #434A5C;
+    background-color: #009999;
 }
 img.hamburger {
     visibility: hidden;
@@ -291,6 +291,10 @@ img.hamburger {
         cursor: auto;
     }
 }
+
+
+
+
 
 /*Media Queries*/
 @media (max-width: 1310px) {
@@ -384,7 +388,6 @@ img.hamburger {
         margin-top: 0;
         margin-right: 0;
         list-style-type: none;
-        border: 1px solid #434A5C;
         display: none;
     }
     .mobile-nav li {
@@ -520,7 +523,6 @@ img.hamburger {
         margin-top: 0;
         margin-right: 0;
         list-style-type: none;
-        border: 1px solid #434A5C;
         display: none;
     }
     .mobile-nav li {
