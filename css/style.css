@@ -55,22 +55,16 @@ ul {
     background-color: white;
     border-bottom: 1px solid black;
 }
+
+.nav-projects {
+    width: 100%;
+    height: 60px;
+    display: block;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
 /* PAGE MENU
 -----------------------------------------*/
-
-.stickyname {
-    padding-left: 0px;
-    padding-top: 0px;
-    float: left;
-}
-.stickyname a {
-    text-decoration: none;
-    color: #333333;
-}
-.stickyname a:hover {
-    color: whitesmoke;
-    background-color: #009999;
-}
 .menu {
     list-style: none;
     padding: 0;
@@ -93,7 +87,7 @@ ul {
     font-family: 'Lato', sans-serif;
 }
 
-li:hover a{
+.menu li:hover a{
     color:white;
 }
 .nav-elem:hover{
@@ -229,7 +223,6 @@ h3 a {
     color: black;
 }
 canvas {
-    padding-top: 75px;
     padding-left: 0;
     padding-right: 0;
     margin: 0 auto;
@@ -240,6 +233,17 @@ canvas {
 .mobile-projectlist {
     visibility: visible;
 }
+
+.project-link{
+    text-decoration:none;
+    color:#333333;
+    font-weight:bold;
+}
+.menu-proj li:hover a{
+    color:#009999;
+
+}
+
 /* CONTACT 
 -----------------------------------------*/
 
@@ -329,25 +333,29 @@ img.hamburger {
     }
     .projects {
         max-width: 100%;
-        height: 400px;
+        height: 500px;
     }
 
     a {
         font-size: 1rem;
     }
+
+    .projectheader a{
+        
+    }
     .banner {
         width: 100%;
-        height: 450px;
+        height: 800px;
     }
     .banner h1 {
-        padding-top: 100px;
+        padding-top: 225px;
     }
     img.profile {
         width: 200px;
         height: 200px;
     }
     .container {
-        padding: 10px 10px;
+        padding: 50px;
     }
     h3 a {
         font-size: 0.85rem;
