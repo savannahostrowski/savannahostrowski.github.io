@@ -16,7 +16,7 @@
 
 	<!--jQuery UI -->
 	<link rel="stylesheet" href="css/jquery-ui.min.css">
-	<script async src="js/jquery.js"></script>
+	<script src="js/jquery.js"></script>
 	<script async src="js/jquery-ui.min.js"></script>			
 
 	<!-- Eager -->
@@ -150,9 +150,11 @@
        		$(".skillgen li").addClass("skillalign-mob");
   			 } 
   			 else{
-  			 	$(".skillgen li").removeClass("skillalign-mob");
-       		$(".skillgen li").addClass("skillalign");
+  			 	if (width > 510) {
+  			 		$(".skillgen li").removeClass("skillalign-mob");
+       			$(".skillgen li").addClass("skillalign");
   			 }
+  			}
 
 })
 .resize();
