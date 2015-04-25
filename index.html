@@ -6,7 +6,7 @@
 	<meta name="description" content= "Savannah Ostrowski is a Canadian web developer and student">
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<!-- Google fonts -->
-	<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway:500,400,200' rel='stylesheet' type='text/css'>
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -23,34 +23,19 @@
 	<script src="//fast.eager.io/R_0LKJjef6.js"></script>
 </head>
 <body>
-	<div class = "nav">
-		<ul class="menu">
-			<li class="nav-elem"><a href="#banner">Home</a></li>
-			<li class="nav-elem"><a href="#about">About</a></li>
-			<li class="nav-elem"><a href="#skills">Skills</a></li>
-			<li class="nav-elem"><a href="#projects">Work</a></li>
-			<li class="nav-elem"><a href="#contact">Connect</a></li>
-		</ul>
-	</div>
-	<div class = "mobile-nav">
-			<img class="hamburger" src="images/hamburger.png" alt>
-			<ul class="mobile">
-				<li><a href="#banner">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#skills">Skills</a></li>
-				<li><a href="#projects">Work</a></li>
-				<li><a href="#contact">Connect</a></li>
-			</ul>
-	</div>
-
 	<section  id= "banner" class="banner container">
-		<h1>Savannah Ostrowski</h1>
+		<div class="header">
+			<h1>Savannah</h1>
+			<span class="accent">Ostrowski</span>
+			<h2>Software Developer &amp; Student</h2>
+		</div>
+		<div id="scroll">
+			<span class="arrow-bounce">&#8595;</span>
+		</div>
 	</section>
-
-	<section id="about" class="about container">
+	<section id="about" class="about container grayscale">
 		<div class = "aboutbox">
 			<h2>Oh, hi there!</h2>
-			<img class="profile" src="images/sav-naples.jpg">
 			<p>I am a Canadian software developer and student at the University of Waterloo studying Geomatics and Computer Science. I used to split my time between programming and geospatial analysis but these days I have been enjoying building all things web development, responsive design and data visualization related. I have been working on projects such as a BrickBreaker clone using HTML5 canvas and Javascript, a chart generator, and an interactive map of the places I have travelled.</p>
 			<p> To see what I have been working on, take a look at my <a href="#projects">projects</a></p>
 		</div>
@@ -117,32 +102,74 @@
 	</section>
 	<script text = "text/javascript">
 	$(document).ready(function(){
-	 	$("a[href*=#]:not([href=#])").click(function() {
-	 		if (location.pathname.replace(/^\//,"") == this.pathname.replace(/^\//,"") && location.hostname == this.hostname) {
-	 		    var target = $(this.hash);
-	 		    target = target.length ? target : $("[name=" + this.hash.slice(1) +"]");
+	 	function smoothScroll(target, time) {
+	 		var margin = ($('#main-header').outerHeight() - 1);
+	 		if (!time) { time = '1000'; }
 
-	 		    if (target.length) {
-	 		        $("html,body").animate({
-	 		      	  scrollTop: target.offset().top
-	 		         }, 1000);
-	 		         return false;
-	 		        }
-	 		    }
+	 		if (target === 'toTop') {
+	 			$('html,body').animate({
+	 				scrollTop: 0
+	 			}, time);
+	 		}
+	 		else {
+	 			$('html,body').animate({
+	 				scrollTop: target.offset().top - margin
+	 			}, time);
+	 		}
+	 	}
+
+	 	// SCROLL DOWN ARROR BUTTON
+
+	 		var count = 0;
+
+	 		$('#scroll').on("click", function(){
+
+	 			var sections = $('section');
+
+	 	    //+55px to offset the margin-top
+	 			var $this = $(this),
+	 				top = ($this.offset().top - $(window).scrollTop()) + 55,
+	 				right = $this.offset().right;
+
+
+	 			$this.css({
+	 				position: 'fixed',
+	 				top: top,
+	 				right: right
+	 			})
+	 			.animate({
+	 				right: '5%',
+	 				top: '90%'
+	 			}, 600)
+	 			.addClass('clicked');
+
+	 			var target;
+
+	 			// END OF ARRAY HAS ALEADY BEEN REACHED
+	 			if (count > (sections.length -1) ) { 
+	 				count = -1;
+	 				
+	 				smoothScroll('toTop');
+	 				$this.removeClass('rotate');
+	 			}
+	 			// JUST REACHED END OF ARRAY
+	 			else { 
+	 				target = $(sections[count]);
+	 				if (count === (sections.length -1)) {
+	 					$this.addClass('rotate');
+	 				}
+	 				smoothScroll(target);
+	 			}
+	 		
+	 			count++;
+
+	 			$(this).find('.arrow-bounce').removeClass('arrow-bounce');
+
 	 		});
 
 	 		//sets initial project icon size
 			$(".proj-img").width(165).height(165);
 
-	    // mobile menu
-
-		  $("img.hamburger").click(function(){
-		     $(".mobile-nav ul").slideToggle();
-		   });
-		  $(".mobile-nav a").click(function(){
-		  	$(".mobile-nav ul").slideUp();
-		  });
-		  
 		  $(window).resize(function(){
    			var width = $(window).width();
    			if(width <= 540){
