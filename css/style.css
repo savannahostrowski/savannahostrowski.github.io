@@ -1,3 +1,13 @@
+/* ---------- ENTYPO ---------- */
+/* ---------- http://www.entypo.com/ ---------- */
+/* ---------- http://weloveiconfonts.com/ ---------- */
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+a[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+
 html {
     box-sizing: border-box;
 
@@ -23,7 +33,7 @@ h2 {
     padding-left:10px;
     margin-bottom:20px;
     font-family: 'Raleway', sans-serif;
-    color: #a76330;
+    color: #936278;
 }
 
 p {
@@ -50,8 +60,9 @@ ul {
     list-style-type: none;
     display: inline-block;
     font-family: 'Raleway', sans-serif;
-    color: #a76330;
+    color: #936278;
     padding: 0;
+    font-weight: 400;
 }
 /* BANNER 
 -----------------------------------------*/
@@ -68,7 +79,7 @@ ul {
     padding-bottom:85px;
 }
 .accent {
-    color:#a76330;
+    color:#936278;
     font-weight:400;
     font-size: 9rem;
 }
@@ -82,7 +93,7 @@ ul {
   text-align: center;
   width: 50px;
   height: 50px;
-  background: #a76330;
+  background: #936278;
   border-radius: 50%;
   margin: 0 auto;
   margin-top: -10px;
@@ -166,7 +177,7 @@ ul {
     max-height: 100%;
     background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/sanfran-gray.jpg');
     background-attachment: fixed;
-    color: #a76330;
+    color: #936278;
     height: 100%;
     position: relative;
     background-size: cover;
@@ -183,12 +194,12 @@ ul {
 
 .about p a {
     text-decoration: underline;
-    color: #a76330;
+    color: #936278;
     font-weight: bold;
     font-size: 1rem;
 }
 .about p a:hover {
-    color: #a76330;
+    color: #936278;
     text-decoration: underline;
 }
 /* SKILLS
@@ -197,9 +208,6 @@ ul {
 .skills {
     width: 100%;
     height: 100%;
-    padding-top: 70px;
-    padding-bottom: 80px;
-    margin-bottom: 0px;
     padding-left: 15%;
     padding-right: 15%;
     overflow: hidden;
@@ -211,7 +219,7 @@ table {
     margin-left:auto; 
     margin-right:auto; 
     color:black;
-    padding-left: 50px;
+    padding-left: 100px;
     font-weight:500;
     font-family: 'Raleway', sans-serif;
     text-align: left;
@@ -222,9 +230,6 @@ td {
 /* PROJECTS
 -----------------------------------------*/
 
-.mobile-projects {
-    visibility: hidden;
-}
 .projects {
     text-align: center;
     background: url('../images/tile2.png');
@@ -243,9 +248,10 @@ td {
 }
 h5 {
     font-size: 1.5rem;
+    font-weight:400;
 }
 h5 a:hover {
-    color: #a76330;
+    color: #936278;
 }
 .projects li {
     padding: 0;
@@ -274,15 +280,23 @@ canvas {
     font-weight:bold;
 }
 .menu-proj li:hover a{
-    color:#a76330;
+    color:#936278;
 
 }
 
 /* CONTACT 
 -----------------------------------------*/
-
-/* ---------- SOCIAL ---------- */
-
+.contact {
+  margin: 0;
+  padding-top: 80px;
+  list-style-type: none;
+  text-align: center;
+  background-color:black;
+}
+.copyright {
+    padding-top:35px;
+    padding-bottom:0;
+}
 .social {
   position: relative;
   margin-left:auto;
@@ -337,43 +351,34 @@ canvas {
   -o-transform: scale(1.3, 1.3) rotate(45deg);
   transform: scale(1.3, 1.3) rotate(45deg);
 }
-.diamondgrid {
-  height: 3em;
-  left: 50%;
-  margin: -1.5em 0 0 -6em;
-  position: relative;
-  top: 50%;
-  width: 12em;
-  padding-top:60px;
-  padding-bottom:30px;
-}
 
-.facebook {
-  background: #a76330;
+.rdio {
+  background: #936278;
   left: 0;
   top: 0%;
 }
 
 .twitter {
-  background: #a76330;
+  background: #936278;
   bottom: 0;
   left: 25%;
 }
 
-.dribbble {
-  background: #a76330;
+.facebook {
+  background: #936278;
   left: 50%;
   top: 0%;
 }
 
-.behance {
-  background: #a76330;
+.github {
+  background: #936278;
   bottom: 0;
   left: 75%;
 }
 
 .linked-in {
-  background: #a76330;
+  background: #936278;
+  color:white;
   left: 100%;
   top: 0%;
 }
@@ -523,7 +528,7 @@ canvas {
         font-size: 1rem;
     }
     .mobile-projects a:hover {
-        color: #a76330;
+        color: #936278;
     }
     h3 a {
         font-size: 0.85rem;
@@ -549,7 +554,7 @@ canvas {
     }
     .mobile-nav {
         visibility: visible;
-        background-color: #a76330;
+        background-color: #936278;
     }
     .mobile-nav img {
         width: 150px;
@@ -567,7 +572,7 @@ canvas {
         width: 100%;
         padding-top: 30px;
         padding-bottom: 10px;
-        background-color: #a76330;
+        background-color: #936278;
         margin-top: 0;
         margin-right: 0;
         list-style-type: none;
