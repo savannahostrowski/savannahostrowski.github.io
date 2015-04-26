@@ -1,6 +1,3 @@
-/* ---------- ENTYPO ---------- */
-/* ---------- http://www.entypo.com/ ---------- */
-/* ---------- http://weloveiconfonts.com/ ---------- */
 
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
@@ -30,12 +27,14 @@ h1 {
 h2 {
     font-size: 3rem;
     font-weight:200;
-    padding-left:10px;
     margin-bottom:20px;
     font-family: 'Raleway', sans-serif;
     color: #936278;
 }
-
+.container {
+    padding-top:20px;
+    padding-bottom:20px;
+}
 p {
     line-height: 1.4;
     font-size: 1rem;
@@ -46,13 +45,7 @@ p {
 svg {
     margin-top: 85px;
 }
-.container {
-    padding: 50px 100px;
-}
-h4 {
-    display: inline-block;
-    position: relative;
-}
+
 div {
     display: block;
 }
@@ -172,9 +165,10 @@ ul {
 -----------------------------------------*/
 
 .about {
-    padding-top: 80px;
     max-width: 100%;
     max-height: 100%;
+    padding-left:10px;
+    padding-right:10px;
     background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/sanfran-gray.jpg');
     background-attachment: fixed;
     color: #936278;
@@ -208,8 +202,6 @@ ul {
 .skills {
     width: 100%;
     height: 100%;
-    padding-left: 15%;
-    padding-right: 15%;
     overflow: hidden;
     z-index: 0;
     background-color: white;
@@ -227,12 +219,31 @@ table {
 td { 
     padding: 30px;
 }
+.icon-javascript {
+    font-size:5rem;
+}
+.icon-html {
+    font-size:5rem;
+}
+.icon-css {
+    font-size:5rem;
+}
+.icon-python {
+    font-size:5rem;
+}
 /* PROJECTS
 -----------------------------------------*/
 
 .projects {
     text-align: center;
     background: url('../images/tile2.png');
+}
+.projectsub {
+    background-color: black;
+    text-align:center;
+}
+#score {
+    color:#936278;
 }
 .projectheader {
     padding: 0;
@@ -270,13 +281,10 @@ canvas {
     width: 500px;
     vertical-align: middle;
 }
-.mobile-projectlist {
-    visibility: visible;
-}
 
 .project-link{
     text-decoration:none;
-    color:#333333;
+    color:white;
     font-weight:bold;
 }
 .menu-proj li:hover a{
@@ -385,387 +393,174 @@ canvas {
 
 
 /*Media Queries*/
-@media (max-width: 1310px) {
-    .skillalign {
-        padding: 0;
-    }
-    .skills {
-        width: 100%;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .projects {
-        text-align: center;
-    }
-    .contact img {
-        width: 23%;
-        height: 23%;
-    }
-}
-@media (max-width: 920px) {
-    .banner {
-        max-height: 100%;
-        max-width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        background-attachment: local;
-    }
-    .skillalign {
-        width: 190px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .projects {
-        max-width: 100%;
-        height: 500px;
-    }
 
-    a {
-        font-size: 1rem;
+@media (max-width:890px) {
+    .banner h1{
+        font-size:8.5rem;
     }
-    .banner {
-        width: 100%;
-        height: 800px;
+    .banner h2 {
+        font-size:2.5rem;
     }
-    .banner h1 {
-        padding-top: 225px;
-        font-size: 3rem;
-    }
-    img.profile {
-        width: 200px;
-        height: 200px;
-    }
-    .container {
-        padding: 50px;
-    }
-    h3 a {
-        font-size: 0.85rem;
-    }
-    .contact img {
-        width: 20%;
-        height: 20%;
-    }
-}
-@media (max-width: 720px) {
-    h1 {
-        padding-left: 40px;
-        line-height: 2.6rem;
-    }
-    .skillalign {
-        width: 170px;
-    }
-    p {
-        font-size: 1rem;
-        padding-top: 0px;
-        padding-right: 0;
-        padding-left: 2%;
-        margin-top: 20px;
-    }
-    .projects h2 {
-        padding-top: 10px;
+    .accent {
+        font-size:8.5rem;
     }
     
+}
+@media (max-width:830px) {
+    .banner h1 {
+        font-size:7.5rem;
+    }
+    .banner h2 {
+        font-size:2.5rem;
+    }
+    .accent{
+        font-size:7.5rem;
+    }
+}
+@media (max-width:775px) {
+    .banner h1 {
+        font-size:7rem;
+    }
+    .banner h2 {
+        font-size:2rem;
+    }
+    .accent{
+        font-size:7rem;
+    }
     .aboutbox {
         width:auto;
     }
-    .about .container {
-        padding:0;
-    }
-     .banner h1 {
-        font-size:2.5rem;
-    }
 }
-
-@media (max-width: 670px) {
-    .banner {
-        max-height: 100%;
-        max-width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        background-attachment: local;
-    }
-    .skillalign {
-        width: 170px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .projects {
-        max-width: 100%;
-        height: 200px;
-    }
-    .mobile-projects {
-        visibility: visible;
-    }
-    .projectheader {
-        visibility: hidden;
-    }
-    a {
-        font-size: 1rem;
-    }
-    .banner {
-        width: 100%;
-        height: 450px;
-    }
+@media (max-width:740px) {
     .banner h1 {
-        padding-top: 100px;
-        font-size: 2.5rem;
+        font-size:6.5rem;
     }
-    img.profile {
-        width: 200px;
-        height: 200px;
+    .banner h2 {
+        font-size:1.75rem;
     }
-    .container {
-        padding: 10px 10px;
+    .accent{
+        font-size:6.5rem;
     }
-    .aboutproject {
-        width: 300px;
-        height: 60px;
-    }
-    .github-mobile {
-        text-decoration: underline;
-        font-weight: bold;
-        color: #333333;
-        font-size: 1rem;
-    }
-    .mobile-projects a:hover {
-        color: #936278;
-    }
-    h3 a {
-        font-size: 0.85rem;
-    }
-    .contact img {
-        width: 20%;
-        height: 20%;
+    .aboutbox {
+        width:auto;
     }
 }
-
-@media (max-width: 580px) {
-    html {
-        overflow-x: hidden;
+@media (max-width:690px) {
+    .banner h1 {
+        font-size:6rem;
     }
-    body {
-        max-width: 100%;
+    .banner h2 {
+        font-size:1.75rem;
     }
-    .nav {
-        visibility: hidden;
+    .accent{
+        font-size:6rem;
     }
-    .menu {
-        visibility: hidden;
+    .aboutbox {
+        width:auto;
     }
-    .mobile-nav {
-        visibility: visible;
-        background-color: #936278;
+    .icon-javascript {
+        font-size:4rem;
     }
-    .mobile-nav img {
-        width: 150px;
-        padding-left: 10px;
-        padding-top: 5px;
+    .icon-html {
+        font-size:4rem;
     }
-    img.hamburger {
-        visibility: visible;
-        width: 35px;
-        position: absolute;
-        top: 10px;
-        right: 20px;
+    .icon-css {
+        font-size:4rem;
     }
-    .mobile-nav ul {
-        width: 100%;
-        padding-top: 30px;
-        padding-bottom: 10px;
-        background-color: #936278;
-        margin-top: 0;
-        margin-right: 0;
-        list-style-type: none;
-        display: none;
+    .icon-python {
+        font-size:4rem;
     }
-    .mobile-nav li {
-        width: 100%;
-        height: 40px;
+    ul {
+        font-size:0.9rem;
     }
-    .mobile-nav li a {
-        padding-right: 100px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        margin-left: -27px;
-        text-decoration: none;
-        font-family: 'Raleway', sans-serif;
-        color: white;
+}
+@media (max-width:655px) {
+    .banner h1 {
+        font-size:5.75rem;
     }
-    .mobile-nav a:hover {
-        color: #003E3E;
+    .banner h2 {
+        font-size:1.75rem;
     }
-    .banner {
-        max-height: 100%;
-        max-width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        background-attachment: local;
+    .accent{
+        font-size:5.75rem;
     }
-    h1 {
-        padding-left: 0px;
+}
+@media (max-width:655px) {
+    .banner h1 {
+        font-size:5.5rem;
     }
-    .banner img {
-        margin-left: 32%;
-        display: none;
+    .banner h2 {
+        font-size:1.5rem;
     }
-    .about {
-        text-align: left;
+    .accent{
+        font-size:5.5rem;
     }
-    .about img {
-        width: 25%;
-        height: 25%;
+    #scroll{
+        margin-top:50px;
+    }
+}
+@media (max-width:460px) {
+    td { 
+        padding: 10px;
+    }
+}
+@media (max-width:420px) {
+    .banner h1 {
+        font-size:4.45rem;
+    }
+    .banner h2 {
+        font-size:1.25rem;
+    }
+    .accent{
+        font-size:4.45rem;
+    }
+}
+@media (max-width:375px) {
+    .banner h1 {
+        font-size:4.45rem;
+    }
+    .banner h2 {
+        font-size:1.25rem;
+    }
+    .accent{
+        font-size:4.45rem;
+    }
+}
+@media (max-width:340px) {
+    .banner h1 {
+        font-size:3.9rem;
+    }
+    .banner h2 {
+        font-size:1.15rem;
+    }
+    .accent{
+        font-size:3.9rem;
+    }
+    
+}
+@media(max-width:310px) {
+    .icon-javascript {
+        font-size:3rem;
+    }
+    .icon-html {
+        font-size:3rem;
+    }
+    .icon-css {
+        font-size:3rem;
+    }
+    .icon-python {
+        font-size:3rem;
+    }
+    ul {
+        font-size:0.9rem;
     }
     h2 {
-        font-size: 1.5rem;
-        text-align: center;
-        padding-top: 0px;
-    }
-    .nav ul li a {
-        padding-left: 0px;
-    }
-    .projects ul li .proj-img {
-        visibility: hidden;
-    }
-    .projects {
-        max-width: 100%;
-        height: 175px;
-        overflow: hidden;
-    }
-    .projectheader {
-        font-size: 1rem;
-    }
-    .projectdesc {
-        font-size: 0.85rem;
-        padding-left: 0px;
-    }
-    .aboutproject {
-        width: 310px;
-        height: 250px;
-        text-align: center;
-    }
-    .mobile-projects {
-        visibility: visible;
-    }
-    .projectheader {
-        visibility: hidden;
-    }
-    .mobile-projectlist {
-        visibility: visible;
-    }
-    .projects ul {
-        visibility: hidden;
-    }
-    .projects li {
-        height: 40px;
-        padding: 0;
-    }
-    .skillalign-mob {
-        width: 170px;
-    }
-    a {
-        font-size: 1rem;
-    }
-    .aboutbox {
-        display: block;
-        text-align: center;
-        max-width: 100%;
-    }
-    .banner {
-        width: 100%;
-        height: 450px;
+        font-size:2.5rem;
     }
     .banner h1 {
-        padding-top: 85px;
+        font-size: 3.5rem;
     }
-    img.profile {
-        width: 190px;
-        height: 190px;
-    }
-    .aboutbox {
-        padding-top: 15px;
-    }
-    .container {
-        padding: 10px 10px;
-    }
-    .aboutproject {
-        width: 300px;
-        height: 60px;
-    }
-    .github-mobile {
-        text-decoration: underline;
-        color: #333333;
-        font-size: 1rem;
-    }
-    h3 a {
-        font-size: 0.85rem;
-    }
-    .contact img {
-        width: 20%;
-        height: 20%;
-    }
-    #skill1 {
-        padding-top: 5px;
-    }
-    #list1 {
-        padding-top: 16px;
-    }
-}
-@media (max-width: 550px) {
-    .skills img {
-        width: 50px;
-        height: 50px;
-    }
-    .skillalign {
-        width: 140px;
-    }
-    #skill1 {
-        padding-top: 5px;
-    }
-    #list1 {
-        padding-top: 1px;
-    }
-    .skillalign-mob {
-        width: 170px;
-    }
-
-    .skillgen ul {
-        padding-bottom:15px;
-    }
-
-    .contact img{
-        width:22%;
-        height:22%;
-    }
-    .projects {
-        max-width:100%;
-        height:210px;
-        overflow:hidden;
-    }
-}
-
-@media (max-width: 215px) {
-    .banner h1 {
-        font-size: 1.85rem;
-    }
-
-    p {
-        font-size:0.85rem;
-    }
-
-    a {
-        font-size:0.85rem;
-    }
-
-    body {
-        font-size: 0.85rem;
-    }
-
-    .github-mobile {
-        font-size:0.85rem;
-    }
-    .projects {
-        max-width:100%;
-        height:auto;
-        overflow:hidden;
+    .accent {
+        font-size:3.5rem;
     }
 }
