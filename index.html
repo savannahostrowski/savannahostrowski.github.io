@@ -143,7 +143,7 @@
 
             //+55px to offset the margin-top
             var $this = $(this),
-                top = ($this.offset().top - $(window).scrollTop()) + 55,
+                top = ($this.offset().top - $(window).scrollTop()),
                 right = $this.offset().right;
 
 
@@ -181,24 +181,6 @@
             $(this).find('.arrow-bounce').removeClass('arrow-bounce');
 
         });
-
-        //sets initial project icon size
-        $(".proj-img").width(165).height(165);
-
-        $(window).resize(function() {
-                var width = $(window).width();
-                if (width <= 540) {
-                    $(".skillgen li").removeClass("skillalign");
-                    $(".skillgen li").addClass("skillalign-mob");
-                } else {
-                    if (width > 540) {
-                        $(".skillgen li").removeClass("skillalign-mob");
-                        $(".skillgen li").addClass("skillalign");
-                    }
-                }
-
-            })
-            .resize();
     });
     </script>
 </body>
