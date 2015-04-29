@@ -161,7 +161,7 @@
             var target;
 
             // END OF ARRAY HAS ALREADY BEEN REACHED
-            if (count > (sections.length - 2)) {
+            if (count > (sections.length - 1)) {
                 count = -1;
 
                 smoothScroll('toTop');
@@ -170,7 +170,7 @@
             // JUST REACHED END OF ARRAY
             else {
                 target = $(sections[count]);
-                if (count === (sections.length - 2)) {
+                if (count === (sections.length - 1)) {
                     $this.addClass('rotate');
                 }
                 smoothScroll(target);

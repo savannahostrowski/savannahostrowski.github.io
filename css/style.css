@@ -98,6 +98,7 @@ ul {
   cursor: pointer;
   position: absolute;
   right: 50%;
+  z-index:100;
   -webkit-transition: -webkit-transform 0.6s ease;
   -moz-transition: -moz-transform 0.6s ease;
   transition: transform 0.6s ease;
@@ -393,16 +394,18 @@ canvas {
 
 
 /*Media Queries*/
-
-@media (max-width:890px) {
+@media (max-width:1024px) {
     .banner h1{
-        font-size:8.5rem;
+        font-size:7rem;
     }
     .banner h2 {
-        font-size:2.5rem;
+        font-size:2rem;
     }
     .accent {
-        font-size:8.5rem;
+        font-size:7rem;
+    }
+    .header {
+      margin-bottom: -30px;
     }
     
 }
@@ -504,7 +507,7 @@ canvas {
         padding: 10px;
     }
 }
-@media (max-width:420px) {
+@media (max-width:425px) {
     .banner h1 {
         font-size:4.45rem;
     }
@@ -513,6 +516,12 @@ canvas {
     }
     .accent{
         font-size:4.45rem;
+    }
+    #scroll{
+        margin-top:auto;
+    }
+    #scroll.clicked {
+      margin-right:auto;
     }
 }
 @media (max-width:375px) {
