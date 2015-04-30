@@ -502,7 +502,7 @@ canvas {
         margin-top:50px;
     }
     #scroll span{
-        padding-left:2px;
+        padding-left:7px;
     }
 }
 @media (max-width:460px) {
