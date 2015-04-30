@@ -501,6 +501,9 @@ canvas {
     #scroll{
         margin-top:50px;
     }
+    #scroll span{
+        padding-left:2px;
+    }
 }
 @media (max-width:460px) {
     td { 
