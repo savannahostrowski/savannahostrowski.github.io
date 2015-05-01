@@ -57,6 +57,10 @@ ul {
     padding: 0;
     font-weight: 400;
 }
+::selection {
+  background-color: #936278;
+  color:white; 
+}
 /* BANNER 
 -----------------------------------------*/
 .banner {
@@ -479,17 +483,6 @@ canvas {
 }
 @media (max-width:655px) {
     .banner h1 {
-        font-size:5.75rem;
-    }
-    .banner h2 {
-        font-size:1.75rem;
-    }
-    .accent{
-        font-size:5.75rem;
-    }
-}
-@media (max-width:655px) {
-    .banner h1 {
         font-size:5.5rem;
     }
     .banner h2 {
@@ -501,8 +494,11 @@ canvas {
     #scroll{
         margin-top:50px;
     }
-    #scroll span{
-        padding-left:7px;
+    #scroll{
+        margin-top:auto;
+    }
+    #scroll.clicked {
+      margin-right:auto;
     }
 }
 @media (max-width:460px) {
@@ -519,12 +515,6 @@ canvas {
     }
     .accent{
         font-size:4.45rem;
-    }
-    #scroll{
-        margin-top:auto;
-    }
-    #scroll.clicked {
-      margin-right:auto;
     }
 }
 @media (max-width:375px) {
