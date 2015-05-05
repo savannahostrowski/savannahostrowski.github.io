@@ -72,7 +72,7 @@ ul {
     height: 100vh;
 }
 .header {
-    padding-top:85px;
+    padding-top:100px;
     padding-bottom:85px;
 }
 .accent {
@@ -94,7 +94,6 @@ ul {
   border-radius: 50%;
   margin: 0 auto;
   margin-top: -10px;
-  margin-right: -25px;
   color: white;
   padding-top: 0px;
   font-size: 26px;
