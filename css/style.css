@@ -96,6 +96,7 @@ ul {
   margin-right: auto;
   margin-left: auto;
   color: white;
+  right:50%;
   padding-top: 0px;
   font-size: 26px;
   line-height: 26px;
@@ -119,6 +120,7 @@ ul {
 }
 #scroll span {
   position: relative;
+  bottom:-10px;
 }
 
 .arrow-bounce {
