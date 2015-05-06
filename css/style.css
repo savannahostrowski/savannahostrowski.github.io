@@ -182,7 +182,6 @@ ul {
     position: relative;
     background-size: cover;
     background-position: center;
-    z-index: -200;
     text-align: center;
 }
 .aboutbox {
