@@ -121,6 +121,7 @@ ul {
 }
 #scroll span {
   position: relative;
+  bottom:-10px;
 }
 
 .arrow-bounce {
