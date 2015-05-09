@@ -253,7 +253,6 @@ td {
 .projectheader {
     padding: 0;
     color: black;
-    text-decoration: underline
 }
 .view {
     color: black;
@@ -268,6 +267,9 @@ h5 {
 }
 h5 a:hover {
     color: #936278;
+}
+h5 a {
+  text-decoration: none;
 }
 .projects li {
     padding: 0;
