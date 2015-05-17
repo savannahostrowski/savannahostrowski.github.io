@@ -65,6 +65,10 @@ ul {
     background-color: #936278;
     color: white;
 }
+::-moz-selection {
+    background-color: #936278;
+    color: white;
+}
 /* BANNER 
 -----------------------------------------*/
 
