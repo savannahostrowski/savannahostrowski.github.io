@@ -69,7 +69,7 @@ ul {
     background-color: #936278;
     color: white;
 }
-/* BANNER 
+/* BANNER
 -----------------------------------------*/
 
 .banner {
@@ -332,7 +332,7 @@ canvas {
 .menu-proj li:hover a {
     color: #936278;
 }
-/* CONTACT 
+/* CONTACT
 -----------------------------------------*/
 
 .contact {
@@ -388,6 +388,7 @@ canvas {
     height: 4em;
     line-height: 4em;
     text-align: center;
+    text-decoration: none;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
