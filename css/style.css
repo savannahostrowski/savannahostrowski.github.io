@@ -23,7 +23,7 @@ h1 {
     font-weight: 200;
     margin-top: 20px;
     font-family: 'Raleway', sans-serif;
-    color: white;
+    color: black;
 }
 
 h2 {
@@ -31,7 +31,7 @@ h2 {
     font-weight: 200;
     margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
-    color: #936278;
+    color: #008a95;
 }
 
 .container {
@@ -56,17 +56,17 @@ ul {
     list-style-type: none;
     display: inline-block;
     font-family: 'Roboto', sans-serif;
-    color: #936278;
+    color: #008a95;
     padding: 0;
     font-weight: 300;
 }
 
 ::selection {
-    background-color: #936278;
+    background-color: #008a95;
     color: white;
 }
 ::-moz-selection {
-    background-color: #936278;
+    background-color: #008a95;
     color: white;
 }
 /* BANNER
@@ -75,8 +75,7 @@ ul {
 .banner {
     max-width: 100%;
     max-height: 100%;
-    background: black;
-    color: #ffffff;
+    background: #CCCCCC;
     text-align: center;
     height: 100vh;
 }
@@ -87,13 +86,14 @@ ul {
 }
 
 .accent {
-    color: #936278;
-    font-weight: 400;
+    color: #008a95;
+    font-weight: 200;
     font-size: 9rem;
 }
 
 .subheader {
     color: white;
+    font-weight: 400;
 }
 
 .banner h1 {
@@ -104,7 +104,7 @@ ul {
   text-align: center;
   width: 50px;
   height: 50px;
-  background: #936278;
+  background: #008a95;
   border-radius: 50%;
   margin-top: -10px;
   margin-right: auto;
@@ -193,13 +193,17 @@ ul {
     padding-right: 10px;
     background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/sanfran-gray.jpg');
     background-attachment: fixed;
-    color: #936278;
+    color: #008a95;
     height: 100%;
     position: relative;
     background-size: cover;
     background-position: center;
+}
+
+.aboutheader {
     text-align: center;
 }
+
 
 .aboutbox {
     width: 650px;
@@ -208,15 +212,18 @@ ul {
     padding-bottom: 20px;
 }
 
+.about p {
+    text-align: left;
+}
 .about p a {
     text-decoration: underline;
-    color: #936278;
-    font-weight: bold;
+    color: #008a95;
+    font-weight: 400;
     font-size: 1rem;
 }
 
 .about p a:hover {
-    color: #936278;
+    color: #008a95;
     text-decoration: underline;
 }
 /* SKILLS
@@ -242,7 +249,7 @@ table {
 }
 
 td {
-    padding: 30px;
+    padding: 20px;
 }
 
 .icon-javascript {
@@ -260,6 +267,14 @@ td {
 .icon-python {
     font-size: 5rem;
 }
+
+.icon-database-alt2 {
+    font-size: 5rem;
+}
+
+.icon-java {
+    font-size: 5rem;
+}
 /* PROJECTS
 -----------------------------------------*/
 
@@ -269,12 +284,13 @@ td {
 }
 
 .projectsub {
-    background-color: black;
+    background-color: white;
     text-align: center;
+    color: #808080;
 }
 
 #score {
-    color: #936278;
+    color: #008a95;
 }
 
 .projectheader {
@@ -285,7 +301,9 @@ td {
 .view {
     color: black;
 }
-
+.gamedesc {
+    color:#808080;
+}
 .aboutproject {
     color: black;
     text-align: center;
@@ -297,7 +315,7 @@ h5 {
 }
 
 h5 a:hover {
-    color: #936278;
+    color: #008a95;
 }
 h5 a {
   text-decoration: none;
@@ -325,12 +343,13 @@ canvas {
 
 .project-link {
     text-decoration: none;
-    color: white;
+    color: #808080;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .menu-proj li:hover a {
-    color: #936278;
+    color: #008a95;
 }
 /* CONTACT
 -----------------------------------------*/
@@ -405,32 +424,32 @@ canvas {
     transform: scale(1.3, 1.3) rotate(45deg);
 }
 
-.rdio {
-    background: #936278;
+.spotify {
+    background: #008a95;
     left: 0;
     top: 0%;
 }
 
-.twitter {
-    background: #936278;
+.instagram {
+    background: #008a95;
     bottom: 0;
     left: 25%;
 }
 
 .facebook {
-    background: #936278;
+    background: #008a95;
     left: 50%;
     top: 0%;
 }
 
 .github {
-    background: #936278;
+    background: #008a95;
     bottom: 0;
     left: 75%;
 }
 
-.linked-in {
-    background: #936278;
+.mail {
+    background: #008a95;
     color: white;
     left: 100%;
     top: 0%;

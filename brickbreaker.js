@@ -26,10 +26,10 @@ var BRICKWIDTH = (width / NCOLS) - 1;
 var BRICKHEIGHT = 15;
 var PADDING = 1;
 var ballRadius = 8;
-var rowcolors = ['#815669', '#a27489', '#b0889a', '#bd9caa', '#cab0bb'];
+var rowcolors = ['#00d2e1', '#00bac7', '#00a2ae', '#008a94', '#00727b'];
 var paddlecolor = 'black';
 var ballcolor = 'black';
-var backcolor = 'lightgrey';
+var backcolor = '#DFDFDF';
 var score = 0;
 
 function resetGameState() {
