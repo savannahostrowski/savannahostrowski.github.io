@@ -493,9 +493,6 @@ canvas {
     .accent {
         font-size: 7rem;
     }
-    .aboutbox {
-        width: auto;
-    }
 }
 
 @media (max-width: 740px) {
