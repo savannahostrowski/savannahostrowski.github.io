@@ -23,6 +23,7 @@ $(document).ready(function () {
 		$('#array').val('');
 		var outputText = "[ " + newlst.toString() + " ]";
 		$("#output").text(outputText);
+		$(".update").css("display", "block");
 
 	});
 });
