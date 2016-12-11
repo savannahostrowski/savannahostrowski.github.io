@@ -8,18 +8,32 @@
 
      <title>ChefSteps Coding Sample</title>
      <link href="css/main.css" rel="stylesheet">
+     <link href="http://fonts.googleapis.com/css?family=Raleway:500,400,200" rel="stylesheet" type="text/css">
+     <link href="http://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet" type="text/css">
+
      <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
      <script type="text/javascript" src="js/main.js"></script>
+     <script type="text/javascript" src="js/test.js"></script>
 
-
-        
 </head>
 <body>
+	<h1 id="chefsteps-header">Remove Duplicates From An Unsorted List</h1>
 	<form>
 		<h3>Input list please:</h3>
 		<input type="text" name="list" id="array"><br>
 		<br>
 		<button type="submit" id="submit">Submit</button><br>
+		<h3 id="output"></h3>
 	</form>
+
+
+	<div id="tests">
+		<h3>Testing</h3>
+		<p>Clicking the button below will run tests on the function which removes duplicates from an unsorted list. The test case uses two lists of 100,000 emails  - one with 100,000 unique emails, and 100,000 emails with 50% randomly placed a duplicates. The runtime along with a boolean value will be displayed once the tests have finished. </p>
+		<button id="run">Run</button><br>
+		<h3 id="boolean">Did it remove duplicates?  <span id="tf"></span></h3>
+		<h3 id="time">It finished in:  <span id="second"></span></h3>
+
+	</div>
 </body>
 </html>

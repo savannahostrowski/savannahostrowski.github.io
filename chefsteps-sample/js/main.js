@@ -1,37 +1,28 @@
-$(document).ready(function () {
-	
-	function removeDuplicates(arr) {
+function removeDuplicates(arr) {
 	  var arrMap = {};
+	  var outputArr = [];
 	  for (var i = 0; i < arr.length; i++) {
 	    if (!arrMap.hasOwnProperty(arr[i])) {
 	      arrMap[arr[i]] = true;
-
-	    } else {
-	      arr.splice(i, 1);
-	      i = i - 1;
+	      outputArr.push(arr[i]);
 	    }
 	  }
-	  return arr;
+	  return outputArr;
 	}
 
-	function addNewList(arr) {
-		var outputHeader = $('<h3>', {id: "output"});
-		var outputText = document.createTextNode(arr.toString());
-
-		outputHeader.append(outputText);
-		$('body').append(outputHeader);
-	}
+$(document).ready(function () {
 
 	$('#submit').click(function(e) {
-		$('#output').remove();
+		if ($("#output").length > 1) {
+			$('#output').remove();
+		}
 		e.preventDefault();
 		var lst_temp = $('#array').val();
 		var lst = lst_temp.split(',');
 		var newlst = removeDuplicates(lst);
 		$('#array').val('');
-		addNewList(newlst);
+		var outputText = "[ " + newlst.toString() + " ]";
+		$("#output").text(outputText);
 
 	});
-
-
 });

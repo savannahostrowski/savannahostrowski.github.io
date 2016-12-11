@@ -1,7 +1,37 @@
 body {
-	padding-top: 100px;
+	padding-top: 20px;
 	background-color: #CCCCCC;
 	color: #008a95;
-	font-family: 'Helvetica', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	text-align: center;
+}
+
+#chefsteps-header {
+	font-weight: 200;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	color: black;
+
+}
+
+p {
+	color: black;
+}
+
+h2, h3, h4, h5 {
+	font-weight: 400;
+}
+
+form, #tests{
+	padding: 30px 20px 50px 20px;
+	margin: 25px;
+
+	border: 2px solid #008a95;
+}
+
+#tf, #second {
+	color: #008a95;
 }
