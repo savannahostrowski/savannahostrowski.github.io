@@ -240,15 +240,18 @@ p {
         font-size: 5.5rem;
     }
     #face {
-        text-align: center;
+        margin: 0 auto;
         padding-bottom: 30px;
+        margin-right: 0;
+        float: none;
+
     }
-    # face img {
-        max-height: 300px;
-    }
-    # text {
-        display: inline-block !important;
+    #text {
+        display: inline-block;
      }
+    .about {
+        text-align: center;
+    }
 }
 
 @media (max-width: 460px) {
@@ -256,8 +259,7 @@ p {
         padding: 10px;
     }
     #face {
-        margin-right: 0;
-
+        margin-right: 0
     }
 
 }
@@ -272,6 +274,9 @@ p {
 @media (max-width: 375px) {
     .header {
         font-size: 4.45rem;
+    }
+    #face img {
+        max-height: 300px;
     }
 }
 
