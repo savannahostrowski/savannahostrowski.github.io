@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da2f4e1e-ab49-459d-a9ae-2c4077f39f7d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/brickbreaker.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/brickbreaker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/custom.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/flexslider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jquery-ui.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/code.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/email.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/github.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/hamburger.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/linkedin-black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/locate.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/puzzle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/sanfran-gray.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/sanfran.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/sav-naples.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tile1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tile2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wordpress.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-2.1.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-ui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,8 +28,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="247" column="5" lean-forward="true" selection-start-line="247" selection-start-column="5" selection-end-line="247" selection-end-column="5" />
+            <state relative-caret-position="545">
+              <caret line="249" column="40" lean-forward="false" selection-start-line="249" selection-start-column="40" selection-end-line="249" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -322,8 +300,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="247" column="5" lean-forward="true" selection-start-line="247" selection-start-column="5" selection-end-line="247" selection-end-column="5" />
+        <state relative-caret-position="545">
+          <caret line="249" column="40" lean-forward="false" selection-start-line="249" selection-start-column="40" selection-end-line="249" selection-end-column="40" />
           <folding />
         </state>
       </provider>

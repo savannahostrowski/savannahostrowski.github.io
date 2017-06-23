@@ -239,23 +239,30 @@ p {
     .header {
         font-size: 5.5rem;
     }
-
+    #face {
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    # face img {
+        max-height: 300px;
+    }
+    # text {
+        display: inline-block !important;
+     }
 }
 
 @media (max-width: 460px) {
     td {
         padding: 10px;
     }
+
 }
 
 @media (max-width: 425px) {
     .header {
         font-size: 4.45rem;
     }
-    #face img{
-        max-height:300px;
-        padding-bottom: 30px;
-    }
+
 }
 
 @media (max-width: 375px) {
