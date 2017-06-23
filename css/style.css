@@ -255,6 +255,10 @@ p {
     td {
         padding: 10px;
     }
+    #face {
+        margin-right: 0;
+
+    }
 
 }
 
@@ -275,10 +279,7 @@ p {
     .header {
         font-size: 3.9rem;
     }
-    #face {
-        margin-right: 0;
 
-    }
 }
 
 @media(max-width:310px) {
