@@ -14,202 +14,55 @@ html {
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
+    background-color:#6534FF;
 }
 
 h1 {
-    font-size: 9rem;
+    font-size: 5rem;
     font-weight: 200;
     margin-top: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Playfair Display', serif;
     color: black;
-}
-
-h2 {
-    font-size: 3rem;
-    font-weight: 200;
-    margin-bottom: 20px;
-    font-family: 'Raleway', sans-serif;
-    color: #008a95;
-}
-
-.container {
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 p {
     line-height: 1.4;
     font-size: 1rem;
     text-align: center;
-    color: white;
-    font-family: 'Roboto', sans-serif;
+    color: #bbc4ef;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
 
-div {
-    display: block;
-}
 
-ul {
-    list-style-type: none;
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
-    color: #008a95;
-    padding: 0;
-    font-weight: 300;
-}
-
-::selection {
-    background-color: #008a95;
-    color: white;
-}
-::-moz-selection {
-    background-color: #008a95;
-    color: white;
-}
-/* BANNER
------------------------------------------*/
-
-.banner {
-    max-width: 100%;
-    max-height: 100%;
-    background: #CCCCCC;
-    text-align: center;
-    height: 100vh;
-}
-
-.header {
-    padding-top: 85px;
-    padding-bottom: 85px;
-}
-
-.accent {
-    color: #008a95;
-    font-weight: 200;
-    font-size: 9rem;
-}
-
-.subheader {
-    color: white;
-    font-weight: 400;
-}
-
-.banner h1 {
-    margin-bottom: 10px;
-}
-
-#scroll {
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  background: #008a95;
-  border-radius: 50%;
-  margin-top: -10px;
-  margin-right: auto;
-  margin-left: auto;
-  color: white;
-  right:50%;
-  padding-top: 0px;
-  font-size: 26px;
-  line-height: 26px;
-  cursor: pointer;
-  z-index:100;
-  -webkit-transition: -webkit-transform 0.6s ease;
-  -moz-transition: -moz-transform 0.6s ease;
-  transition: transform 0.6s ease;
-}
-
-#scroll.clicked {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-}
-
-#scroll.rotate {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(3180deg);
-}
-
-#scroll span {
-  position: relative;
-  bottom:-10px;
-}
-
-.arrow-bounce {
-    -webkit-animation: arrow 1s infinite;
-    -moz-animation: arrow 1s infinite;
-    -o-animation: arrow 1s infinite;
-    animation: arrow 1s infinite;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-@-webkit-keyframes arrow {
-    0% {
-        bottom: -13px;
-    }
-    50% {
-        bottom: -8px;
-    }
-    100% {
-        bottom: -13px;
-    }
-}
-
-@-moz-keyframes arrow {
-    0% {
-        bottom: -13px;
-    }
-    50% {
-        bottom: -8px;
-    }
-    100% {
-        bottom: -13px;
-    }
-}
-
-@keyframes arrow {
-    0% {
-        bottom: -13px;
-    }
-    50% {
-        bottom: -8px;
-    }
-    100% {
-        bottom: -13px;
-    }
-}
 /* ABOUT
 -----------------------------------------*/
 
-.about {
-    max-width: 100%;
-    max-height: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/sanfran-gray.jpg');
-    background-attachment: fixed;
-    color: #008a95;
-    height: 100%;
-    position: relative;
-    background-size: cover;
-    background-position: center;
+.header {
+    color: #62bcfa;
+    text-align:center;
 }
-
-.aboutheader {
-    text-align: center;
+#face img{
+    max-height:400px;
 }
-
+#face {
+    display:block;
+    float:left;
+    margin-right: 50px;
+}
+#text {
+    display: block;
+}
 
 .aboutbox {
-    width: 650px;
-    margin: 0 auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+     margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}
+.about {
+    padding: 45px;
 }
 
 .about p {
@@ -217,154 +70,22 @@ ul {
 }
 .about p a {
     text-decoration: underline;
-    color: #008a95;
+    color: #62bcfa;
     font-weight: 400;
     font-size: 1rem;
 }
 
 .about p a:hover {
-    color: #008a95;
+    color: #fccdd3;
     text-decoration: underline;
 }
-/* SKILLS
------------------------------------------*/
 
-.skills {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-    background-color: white;
-    text-align: center;
-}
-
-table {
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    padding-left: 100px;
-    font-weight: 500;
-    font-family: 'Raleway', sans-serif;
-    text-align: left;
-}
-
-td {
-    padding: 20px;
-}
-
-.icon-javascript {
-    font-size: 5rem;
-}
-
-.icon-html {
-    font-size: 5rem;
-}
-
-.icon-css {
-    font-size: 5rem;
-}
-
-.icon-python {
-    font-size: 5rem;
-}
-
-.icon-database-alt2 {
-    font-size: 5rem;
-}
-
-.icon-java {
-    font-size: 5rem;
-}
-/* PROJECTS
------------------------------------------*/
-
-.projects {
-    text-align: center;
-    background: url('../images/tile2.png');
-}
-
-.projectsub {
-    background-color: white;
-    text-align: center;
-    color: #808080;
-}
-
-#score {
-    color: #008a95;
-}
-
-.projectheader {
-    padding: 0;
-    color: black;
-}
-
-.view {
-    color: black;
-}
-.gamedesc {
-    color:#808080;
-}
-.aboutproject {
-    color: black;
-    text-align: center;
-}
-
-h5 {
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-h5 a:hover {
-    color: #008a95;
-}
-h5 a {
-  text-decoration: none;
-}
-.projects li {
-    padding: 0;
-}
-
-.projects li ul {
-    padding: 0;
-}
-
-h3 a {
-    color: black;
-}
-
-canvas {
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0 auto;
-    display: block;
-    width: 500px;
-    vertical-align: middle;
-}
-
-.project-link {
-    text-decoration: none;
-    color: #808080;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.menu-proj li:hover a {
-    color: #008a95;
-}
 /* CONTACT
 -----------------------------------------*/
 
 .contact {
-    margin: 0;
-    padding-top: 80px;
+    margin-top: 100px;
     list-style-type: none;
-    text-align: center;
-    background-color: black;
-}
-
-.copyright {
-    padding-top: 35px;
-    padding-bottom: 0;
 }
 
 .social {
@@ -398,11 +119,10 @@ canvas {
 .social ul {
     list-style: none;
     margin: 0;
-    padding: 0;
 }
 
 .social a {
-    color: #fffdf0;
+    color: #fccdd3;
     display: block;
     height: 4em;
     line-height: 4em;
@@ -425,31 +145,31 @@ canvas {
 }
 
 .spotify {
-    background: #008a95;
+    background: #62bcfa;
     left: 0;
     top: 0%;
 }
 
 .instagram {
-    background: #008a95;
+    background: #62bcfa;
     bottom: 0;
     left: 25%;
 }
 
 .facebook {
-    background: #008a95;
+    background: #62bcfa;
     left: 50%;
     top: 0%;
 }
 
 .github {
-    background: #008a95;
+    background: #62bcfa;
     bottom: 0;
     left: 75%;
 }
 
 .mail {
-    background: #008a95;
+    background: #62bcfa;
     color: white;
     left: 100%;
     top: 0%;
@@ -457,52 +177,26 @@ canvas {
 /*Media Queries*/
 
 @media (max-width: 1024px) {
-    .banner h1 {
-        font-size: 7rem;
-    }
-    .banner h2 {
-        font-size: 2rem;
-    }
-    .accent {
-        font-size: 7rem;
-    }
     .header {
-        margin-bottom: -30px;
+        font-size: 7rem;
     }
 }
 
 @media (max-width: 830px) {
-    .banner h1 {
+    .header {
         font-size: 7.5rem;
     }
-    .banner h2 {
-        font-size: 2.5rem;
-    }
-    .accent {
-        font-size: 7.5rem;
-    }
+
 }
 
 @media (max-width: 775px) {
-    .banner h1 {
-        font-size: 7rem;
-    }
-    .banner h2 {
-        font-size: 2rem;
-    }
-    .accent {
+    .header {
         font-size: 7rem;
     }
 }
 
 @media (max-width: 740px) {
-    .banner h1 {
-        font-size: 6.5rem;
-    }
-    .banner h2 {
-        font-size: 1.75rem;
-    }
-    .accent {
+    .header {
         font-size: 6.5rem;
     }
     .aboutbox {
@@ -511,42 +205,14 @@ canvas {
 }
 
 @media (max-width: 700px) and (max-height: 400px) {
-    .banner h1 {
-        font-size: 4rem;
-    }
-    .banner h2 {
-        font-size: 1.5rem;
-    }
-    .accent {
-        font-size: 4rem;
-    }
-    #scroll {
-        margin-top: 50px;
-    }
-    #scroll {
-        margin-top: -15px;
-    }
-    #scroll.clicked {
-        margin-right: auto;
-    }
     .header {
-        padding-top: 15px;
-        padding-bottom: 25px;
-        margin-bottom: auto;
+        font-size: 4rem;
     }
-    h2 {
-        font-size: 2.25rem;
-    }
+
 }
 
 @media (max-width: 690px) {
-    .banner h1 {
-        font-size: 6rem;
-    }
-    .banner h2 {
-        font-size: 1.75rem;
-    }
-    .accent {
+    .header {
         font-size: 6rem;
     }
     .aboutbox {
@@ -570,24 +236,10 @@ canvas {
 }
 
 @media (max-width: 655px) {
-    .banner h1 {
+    .header {
         font-size: 5.5rem;
     }
-    .banner h2 {
-        font-size: 1.5rem;
-    }
-    .accent {
-        font-size: 5.5rem;
-    }
-    #scroll {
-        margin-top: 50px;
-    }
-    #scroll {
-        margin-top: auto;
-    }
-    #scroll.clicked {
-        margin-right: auto;
-    }
+
 }
 
 @media (max-width: 460px) {
@@ -597,37 +249,23 @@ canvas {
 }
 
 @media (max-width: 425px) {
-    .banner h1 {
+    .header {
         font-size: 4.45rem;
     }
-    .banner h2 {
-        font-size: 1.25rem;
-    }
-    .accent {
-        font-size: 4.45rem;
+    #face img{
+        max-height:300px;
+        padding-bottom: 30px;
     }
 }
 
 @media (max-width: 375px) {
-    .banner h1 {
-        font-size: 4.45rem;
-    }
-    .banner h2 {
-        font-size: 1.25rem;
-    }
-    .accent {
+    .header {
         font-size: 4.45rem;
     }
 }
 
 @media (max-width: 340px) {
-    .banner h1 {
-        font-size: 3.9rem;
-    }
-    .banner h2 {
-        font-size: 1.15rem;
-    }
-    .accent {
+    .header {
         font-size: 3.9rem;
     }
 }
@@ -651,7 +289,7 @@ canvas {
     h2 {
         font-size: 2.5rem;
     }
-    .banner h1 {
+    .header {
         font-size: 3.5rem;
     }
     .accent {

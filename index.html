@@ -6,8 +6,8 @@
     <meta name="description" content=" Savannah Ostrowski is a Canadian software developer currently attending the University of Waterloo">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <!-- Google fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Raleway:500,400,200' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">       <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="font-mfizz/font-mfizz.css">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -17,190 +17,54 @@
 </head>
 
 <body>
-    <div id="banner" class="banner container">
-        <div class="header">
-            <h1>SAVANNAH</h1>
-            <span class="accent">OSTROWSKI</span>
-            <h2 class="subheader">SOFTWARE DEVELOPER</h2>
-            
-        </div>
-        <div id="scroll">
-            <span class="arrow-bounce">&#8595;</span>
-        </div>
-    </div>
-    <section id="about" class="about container grayscale">
+     <h1 class="header">savannah ostrowski</h1>
+    <section id="about" class="about">
         <div class="aboutbox">
-            <h2 class="aboutheader">Oh, hi there!</h2>
-            <p>My name is Savannah Ostrowski. I majored in <a href="https://en.wikipedia.org/wiki/Geomatics">geomatics</a> at the University of Waterloo in Canada. As an applied science combining physical geography with computer science, geomatics allowed me to find the world of programming. During my time in school, I interned at <a href="http://www.theredpin.com">TheRedPin</a> and <a href="http://www.sequence.com">Sequence</a> working at a developer, and also at <a href="http://www.kbmrg.com">KBM Resources Group</a> as a geomatics analyst.</p>
+            <div id="face">
+                <img src="images/face.jpg">
+            </div>
+            <div id="text">
+                <p>Hey there! I'm Savannah, and I'm a software engineer living in Seattle, WA. I majored in
+                    <a href="https://en.wikipedia.org/wiki/Geomatics">geomatics</a> at the University of
+                    Waterloo up in Canada. Although you've likely never heard of geomatics, let me assure you - it's
+                    the best possible combination of computer science and technical geography.
+                    During my time at UW, I interned at some rad companies. You can read more about
+                    that on my <a href="resume.pdf">resume</a>. Recently, I've been hanging out at
+                    <a href="http://www.droneseed.co">DroneSeed</a> as a software engineer.</p>
 
-            <p>I am interested in a lot of things. I love to learn. My current interests include, but are certainly not limited to: spatial data management and visualization, data modelling, and wearable tech.</p>
+                <p>My current interests include: spatial data management and visualization, data modelling,
+                    and wearable tech.</p>
+                <p>In my free time, I like to go hiking in the mountains, do hot yoga, go running, cook things like
+                    Okonomiyaki, ramen made from scratch or a roast chicken dinner with all the fixings on a Tuesday
+                    night, and travel as far and as much as I can with my husband (sometimes I even blog about it
+                    on <a href="http://www.theperpetualtravellers.com"> The Perpetual Travellers</a>).</p>
 
-            <p>In my free time, I like to go hiking in the mountains, do hot yoga, cook things like Okonomiyaki, ramen made from scratch, or a roast chicken dinner with all the fixings on a Tuesday night, watch movies from all genres (except horror), and travel as far and as much as I can with my husband (sometimes I even blog about it on <a href="http://www.theperpetualtravellers.wordpress.com">The Perpetual Travellers</a>).</p>
-
-            <p>I also really like meeting new people! If you too like meeting other humans, connect with me <a href="#contact">somewhere</a> on the Internet.</p>
+                <p>If you like meeting other humans, find me somewhere on the Internet. I'd love to meet you!</p>
+            </div>
+        </div>
+        <div class="contact">
+            <ul class="social">
+                    <li class="spotify">
+                        <a href="https://open.spotify.com/user/224tlpa3nu7dkd5srtvkvicfi" class="entypo-spotify"></a>
+                    </li>
+                    <li class="instagram">
+                        <a href="https://www.instagram.com/savannahostrowski/" class="entypo-instagrem"></a>
+                    </li>
+                    <li class="facebook">
+                        <a href="https://www.facebook.com/savannah.ostrowski" class="entypo-facebook"></a>
+                    </li>
+                    <li class="github">
+                        <a href="https://github.com/savannahostrowski" class="entypo-github"></a>
+                    </li>
+                    <li class="mail">
+                        <a href="mailto:savannahostrowski@gmail.com" class="entypo-mail"></a>
+                    </li>
+                </ul>
         </div>
     </section>
-    <!-- Skills Section -->
-    <section id="skills" class="skills container">
-    	<h2>Languages &amp; Frameworks</h2>
-        <table>
-            <tr>
-                <td><i class="icon-java"></i> </td>
-                <td>
-                    <ul>
-                        <li>Java</li>
-                    </ul>
-                </td>
-                <td><i class="icon-javascript"></i> </td>
-                <td>
-                    <ul>
-                        <li>node.js</li>
-                        <li>D3.js</li>
-                        <li>PhantomJS</li>
-                        <li>jQuery</li>
-                        <li>Mocha &amp; Chai</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><i class="icon-python"></i></td>
-                <td>
-                    <ul>
-                        <li>Python</li>
-                    </ul>
-                </td>
-                <td><i class="icon-database-alt2"></i> </td>
-                <td>
-                    <ul>
-                        <li>SQLite</li>
-                        <li>PostgreSQL</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+
     </section>
-    <!-- Projects Section -->
-    <section id="projects" class="projects container">
-        <h2 class="workheader">Current Work</h2>
-          <ul>
-            <li class="aboutproject">
-              <h5 class="projectheader"><a class="view" href="https://www.github.com/savannahostrowski/limon">Limon - An Interface for Locally Stored MP4 Files</h5></a>
-            </li>
-            <li class="aboutproject">
-              <h5 class="projectheader"><a class="view" href="http://www.savannahostrowski.com/GISApp/">Interactive Sustainable Development Map</h5></a>
-            </li>
-            <li class="aboutproject">
-                <h5 class="projectheader"><a class="view" href = "brickbreaker.html">BrickSmasher (A BrickBreaker Clone)</h5></a>
-            </li>
-             <li class="aboutproject">
-                <h5 class="projectheader"><a class="view" href = "https://github.com/savannahostrowski/acupofjava">A Cup of Java (Algorithm Problems)</h5></a>
-            </li>
-            <li class="aboutproject">
-                <h5 class="projectheader"><a class="view" href = "https://github.com/savannahostrowski/crawler">Web Crawlers</h5></a>
-            </li>
-            
-        </ul>
-    </section>
-    <section id="contact" class="contact container">
-            <ul class="social">
-                <li class="spotify">
-                    <a href="https://open.spotify.com/user/224tlpa3nu7dkd5srtvkvicfi" class="entypo-spotify"></a>
-                </li>
-                <li class="instagram">
-                    <a href="https://www.instagram.com/savannahostrowski/" class="entypo-instagrem"></a>
-                </li>
-                <li class="facebook">
-                    <a href="https://www.facebook.com/savannah.ostrowski" class="entypo-facebook"></a>
-                </li>
-                <li class="github">
-                    <a href="https://github.com/savannahostrowski" class="entypo-github"></a>
-                </li>
-                <li class="mail">
-                    <a href="mailto:savannahostrowski@gmail.com" class="entypo-mail"></a>
-                </li>
-            </ul>
-          <p class="copyright">&copy;2014-2016 Savannah Ostrowski</p>
-    </section>
-    <script text="text/javascript">
-    $(document).ready(function() {
-        function smoothScroll(target, time) {
-            var margin = ($('#main-header').outerHeight() - 1);
-            if (!time) {
-                time = '1000';
-            }
 
-            if (target === 'toTop') {
-                $('html,body').animate({
-                    scrollTop: 0
-                }, time);
-            } else {
-                $('html,body').animate({
-                    scrollTop: target.offset().top - margin
-                }, time);
-            }
-        }
-
-        // SCROLL DOWN ARROW BUTTON
-        var count = 0;
-
-        $('#scroll').on("click", function() {
-
-            var sections = $('section');
-
-            //+55px to offset the margin-top
-            var $this = $(this),
-                top = ($this.offset().top - $(window).scrollTop()),
-                right = $this.offset().right;
-
-            $this.css({
-                    position: 'fixed',
-                    top: top,
-                    right: right
-                })
-                .animate({
-                    right: '5%',
-                    top: '90%'
-                }, 600)
-                .addClass('clicked');
-
-            var target;
-
-            // END OF ARRAY HAS ALREADY BEEN REACHED
-            if (count > (sections.length - 1)) {
-                count = -1;
-
-                smoothScroll('toTop');
-                $this.removeClass('rotate');
-            }
-            // JUST REACHED END OF ARRAY
-            else {
-                target = $(sections[count]);
-                if (count === (sections.length - 1)) {
-                    $this.addClass('rotate');
-                }
-                smoothScroll(target);
-            }
-
-            count++;
-
-            $(this).find('.arrow-bounce').removeClass('arrow-bounce');
-
-        });
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                    $('html,body').animate({
-                      scrollTop: target.offset().top
-                     }, 1000);
-                     return false;
-                    }
-                }
-            });
-    });
-
-    </script>
 </body>
 
 </html>
