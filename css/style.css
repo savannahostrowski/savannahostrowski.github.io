@@ -6,18 +6,19 @@ html {
 *:before,
 *:after {
     box-sizing: inherit;
+    margin: 0; 
+    padding: 0;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    background-color:#6534FF;
+    background-color:white;
 }
 
 h1 {
     font-size: 5rem;
     font-weight: 200;
-    margin-top: 20px;
     font-family: 'Playfair Display', serif;
     color: black;
 }
@@ -26,7 +27,7 @@ p {
     line-height: 1.4;
     font-size: 1rem;
     text-align: center;
-    color: #bbc4ef;
+    color: #5d6277;
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
 }
@@ -36,8 +37,16 @@ p {
 -----------------------------------------*/
 
 .header {
+    background-color:#6534FF;
+    height: 20vh;
+    display: table;
+    width: 100%;    
+}
+.header h1 {
     color: #62bcfa;
     text-align:center;
+    vertical-align:middle; 
+    display:table-cell;
 }
 #face img{
     max-height:400px;
@@ -52,12 +61,12 @@ p {
 }
 
 .aboutbox {
-     margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
     max-width: 900px;
 }
 .about {
-    padding: 45px;
+    padding: 90px 25px;
 }
 
 .about p {
@@ -71,7 +80,7 @@ p {
 }
 
 .about p a:hover {
-    color: #fccdd3;
+    color: #6534FF;
     text-decoration: underline;
 }
 
