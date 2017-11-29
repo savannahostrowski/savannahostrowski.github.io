@@ -13,24 +13,20 @@ html {
     box-sizing: inherit;
 }
 
-body {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 400;
-}
 
 h1 {
     font-size: 9rem;
     font-weight: 200;
     margin-top: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Oswald', sans-serif;
     color: black;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 200;
     margin-bottom: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #008a95;
 }
 
@@ -75,9 +71,9 @@ ul {
 .banner {
     max-width: 100%;
     max-height: 100%;
-    background: #CCCCCC;
+    background: white;
     text-align: center;
-    height: 100vh;
+    height: 75vh;
 }
 
 .header {
@@ -88,12 +84,16 @@ ul {
 .accent {
     color: #008a95;
     font-weight: 200;
-    font-size: 9rem;
+    font-size: 1rem;
 }
 
-.subheader {
-    color: white;
-    font-weight: 400;
+.subheader a {
+    color:#666666;
+    font-weight: 500;
+}
+
+.subheader a:hover {
+    color: black;
 }
 
 .banner h1 {
@@ -102,11 +102,11 @@ ul {
 
 #scroll {
   text-align: center;
-  width: 50px;
-  height: 50px;
+  width: 50px
+;  height: 50px;
   background: #008a95;
   border-radius: 50%;
-  margin-top: -10px;
+  margin-top: 25px;
   margin-right: auto;
   margin-left: auto;
   color: white;
@@ -191,7 +191,7 @@ ul {
     max-height: 100%;
     padding-left: 10px;
     padding-right: 10px;
-    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/sanfran-gray.jpg');
+    background: url('../images/congruent_outline.png');
     background-attachment: fixed;
     color: #008a95;
     height: 100%;
@@ -202,29 +202,34 @@ ul {
 
 .aboutheader {
     text-align: center;
+    font-weight: bolder;
 }
 
-
 .aboutbox {
-    width: 650px;
-    margin: 0 auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .about p {
     text-align: left;
 }
-.about p a {
-    text-decoration: underline;
-    color: #008a95;
-    font-weight: 400;
-    font-size: 1rem;
+
+.face {
+    display: inline-block;
+    width:50%;
+    float:left;
+}
+.face img{
+    width: 75%;
+    height: 75%;
+    border-radius: 50%
 }
 
-.about p a:hover {
-    color: #008a95;
-    text-decoration: underline;
+.abouttext {
+    width:50%;
+    display:inline-block;
 }
 /* SKILLS
 -----------------------------------------*/
@@ -351,108 +356,20 @@ canvas {
 .menu-proj li:hover a {
     color: #008a95;
 }
-/* CONTACT
+/* END
 -----------------------------------------*/
 
-.contact {
+.end {
     margin: 0;
-    padding-top: 80px;
     list-style-type: none;
     text-align: center;
-    background-color: black;
+    background-color: white;
 }
 
 .copyright {
     padding-top: 35px;
     padding-bottom: 0;
-}
-
-.social {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    height: 3em;
-    width: 13.5em;
-}
-
-.social li {
-    display: block;
-    height: 4em;
-    line-height: 4em;
-    margin: -2.2em;
-    position: absolute;
-    -webkit-transition: -webkit-transform .7s;
-    -moz-transition: -moz-transform .7s;
-    -ms-transition: -ms-transform .7s;
-    -o-transition: -o-transform .7s;
-    transition: transform .7s;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    text-align: center;
-    width: 4em;
-}
-
-.social ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.social a {
-    color: #fffdf0;
-    display: block;
-    height: 4em;
-    line-height: 4em;
-    text-align: center;
-    text-decoration: none;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    width: 4em;
-}
-
-.social li:hover {
-    -webkit-transform: scale(1.3, 1.3) rotate(45deg);
-    -moz-transform: scale(1.3, 1.3) rotate(45deg);
-    -ms-transform: scale(1.3, 1.3) rotate(45deg);
-    -o-transform: scale(1.3, 1.3) rotate(45deg);
-    transform: scale(1.3, 1.3) rotate(45deg);
-}
-
-.spotify {
-    background: #008a95;
-    left: 0;
-    top: 0%;
-}
-
-.instagram {
-    background: #008a95;
-    bottom: 0;
-    left: 25%;
-}
-
-.facebook {
-    background: #008a95;
-    left: 50%;
-    top: 0%;
-}
-
-.github {
-    background: #008a95;
-    bottom: 0;
-    left: 75%;
-}
-
-.mail {
-    background: #008a95;
-    color: white;
-    left: 100%;
-    top: 0%;
+    color: #666666;
 }
 /*Media Queries*/
 
@@ -460,11 +377,8 @@ canvas {
     .banner h1 {
         font-size: 7rem;
     }
-    .banner h2 {
-        font-size: 2rem;
-    }
     .accent {
-        font-size: 7rem;
+        font-size: 1.5rem;
     }
     .header {
         margin-bottom: -30px;
