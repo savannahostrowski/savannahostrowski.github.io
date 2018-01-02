@@ -198,6 +198,7 @@ ul {
     position: relative;
     background-size: cover;
     background-position: center;
+    padding: 30px;
 }
 
 .aboutheader {
@@ -206,10 +207,11 @@ ul {
 }
 
 .aboutbox {
-    width: 100%;
+    width: 50%;
     text-align: center;
     padding-top: 40px;
     padding-bottom: 40px;
+    margin: 0 auto;
 }
 
 .about p {
@@ -231,55 +233,6 @@ ul {
     width:50%;
     display:inline-block;
 }
-/* SKILLS
------------------------------------------*/
-
-.skills {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-    background-color: white;
-    text-align: center;
-}
-
-table {
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    padding-left: 100px;
-    font-weight: 500;
-    font-family: 'Raleway', sans-serif;
-    text-align: left;
-}
-
-td {
-    padding: 20px;
-}
-
-.icon-javascript {
-    font-size: 5rem;
-}
-
-.icon-html {
-    font-size: 5rem;
-}
-
-.icon-css {
-    font-size: 5rem;
-}
-
-.icon-python {
-    font-size: 5rem;
-}
-
-.icon-database-alt2 {
-    font-size: 5rem;
-}
-
-.icon-java {
-    font-size: 5rem;
-}
 /* PROJECTS
 -----------------------------------------*/
 
@@ -288,27 +241,16 @@ td {
     background: url('../images/tile2.png');
 }
 
-.projectsub {
-    background-color: white;
-    text-align: center;
-    color: #808080;
-}
-
-#score {
-    color: #008a95;
-}
-
 .projectheader {
     padding: 0;
+    margin: 0;
     color: black;
 }
 
 .view {
     color: black;
 }
-.gamedesc {
-    color:#808080;
-}
+
 .aboutproject {
     color: black;
     text-align: center;
@@ -317,21 +259,27 @@ td {
 h5 {
     font-size: 1.5rem;
     font-weight: 400;
+    color: black;
 }
 
-h5 a:hover {
-    color: #008a95;
-}
 h5 a {
   text-decoration: none;
 }
+
+.projects ul {
+    width:100%;
+}
 .projects li {
     padding: 0;
+    width:100%;
+    height: 80px;
+    line-height: 60px;
 }
 
-.projects li ul {
-    padding: 0;
+.projects li:hover, .projects li:focus{
+    background-color: rgba(0,138,149, 0.4);
 }
+
 
 h3 a {
     color: black;
@@ -363,18 +311,19 @@ canvas {
     margin: 0;
     list-style-type: none;
     text-align: center;
-    background-color: white;
+    background-color: #008a95;
 }
 
 .copyright {
-    padding-top: 35px;
     padding-bottom: 0;
-    color: #666666;
+    color: white;
+    font-weight: bold;
+  
 }
 /*Media Queries*/
 
-@media (max-width: 1024px) {
-    .banner h1 {
+@media (max-width: 1400px) {
+     .banner h1 {
         font-size: 7rem;
     }
     .accent {
@@ -383,6 +332,36 @@ canvas {
     .header {
         margin-bottom: -30px;
     }
+
+    .face img {
+        width: 75%;
+        height: 75%;
+    }
+
+    .about {
+        padding: 30px 30px 80px 30px;
+    }
+
+     .aboutbox {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .banner h1 {
+        font-size: 5rem;
+    }
+    .accent {
+        font-size: 1.5rem;
+    }
+    .header {
+        margin-bottom: -30px;
+    }
+
+   
+
+    
+
 }
 
 @media (max-width: 830px) {
@@ -393,7 +372,7 @@ canvas {
         font-size: 2.5rem;
     }
     .accent {
-        font-size: 7.5rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -401,11 +380,8 @@ canvas {
     .banner h1 {
         font-size: 7rem;
     }
-    .banner h2 {
-        font-size: 2rem;
-    }
     .accent {
-        font-size: 7rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -413,11 +389,8 @@ canvas {
     .banner h1 {
         font-size: 6.5rem;
     }
-    .banner h2 {
-        font-size: 1.75rem;
-    }
     .accent {
-        font-size: 6.5rem;
+        font-size: 1.5rem;
     }
     .aboutbox {
         width: auto;
@@ -430,9 +403,6 @@ canvas {
     }
     .banner h2 {
         font-size: 1.5rem;
-    }
-    .accent {
-        font-size: 4rem;
     }
     #scroll {
         margin-top: 50px;
@@ -466,18 +436,7 @@ canvas {
     .aboutbox {
         width: auto;
     }
-    .icon-javascript {
-        font-size: 4rem;
-    }
-    .icon-html {
-        font-size: 4rem;
-    }
-    .icon-css {
-        font-size: 4rem;
-    }
-    .icon-python {
-        font-size: 4rem;
-    }
+   
     ul {
         font-size: 0.9rem;
     }
@@ -496,9 +455,6 @@ canvas {
     #scroll {
         margin-top: 50px;
     }
-    #scroll {
-        margin-top: auto;
-    }
     #scroll.clicked {
         margin-right: auto;
     }
@@ -511,55 +467,111 @@ canvas {
 }
 
 @media (max-width: 425px) {
-    .banner h1 {
-        font-size: 4.45rem;
+    .banner {
+        margin: 20px;
     }
-    .banner h2 {
-        font-size: 1.25rem;
+    .banner h1 {
+        font-size: 3rem;
     }
     .accent {
-        font-size: 4.45rem;
+        font-size: 1.1rem;
+    }
+
+    .subheader {
+        font-size: 1.1rem;
+    }
+
+    .face {
+        float: none;
+    }
+
+     .face img {
+        width: 75%;
+        height: 75%;
+    }
+
+    .face, .abouttext {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .about {
+        padding: 30px;
+    }
+
+    .projects li h5 {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 375px) {
-    .banner h1 {
-        font-size: 4.45rem;
+    .banner {
+        margin: 20px;
     }
-    .banner h2 {
-        font-size: 1.25rem;
+    .banner h1 {
+        font-size: 2.5rem;
     }
     .accent {
-        font-size: 4.45rem;
+        font-size: 1.1rem;
+    }
+
+    .subheader {
+        font-size: 1.1rem;
+    }
+
+    .face {
+        float: none;
+    }
+
+    .face, .abouttext {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .projects li h5 {
+        font-size: 0.85rem;
+    }
+
+    .abouttext {
+        width: 75%;
     }
 }
 
 @media (max-width: 340px) {
-    .banner h1 {
-        font-size: 3.9rem;
+    .banner {
+        margin: 20px;
     }
-    .banner h2 {
-        font-size: 1.15rem;
+    .banner h1 {
+        font-size: 2rem;
     }
     .accent {
-        font-size: 3.9rem;
+        font-size: 0.9rem;
+    }
+
+    .subheader {
+        font-size: 0.9rem;
+    }
+
+    .face {
+        float: none;
+    }
+
+    .face, .abouttext {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .projects li h5 {
+        font-size: 0.85rem;
+    }
+
+    .abouttext {
+        width: 75%;
     }
 }
 
 @media(max-width:310px) {
-    .icon-javascript {
-        font-size: 3rem;
-    }
-    .icon-html {
-        font-size: 3rem;
-    }
-    .icon-css {
-        font-size: 3rem;
-    }
-    .icon-python {
-        font-size: 3rem;
-    }
-    ul {
+   ul {
         font-size: 0.9rem;
     }
     h2 {
