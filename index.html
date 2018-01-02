@@ -3,18 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Savannah Ostrowski</title>
-    <meta name="description" content=" Savannah Ostrowski is a Canadian software developer currently attending the University of Waterloo">
+    <meta name="description" content="Savannah Ostrowski is an engineer and maker of things living in Seattle, Washington">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:500,400,200' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link rel="stylesheet" href="font-mfizz/font-mfizz.css">
-    <!-- CSS -->
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <!--jQuery -->
-    <script src="js/jquery-2.1.3.min.js"></script>
 </head>
 
 <body>
@@ -31,9 +28,6 @@
                 <a href="https://www.theperpetualtravellers.com" target="_blank">blog</a>&nbsp;&nbsp;&nbsp;
                 <a href="mailto:savannahostrowski@gmail.com" target="_blank">email</a>
             </div>
-        <div id="scroll">
-            <span class="arrow-bounce">&#8595;</span>
-        </div>
     </div>
     <section id="about" class="about container grayscale">
         <h2 class="aboutheader">oh, hi there!</h2>
@@ -72,86 +66,5 @@
     <section id="end" class="end container">
           <p class="copyright">est. twenty-eighteen</p>
     </section>
-    <script text="text/javascript">
-    $(document).ready(function() {
-        function smoothScroll(target, time) {
-            var margin = ($('#main-header').outerHeight() - 1);
-            if (!time) {
-                time = '1000';
-            }
-
-            if (target === 'toTop') {
-                $('html,body').animate({
-                    scrollTop: 0
-                }, time);
-            } else {
-                $('html,body').animate({
-                    scrollTop: target.offset().top - margin
-                }, time);
-            }
-        }
-
-        // SCROLL DOWN ARROW BUTTON
-        var count = 0;
-
-        $('#scroll').on("click", function() {
-
-            var sections = $('section');
-
-            //+55px to offset the margin-top
-            var $this = $(this),
-                top = ($this.offset().top - $(window).scrollTop()),
-                right = $this.offset().right;
-
-            $this.css({
-                    position: 'fixed',
-                    top: top,
-                    right: right
-                })
-                .animate({
-                    right: '5%',
-                    top: '90%'
-                }, 600)
-                .addClass('clicked');
-
-            var target;
-
-            // END OF ARRAY HAS ALREADY BEEN REACHED
-            if (count > (sections.length - 1)) {
-                count = -1;
-
-                smoothScroll('toTop');
-                $this.removeClass('rotate');
-            }
-            // JUST REACHED END OF ARRAY
-            else {
-                target = $(sections[count]);
-                if (count === (sections.length - 1)) {
-                    $this.addClass('rotate');
-                }
-                smoothScroll(target);
-            }
-
-            count++;
-
-            $(this).find('.arrow-bounce').removeClass('arrow-bounce');
-
-        });
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                    $('html,body').animate({
-                      scrollTop: target.offset().top
-                     }, 1000);
-                     return false;
-                    }
-                }
-            });
-    });
-
-    </script>
 </body>
-
 </html>

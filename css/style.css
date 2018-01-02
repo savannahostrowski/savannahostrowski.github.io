@@ -73,18 +73,18 @@ ul {
     max-height: 100%;
     background: white;
     text-align: center;
-    height: 75vh;
+    height: 50vh;
 }
 
 .header {
-    padding-top: 85px;
+    padding-top: 65px;
     padding-bottom: 85px;
 }
 
 .accent {
     color: #008a95;
     font-weight: 200;
-    font-size: 4rem;
+    font-size: `1.75rem;
 }
 
 .subheader a {
@@ -100,89 +100,7 @@ ul {
     margin-bottom: 10px;
 }
 
-#scroll {
-  text-align: center;
-  width: 50px
-;  height: 50px;
-  background: #008a95;
-  border-radius: 50%;
-  margin-top: 25px;
-  margin-right: auto;
-  margin-left: auto;
-  color: white;
-  right:50%;
-  padding-top: 0px;
-  font-size: 26px;
-  line-height: 26px;
-  cursor: pointer;
-  z-index:100;
-  -webkit-transition: -webkit-transform 0.6s ease;
-  -moz-transition: -moz-transform 0.6s ease;
-  transition: transform 0.6s ease;
-}
 
-#scroll.clicked {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-}
-
-#scroll.rotate {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(3180deg);
-}
-
-#scroll span {
-  position: relative;
-  bottom:-10px;
-}
-
-.arrow-bounce {
-    -webkit-animation: arrow 1s infinite;
-    -moz-animation: arrow 1s infinite;
-    -o-animation: arrow 1s infinite;
-    animation: arrow 1s infinite;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-@-webkit-keyframes arrow {
-    0% {
-        bottom: -13px;
-    }
-    50% {
-        bottom: -8px;
-    }
-    100% {
-        bottom: -13px;
-    }
-}
-
-@-moz-keyframes arrow {
-    0% {
-        bottom: -13px;
-    }
-    50% {
-        bottom: -8px;
-    }
-    100% {
-        bottom: -13px;
-    }
-}
-
-@keyframes arrow {
-    0% {
-        bottom: -13px;
-    }
-    50% {
-        bottom: -8px;
-    }
-    100% {
-        bottom: -13px;
-    }
-}
 /* ABOUT
 -----------------------------------------*/
 
@@ -400,15 +318,7 @@ canvas {
     .banner h2 {
         font-size: 1.5rem;
     }
-    #scroll {
-        margin-top: 50px;
-    }
-    #scroll {
-        margin-top: -15px;
-    }
-    #scroll.clicked {
-        margin-right: auto;
-    }
+   
     .header {
         padding-top: 15px;
         padding-bottom: 25px;
@@ -448,17 +358,13 @@ canvas {
     .accent {
         font-size: 5.5rem;
     }
-    #scroll {
-        margin-top: 50px;
-    }
-    #scroll.clicked {
-        margin-right: auto;
-    }
+    
 }
 
 @media (max-width: 460px) {
     td {
         padding: 10px;
+
     }
 }
 
