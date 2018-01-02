@@ -248,7 +248,8 @@ canvas {
         font-size: 1.5rem;
     }
     .header {
-        margin-bottom: -30px;
+        padding-top: 0;
+        padding-bottom: 65px;
     }
 
     .face img {
@@ -272,9 +273,7 @@ canvas {
     .accent {
         font-size: 1.5rem;
     }
-    .header {
-        margin-bottom: -30px;
-    }
+
 
 }
 
