@@ -84,7 +84,7 @@ ul {
 .accent {
     color: #008a95;
     font-weight: 200;
-    font-size: 1rem;
+    font-size: 4rem;
 }
 
 .subheader a {
@@ -357,10 +357,6 @@ canvas {
     .header {
         margin-bottom: -30px;
     }
-
-   
-
-    
 
 }
 
